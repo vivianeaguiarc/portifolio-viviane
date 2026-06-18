@@ -5,32 +5,42 @@ import { Badge } from "@/components/ui/badge";
 import { CareerTimeline } from "@/components/sections/career-timeline";
 import { CurrentLearning } from "@/components/sections/current-learning";
 import {
+  getPrincipleCategories,
   getPrinciplesByCategory,
-  PRINCIPLE_CATEGORIES,
-  SOFTWARE_ENGINEERING_SECTION,
+  getSoftwareEngineeringSection,
 } from "@/data/software-engineering";
+import type { Locale } from "@/i18n/routing";
 
-export function SoftwareEngineeringSection() {
+interface SoftwareEngineeringSectionProps {
+  locale: Locale;
+}
+
+export async function SoftwareEngineeringSection({
+  locale,
+}: SoftwareEngineeringSectionProps) {
+  const section = getSoftwareEngineeringSection(locale);
+  const categories = getPrincipleCategories(locale);
+
   return (
     <AnimatedSection id="engenharia" className="py-24">
       <div className="section-container space-y-16">
         <SectionHeading
-          eyebrow={SOFTWARE_ENGINEERING_SECTION.eyebrow}
-          title={SOFTWARE_ENGINEERING_SECTION.title}
-          description={SOFTWARE_ENGINEERING_SECTION.description}
+          eyebrow={section.eyebrow}
+          title={section.title}
+          description={section.description}
         />
 
         <div className="space-y-12">
-          {PRINCIPLE_CATEGORIES.map((category) => {
-            const principles = getPrinciplesByCategory(category);
+          {categories.map(({ key, label }) => {
+            const principles = getPrinciplesByCategory(key, locale);
 
             if (principles.length === 0) return null;
 
             return (
-              <div key={category}>
+              <div key={key}>
                 <div className="mb-6 flex items-center gap-3">
                   <h3 className="text-lg font-semibold tracking-tight sm:text-xl">
-                    {category}
+                    {label}
                   </h3>
                   <Badge variant="outline">{principles.length}</Badge>
                 </div>
@@ -50,8 +60,8 @@ export function SoftwareEngineeringSection() {
         </div>
 
         <div className="grid gap-12 lg:grid-cols-2">
-          <CareerTimeline />
-          <CurrentLearning />
+          <CareerTimeline locale={locale} />
+          <CurrentLearning locale={locale} />
         </div>
       </div>
     </AnimatedSection>

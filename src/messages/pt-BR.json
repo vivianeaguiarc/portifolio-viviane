@@ -1,0 +1,214 @@
+{
+  "metadata": {
+    "siteTitle": "Desenvolvedora Fullstack",
+    "siteDescription": "Portfólio profissional de Viviane — Desenvolvedora Fullstack especializada em Next.js, TypeScript, arquitetura de software e soluções escaláveis.",
+    "ogImageAlt": "Viviane — Portfólio técnico",
+    "portfolioName": "Portfólio",
+    "recruiterTitle": "Viviane Aguiar Silva Simões | Desenvolvedora Fullstack",
+    "recruiterDescription": "Portfólio profissional com projetos Fullstack, backend Node.js, TypeScript, arquitetura de software e engenharia de software.",
+    "blogTitle": "Blog Técnico",
+    "blogDescription": "Artigos sobre arquitetura, segurança, backend e qualidade de código baseados em projetos reais.",
+    "caseStudy": "Case Técnico",
+    "projectNotFound": "Projeto não encontrado",
+    "postNotFound": "Artigo não encontrado",
+    "backToBlog": "Voltar ao blog"
+  },
+  "nav": {
+    "home": "Início",
+    "about": "Sobre",
+    "projects": "Projetos",
+    "engineering": "Engenharia",
+    "education": "Formação",
+    "certifications": "Certificações",
+    "stack": "Stack",
+    "blog": "Blog",
+    "contact": "Contato"
+  },
+  "header": {
+    "homeAria": "{name} — Início",
+    "mainNav": "Principal",
+    "recruiterMode": "Modo Recrutador",
+    "recruiterAria": "Abrir modo recrutador",
+    "openMenu": "Abrir menu",
+    "closeMenu": "Fechar menu",
+    "mobileNav": "Menu mobile"
+  },
+  "footer": {
+    "rights": "Todos os direitos reservados.",
+    "madeWith": "Feito com",
+    "and": "e",
+    "githubAria": "GitHub"
+  },
+  "theme": {
+    "toggleAria": "Alternar tema",
+    "light": "Ativar modo claro",
+    "dark": "Ativar modo escuro"
+  },
+  "language": {
+    "label": "Idioma",
+    "pt-BR": "Português",
+    "en-US": "English",
+    "switchAria": "Alterar idioma para {language}"
+  },
+  "hero": {
+    "badge": "Disponível para novas oportunidades",
+    "greeting": "Olá, sou",
+    "intro": "Construo aplicações web modernas, escaláveis e com foco em qualidade de código — do frontend ao backend.",
+    "resume": "Currículo PDF",
+    "explore": "Explorar",
+    "exploreAria": "Rolar para a seção Sobre",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "instagram": "Instagram"
+  },
+  "about": {
+    "eyebrow": "Sobre Mim",
+    "title": "Transformando ideias em software de qualidade",
+    "description": "Desenvolvedora apaixonada por tecnologia, arquitetura limpa e entrega de valor.",
+    "summaryTitle": "Resumo Profissional",
+    "specialtiesTitle": "Especialidades",
+    "technologiesTitle": "Tecnologias"
+  },
+  "projects": {
+    "eyebrow": "Projetos",
+    "title": "Cases técnicos de engenharia",
+    "description": "Projetos reais com foco em arquitetura e entrega de valor. Veja métricas, conceitos e desafios em cada case.",
+    "technologies": "Tecnologias",
+    "viewDetails": "Ver detalhes",
+    "viewDetailsAria": "Ver detalhes do projeto {name}",
+    "github": "GitHub",
+    "githubAria": "GitHub do projeto {name}",
+    "deploy": "Deploy",
+    "deployAria": "Deploy do projeto {name}",
+    "screenshotAlt": "Screenshot do projeto {name}",
+    "status": {
+      "completed": "Concluído",
+      "inDevelopment": "Em desenvolvimento",
+      "planned": "Planejado"
+    }
+  },
+  "projectDetail": {
+    "back": "Voltar aos projetos",
+    "backAria": "Voltar para a seção de projetos",
+    "overview": "Visão geral",
+    "problem": "Problema resolvido",
+    "businessRules": "Regras de negócio",
+    "architecture": "Arquitetura",
+    "challenges": "Desafios técnicos",
+    "decisions": "Decisões técnicas",
+    "metrics": "Métricas técnicas",
+    "technologies": "Tecnologias",
+    "concepts": "Conceitos aplicados",
+    "learnings": "Aprendizados",
+    "roadmap": "Roadmap"
+  },
+  "engineering": {
+    "timelineEyebrow": "Trajetória",
+    "timelineTitle": "Evolução profissional",
+    "timelineDescription": "Marcos da minha jornada em tecnologia e engenharia de software.",
+    "timelineAria": "Linha do tempo profissional",
+    "learningAria": "Tópicos em estudo"
+  },
+  "education": {
+    "eyebrow": "Formação",
+    "title": "Base acadêmica",
+    "description": "Formação contínua em desenvolvimento de software e arquitetura de sistemas."
+  },
+  "certifications": {
+    "eyebrow": "Certificações",
+    "title": "Aprendizado contínuo",
+    "description": "Certificações e cursos que complementam minha formação prática."
+  },
+  "stack": {
+    "eyebrow": "Stack",
+    "title": "Tecnologias e ferramentas",
+    "description": "Ecossistema que utilizo no dia a dia para construir produtos digitais."
+  },
+  "blog": {
+    "eyebrow": "Blog Técnico",
+    "title": "Artigos Técnicos",
+    "description": "Conteúdo sobre arquitetura, segurança e engenharia baseado em projetos reais do meu portfólio.",
+    "viewAll": "Ver todos os artigos",
+    "viewAllAria": "Ver todos os artigos do blog",
+    "readArticle": "Ler artigo",
+    "readArticleAria": "Ler artigo: {title}",
+    "readingTime": "{time} de leitura",
+    "pageTitle": "Blog Técnico",
+    "pageDescription": "Artigos sobre arquitetura, segurança, backend e qualidade de código baseados em projetos reais."
+  },
+  "contact": {
+    "eyebrow": "Contato",
+    "title": "Vamos conversar?",
+    "description": "Estou aberta a oportunidades, projetos e conversas sobre tecnologia.",
+    "formTitle": "Envie uma mensagem",
+    "name": "Nome",
+    "namePlaceholder": "Seu nome",
+    "email": "E-mail",
+    "emailPlaceholder": "seu@email.com",
+    "message": "Mensagem",
+    "messagePlaceholder": "Conte sobre a oportunidade ou projeto...",
+    "submit": "Enviar mensagem",
+    "submitting": "Enviando...",
+    "success": "Mensagem enviada com sucesso! Entrarei em contato em breve.",
+    "error": "Não foi possível enviar. Tente novamente.",
+    "validation": {
+      "nameMin": "Nome deve ter pelo menos 2 caracteres",
+      "emailInvalid": "E-mail inválido",
+      "messageMin": "Mensagem deve ter pelo menos 10 caracteres"
+    },
+    "directTitle": "Canais diretos",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "instagram": "Instagram",
+    "emailLabel": "E-mail"
+  },
+  "recruiter": {
+    "badge": "Modo Recrutador",
+    "downloadCv": "Download CV",
+    "downloadCvAria": "Baixar currículo em PDF",
+    "linkedinAria": "Perfil no LinkedIn",
+    "githubAria": "Perfil no GitHub",
+    "contactAria": "Ir para seção de contato",
+    "metricsSr": "Métricas do portfólio",
+    "metricsAria": "Indicadores do portfólio",
+    "metrics": {
+      "projects": "Projetos publicados",
+      "articles": "Artigos técnicos",
+      "certifications": "Certificações",
+      "years": "Anos estudando tecnologia"
+    },
+    "skillsEyebrow": "Competências",
+    "skillsTitle": "Stack e arquitetura",
+    "skillsDescription": "Tecnologias e conceitos aplicados em projetos reais.",
+    "featuredEyebrow": "Projetos em destaque",
+    "featuredTitle": "Cases com impacto",
+    "featuredDescription": "Seleção de projetos que demonstram capacidade técnica e visão de produto.",
+    "concepts": "Conceitos aplicados",
+    "caseStudy": "Ver case study",
+    "caseStudyAria": "Ver case study de {name}",
+    "educationEyebrow": "Formação",
+    "educationTitle": "Trajetória acadêmica",
+    "educationDescription": "Base teórica que sustenta a prática em engenharia de software.",
+    "certEyebrow": "Certificações",
+    "certTitle": "Credenciais relevantes",
+    "certDescription": "Certificações que complementam a experiência prática.",
+    "availabilityTitle": "Disponível para oportunidades",
+    "availabilityAria": "Tipos de oportunidade",
+    "contactEyebrow": "Contato",
+    "contactTitle": "Vamos conversar?",
+    "contactDescription": "Canais diretos para recrutadores e empresas.",
+    "sendEmailAria": "Enviar e-mail",
+    "openChannelAria": "Abrir {channel}"
+  },
+  "notFound": {
+    "title": "Página não encontrada",
+    "description": "A página que você procura não existe ou foi movida.",
+    "backHome": "Voltar ao início"
+  },
+  "principleCategories": {
+    "architecture": "Arquitetura",
+    "quality": "Qualidade",
+    "security": "Segurança",
+    "operations": "Operação"
+  }
+}

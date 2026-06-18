@@ -1,16 +1,25 @@
 import { GraduationCap } from "lucide-react";
+import { getTranslations } from "next-intl/server";
 import { AnimatedSection } from "@/components/shared/animated-section";
 import { SectionHeading } from "@/components/shared/section-heading";
-import { EDUCATION } from "@/data/education";
+import { getEducation } from "@/data/education";
+import type { Locale } from "@/i18n/routing";
 
-export function EducationSection() {
+interface EducationSectionProps {
+  locale: Locale;
+}
+
+export async function EducationSection({ locale }: EducationSectionProps) {
+  const t = await getTranslations({ locale, namespace: "education" });
+  const education = getEducation(locale);
+
   return (
     <AnimatedSection id="formacao" className="py-24">
       <div className="section-container">
         <SectionHeading
-          eyebrow="Formação Acadêmica"
-          title="Trajetória educacional"
-          description="Formação contínua em engenharia de software e arquitetura de sistemas."
+          eyebrow={t("eyebrow")}
+          title={t("title")}
+          description={t("description")}
         />
 
         <div className="relative mx-auto max-w-3xl">
@@ -20,7 +29,7 @@ export function EducationSection() {
           />
 
           <ol className="space-y-12">
-            {EDUCATION.map((item, index) => (
+            {education.map((item, index) => (
               <li
                 key={item.id}
                 className={`relative flex flex-col gap-4 sm:flex-row ${

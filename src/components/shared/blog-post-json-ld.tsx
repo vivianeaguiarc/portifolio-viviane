@@ -1,12 +1,19 @@
-import type { BlogPost } from "@/types";
 import { createBlogPostingJsonLd } from "@/lib/seo";
+import type { Locale } from "@/i18n/routing";
+import type { BlogPost } from "@/types";
 
 interface BlogPostJsonLdProps {
   post: BlogPost;
+  locale: Locale;
+  canonicalPath: string;
 }
 
-export function BlogPostJsonLd({ post }: BlogPostJsonLdProps) {
-  const jsonLd = createBlogPostingJsonLd(post);
+export function BlogPostJsonLd({
+  post,
+  locale,
+  canonicalPath,
+}: BlogPostJsonLdProps) {
+  const jsonLd = createBlogPostingJsonLd(post, locale, canonicalPath);
 
   return (
     <script

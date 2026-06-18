@@ -1,24 +1,33 @@
 import Image from "next/image";
+import { getTranslations } from "next-intl/server";
 import { ProjectArchitectureFlow } from "@/components/shared/project-architecture-flow";
 import { ProjectDetailHeader } from "@/components/shared/project-detail-header";
 import { ProjectMetricGrid } from "@/components/shared/project-metric";
 import { ProjectSection } from "@/components/shared/project-section";
 import { TechBadgeGroup } from "@/components/shared/tech-badge";
+import type { Locale } from "@/i18n/routing";
 import type { Project } from "@/types";
 
 interface ProjectDetailContentProps {
   project: Project;
+  locale: Locale;
 }
 
-export function ProjectDetailContent({ project }: ProjectDetailContentProps) {
+export async function ProjectDetailContent({
+  project,
+  locale,
+}: ProjectDetailContentProps) {
+  const t = await getTranslations({ locale, namespace: "projectDetail" });
+  const tProjects = await getTranslations({ locale, namespace: "projects" });
+
   return (
     <article className="section-container space-y-10 py-24 pt-28">
-      <ProjectDetailHeader project={project} />
+      <ProjectDetailHeader project={project} locale={locale} />
 
       <div className="relative aspect-video overflow-hidden rounded-2xl border bg-muted shadow-lg">
         <Image
           src={project.image}
-          alt={`Screenshot do projeto ${project.name}`}
+          alt={tProjects("screenshotAlt", { name: project.name })}
           fill
           priority
           className="object-cover"
@@ -28,7 +37,7 @@ export function ProjectDetailContent({ project }: ProjectDetailContentProps) {
 
       <div className="grid gap-8 lg:grid-cols-3">
         <div className="space-y-8 lg:col-span-2">
-          <ProjectSection title="Visão geral" id="visao-geral">
+          <ProjectSection title={t("overview")} id="visao-geral">
             <p className="leading-relaxed text-muted-foreground">
               {project.longDescription}
             </p>
@@ -47,13 +56,13 @@ export function ProjectDetailContent({ project }: ProjectDetailContentProps) {
             </ul>
           </ProjectSection>
 
-          <ProjectSection title="Problema resolvido" id="problema">
+          <ProjectSection title={t("problem")} id="problema">
             <p className="leading-relaxed text-muted-foreground">
               {project.problem}
             </p>
           </ProjectSection>
 
-          <ProjectSection title="Regras de negócio" id="regras">
+          <ProjectSection title={t("businessRules")} id="regras">
             <ul className="space-y-2" role="list">
               {project.businessRules.map((rule) => (
                 <li
@@ -69,7 +78,7 @@ export function ProjectDetailContent({ project }: ProjectDetailContentProps) {
             </ul>
           </ProjectSection>
 
-          <ProjectSection title="Arquitetura" id="arquitetura">
+          <ProjectSection title={t("architecture")} id="arquitetura">
             <h3 className="mb-2 font-medium">{project.architecture.title}</h3>
             <p className="mb-6 leading-relaxed text-muted-foreground">
               {project.architecture.description}
@@ -77,7 +86,7 @@ export function ProjectDetailContent({ project }: ProjectDetailContentProps) {
             <ProjectArchitectureFlow steps={project.architecture.flow} />
           </ProjectSection>
 
-          <ProjectSection title="Desafios técnicos" id="desafios">
+          <ProjectSection title={t("challenges")} id="desafios">
             <TechBadgeGroup
               title=""
               items={project.challenges}
@@ -85,7 +94,7 @@ export function ProjectDetailContent({ project }: ProjectDetailContentProps) {
             />
           </ProjectSection>
 
-          <ProjectSection title="Decisões técnicas" id="decisoes">
+          <ProjectSection title={t("decisions")} id="decisoes">
             <div className="space-y-4">
               {project.technicalDecisions.map((decision) => (
                 <div
@@ -103,11 +112,11 @@ export function ProjectDetailContent({ project }: ProjectDetailContentProps) {
         </div>
 
         <aside className="space-y-8">
-          <ProjectSection title="Métricas técnicas" id="metricas">
+          <ProjectSection title={t("metrics")} id="metricas">
             <ProjectMetricGrid metrics={project.metrics} />
           </ProjectSection>
 
-          <ProjectSection title="Tecnologias" id="tecnologias">
+          <ProjectSection title={t("technologies")} id="tecnologias">
             <TechBadgeGroup
               title=""
               items={project.technologies}
@@ -115,7 +124,7 @@ export function ProjectDetailContent({ project }: ProjectDetailContentProps) {
             />
           </ProjectSection>
 
-          <ProjectSection title="Conceitos aplicados" id="conceitos">
+          <ProjectSection title={t("concepts")} id="conceitos">
             <TechBadgeGroup
               title=""
               items={project.concepts}
@@ -123,7 +132,7 @@ export function ProjectDetailContent({ project }: ProjectDetailContentProps) {
             />
           </ProjectSection>
 
-          <ProjectSection title="Aprendizados" id="aprendizados">
+          <ProjectSection title={t("learnings")} id="aprendizados">
             <ul className="space-y-2" role="list">
               {project.learnings.map((learning) => (
                 <li
@@ -136,7 +145,7 @@ export function ProjectDetailContent({ project }: ProjectDetailContentProps) {
             </ul>
           </ProjectSection>
 
-          <ProjectSection title="Roadmap" id="roadmap">
+          <ProjectSection title={t("roadmap")} id="roadmap">
             <ol className="space-y-2" role="list">
               {project.roadmap.map((item, index) => (
                 <li

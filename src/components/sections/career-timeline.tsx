@@ -1,18 +1,27 @@
+import { getTranslations } from "next-intl/server";
 import { TimelineItem } from "@/components/shared/timeline-item";
-import { CAREER_TIMELINE } from "@/data/timeline";
+import { getCareerTimeline } from "@/data/timeline";
+import type { Locale } from "@/i18n/routing";
 
-export function CareerTimeline() {
+interface CareerTimelineProps {
+  locale: Locale;
+}
+
+export async function CareerTimeline({ locale }: CareerTimelineProps) {
+  const t = await getTranslations({ locale, namespace: "engineering" });
+  const careerTimeline = getCareerTimeline(locale);
+
   return (
     <div>
       <h3 className="mb-6 text-lg font-semibold tracking-tight sm:text-xl">
-        Evolução profissional
+        {t("timelineTitle")}
       </h3>
-      <ol className="max-w-xl" aria-label="Linha do tempo profissional">
-        {CAREER_TIMELINE.map((event, index) => (
+      <ol className="max-w-xl" aria-label={t("timelineAria")}>
+        {careerTimeline.map((event, index) => (
           <TimelineItem
             key={event.id}
             event={event}
-            isLast={index === CAREER_TIMELINE.length - 1}
+            isLast={index === careerTimeline.length - 1}
           />
         ))}
       </ol>

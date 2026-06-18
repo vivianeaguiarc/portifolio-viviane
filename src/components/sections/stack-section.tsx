@@ -1,21 +1,30 @@
+import { getTranslations } from "next-intl/server";
 import { AnimatedSection } from "@/components/shared/animated-section";
 import { SectionHeading } from "@/components/shared/section-heading";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { TECH_STACK } from "@/data/stack";
+import { getTechStack } from "@/data/stack";
+import type { Locale } from "@/i18n/routing";
 
-export function StackSection() {
+interface StackSectionProps {
+  locale: Locale;
+}
+
+export async function StackSection({ locale }: StackSectionProps) {
+  const t = await getTranslations({ locale, namespace: "stack" });
+  const techStack = getTechStack(locale);
+
   return (
     <AnimatedSection id="stack" className="py-24">
       <div className="section-container">
         <SectionHeading
-          eyebrow="Stack Tecnológica"
-          title="Ferramentas que domino"
-          description="Tecnologias que utilizo no dia a dia para construir soluções robustas."
+          eyebrow={t("eyebrow")}
+          title={t("title")}
+          description={t("description")}
         />
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {TECH_STACK.map((category) => (
+          {techStack.map((category) => (
             <Card key={category.id} className="glass">
               <CardHeader>
                 <CardTitle className="text-lg">{category.title}</CardTitle>

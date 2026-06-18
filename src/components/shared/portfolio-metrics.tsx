@@ -1,44 +1,50 @@
+"use client";
+
 import { BookOpen, Briefcase, Calendar, Medal } from "lucide-react";
+import { useLocale, useTranslations } from "next-intl";
+import { useMemo } from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import { PORTFOLIO_METRICS } from "@/data/recruiter";
+import { getPortfolioMetrics } from "@/data/recruiter";
+import type { Locale } from "@/i18n/routing";
 
 const METRIC_ITEMS = [
   {
     key: "projectsPublished",
-    label: "Projetos publicados",
+    translationKey: "projects",
     icon: Briefcase,
-    value: PORTFOLIO_METRICS.projectsPublished,
   },
   {
     key: "technicalArticles",
-    label: "Artigos técnicos",
+    translationKey: "articles",
     icon: BookOpen,
-    value: PORTFOLIO_METRICS.technicalArticles,
   },
   {
     key: "certifications",
-    label: "Certificações",
+    translationKey: "certifications",
     icon: Medal,
-    value: PORTFOLIO_METRICS.certifications,
   },
   {
     key: "yearsInTech",
-    label: "Anos estudando tecnologia",
+    translationKey: "years",
     icon: Calendar,
-    value: PORTFOLIO_METRICS.yearsInTech,
   },
 ] as const;
 
 export function PortfolioMetrics() {
+  const t = useTranslations("recruiter.metrics");
+  const tRecruiter = useTranslations("recruiter");
+  const locale = useLocale() as Locale;
+  const metrics = useMemo(() => getPortfolioMetrics(locale), [locale]);
+
   return (
     <section aria-labelledby="portfolio-metrics-heading">
       <h2 id="portfolio-metrics-heading" className="sr-only">
-        Métricas do portfólio
+        {tRecruiter("metricsSr")}
       </h2>
       <ul
         className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4"
         role="list"
-        aria-label="Indicadores do portfólio"
+        aria-label={tRecruiter("metricsAria")}
       >
         {METRIC_ITEMS.map((metric) => (
           <li key={metric.key}>
@@ -52,10 +58,10 @@ export function PortfolioMetrics() {
                 </div>
                 <div>
                   <p className="text-2xl font-bold tabular-nums">
-                    {metric.value}
+                    {metrics[metric.key]}
                   </p>
                   <p className="text-sm text-muted-foreground">
-                    {metric.label}
+                    {t(metric.translationKey)}
                   </p>
                 </div>
               </CardContent>

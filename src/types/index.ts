@@ -1,4 +1,4 @@
-export type ProjectStatus = "Concluído" | "Em desenvolvimento" | "Planejado";
+export type ProjectStatus = "completed" | "inDevelopment" | "planned";
 
 export interface ProjectMetric {
   label: string;
@@ -83,10 +83,10 @@ export interface ContactFormData {
 }
 
 export type PrincipleCategory =
-  | "Arquitetura"
-  | "Qualidade"
-  | "Segurança"
-  | "Operação";
+  | "architecture"
+  | "quality"
+  | "security"
+  | "operations";
 
 export type PrincipleIcon =
   | "layers"

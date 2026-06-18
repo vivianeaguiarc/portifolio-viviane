@@ -7,7 +7,7 @@ import {
   Mail,
   MapPin,
 } from "lucide-react";
-import Link from "next/link";
+import { getTranslations } from "next-intl/server";
 import {
   GithubIcon,
   InstagramIcon,
@@ -23,42 +23,56 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { SOCIAL_LINKS } from "@/constants/site";
 import {
-  AVAILABILITY,
+  getAvailability,
   getFeaturedProjects,
   getRecruiterCertifications,
   getRecruiterEducation,
-  RECRUITER_PROFILE,
-  RECRUITER_SKILL_CATEGORIES,
+  getRecruiterProfile,
+  getRecruiterSkillCategories,
 } from "@/data/recruiter";
+import { Link, type Locale } from "@/i18n/routing";
 
-const CONTACT_LINKS = [
-  {
-    label: "LinkedIn",
-    href: SOCIAL_LINKS.linkedin,
-    icon: LinkedinIcon,
-  },
-  {
-    label: "GitHub",
-    href: SOCIAL_LINKS.github,
-    icon: GithubIcon,
-  },
-  {
-    label: "Instagram",
-    href: SOCIAL_LINKS.instagram,
-    icon: InstagramIcon,
-  },
-  {
-    label: "Email",
-    href: SOCIAL_LINKS.email,
-    icon: Mail,
-    display: "contato@viviane.dev",
-  },
-] as const;
+interface RecruiterContentProps {
+  locale: Locale;
+}
 
-export function RecruiterContent() {
-  const featuredProjects = getFeaturedProjects();
-  const education = getRecruiterEducation();
-  const certifications = getRecruiterCertifications();
+export async function RecruiterContent({ locale }: RecruiterContentProps) {
+  const t = await getTranslations({ locale, namespace: "recruiter" });
+  const tProjects = await getTranslations({ locale, namespace: "projects" });
+  const recruiterProfile = getRecruiterProfile(locale);
+  const skillCategories = getRecruiterSkillCategories(locale);
+  const availability = getAvailability(locale);
+  const featuredProjects = getFeaturedProjects(locale);
+  const education = getRecruiterEducation(locale);
+  const certifications = getRecruiterCertifications(locale);
+
+  const contactLinks = [
+    {
+      label: t("linkedinAria"),
+      channel: "LinkedIn",
+      href: SOCIAL_LINKS.linkedin,
+      icon: LinkedinIcon,
+    },
+    {
+      label: t("githubAria"),
+      channel: "GitHub",
+      href: SOCIAL_LINKS.github,
+      icon: GithubIcon,
+    },
+    {
+      label: t("openChannelAria", { channel: "Instagram" }),
+      channel: "Instagram",
+      href: SOCIAL_LINKS.instagram,
+      icon: InstagramIcon,
+    },
+    {
+      label: t("sendEmailAria"),
+      channel: "Email",
+      href: SOCIAL_LINKS.email,
+      icon: Mail,
+      display: "contato@viviane.dev",
+    },
+  ] as const;
 
   return (
     <div className="pt-16">
@@ -81,23 +95,23 @@ export function RecruiterContent() {
 
             <div className="text-center lg:text-left">
               <Badge variant="secondary" className="mb-4">
-                Modo Recrutador
+                {t("badge")}
               </Badge>
               <h1
                 id="recruiter-hero-heading"
                 className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl"
               >
-                {RECRUITER_PROFILE.fullName}
+                {recruiterProfile.fullName}
               </h1>
               <p className="mt-2 text-xl text-primary">
-                {RECRUITER_PROFILE.role}
+                {recruiterProfile.role}
               </p>
               <p className="mt-4 flex items-center justify-center gap-2 text-muted-foreground lg:justify-start">
                 <MapPin className="h-4 w-4 shrink-0" aria-hidden />
-                {RECRUITER_PROFILE.location}
+                {recruiterProfile.location}
               </p>
               <p className="mt-6 max-w-2xl text-muted-foreground leading-relaxed">
-                {RECRUITER_PROFILE.summary}
+                {recruiterProfile.summary}
               </p>
 
               <div className="mt-8 flex flex-wrap justify-center gap-3 lg:justify-start">
@@ -105,10 +119,10 @@ export function RecruiterContent() {
                   <a
                     href={SOCIAL_LINKS.resume}
                     download
-                    aria-label="Baixar currículo em PDF"
+                    aria-label={t("downloadCvAria")}
                   >
                     <FileDown className="mr-2 h-4 w-4" aria-hidden />
-                    Download CV
+                    {t("downloadCv")}
                   </a>
                 </Button>
                 <Button asChild variant="outline">
@@ -116,7 +130,7 @@ export function RecruiterContent() {
                     href={SOCIAL_LINKS.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label="Perfil no LinkedIn"
+                    aria-label={t("linkedinAria")}
                   >
                     <LinkedinIcon className="mr-2 h-4 w-4" aria-hidden />
                     LinkedIn
@@ -127,7 +141,7 @@ export function RecruiterContent() {
                     href={SOCIAL_LINKS.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label="Perfil no GitHub"
+                    aria-label={t("githubAria")}
                   >
                     <GithubIcon className="mr-2 h-4 w-4" aria-hidden />
                     GitHub
@@ -136,9 +150,9 @@ export function RecruiterContent() {
                 <Button asChild variant="secondary">
                   <NavigationLink
                     href="/#contato"
-                    aria-label="Ir para seção de contato"
+                    aria-label={t("contactAria")}
                   >
-                    Contato
+                    {t("contactEyebrow")}
                   </NavigationLink>
                 </Button>
               </div>
@@ -157,14 +171,14 @@ export function RecruiterContent() {
       >
         <div className="section-container">
           <SectionHeading
-            eyebrow="Competências"
-            title="Stack e arquitetura"
-            description="Tecnologias e conceitos aplicados em projetos reais."
+            eyebrow={t("skillsEyebrow")}
+            title={t("skillsTitle")}
+            description={t("skillsDescription")}
             id="skills-heading"
           />
 
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {RECRUITER_SKILL_CATEGORIES.map((category) => (
+            {skillCategories.map((category) => (
               <Card key={category.id} className="glass">
                 <CardHeader className="pb-3">
                   <CardTitle className="text-base">{category.title}</CardTitle>
@@ -185,9 +199,9 @@ export function RecruiterContent() {
       <section className="py-20" aria-labelledby="projects-heading">
         <div className="section-container">
           <SectionHeading
-            eyebrow="Projetos em destaque"
-            title="Cases com impacto"
-            description="Seleção de projetos que demonstram capacidade técnica e visão de produto."
+            eyebrow={t("featuredEyebrow")}
+            title={t("featuredTitle")}
+            description={t("featuredDescription")}
             id="projects-heading"
           />
 
@@ -200,7 +214,9 @@ export function RecruiterContent() {
                 <CardHeader>
                   <div className="mb-2 flex items-center gap-2">
                     <Briefcase className="h-5 w-5 text-primary" aria-hidden />
-                    <Badge variant="outline">{project.status}</Badge>
+                    <Badge variant="outline">
+                      {tProjects(`status.${project.status}`)}
+                    </Badge>
                   </div>
                   <CardTitle className="text-lg">{project.name}</CardTitle>
                 </CardHeader>
@@ -209,20 +225,23 @@ export function RecruiterContent() {
                     {project.description}
                   </p>
                   <TechBadgeGroup
-                    title="Tecnologias"
+                    title={tProjects("technologies")}
                     items={project.technologies}
                   />
                   <TechBadgeGroup
-                    title="Conceitos aplicados"
+                    title={t("concepts")}
                     items={project.concepts}
                     variant="outline"
                   />
                   <Button asChild variant="link" className="mt-auto h-auto p-0">
                     <Link
-                      href={`/projetos/${project.slug}`}
-                      aria-label={`Ver case study de ${project.name}`}
+                      href={{
+                        pathname: "/projects/[slug]",
+                        params: { slug: project.slug },
+                      }}
+                      aria-label={t("caseStudyAria", { name: project.name })}
                     >
-                      Ver case study
+                      {t("caseStudy")}
                       <ArrowRight className="ml-1 h-4 w-4" aria-hidden />
                     </Link>
                   </Button>
@@ -239,9 +258,9 @@ export function RecruiterContent() {
       >
         <div className="section-container">
           <SectionHeading
-            eyebrow="Formação"
-            title="Trajetória acadêmica"
-            description="Base teórica que sustenta a prática em engenharia de software."
+            eyebrow={t("educationEyebrow")}
+            title={t("educationTitle")}
+            description={t("educationDescription")}
             id="education-heading"
           />
 
@@ -275,9 +294,9 @@ export function RecruiterContent() {
       <section className="py-20" aria-labelledby="certifications-heading">
         <div className="section-container">
           <SectionHeading
-            eyebrow="Certificações"
-            title="Credenciais relevantes"
-            description="Certificações que complementam a experiência prática."
+            eyebrow={t("certEyebrow")}
+            title={t("certTitle")}
+            description={t("certDescription")}
             id="certifications-heading"
           />
 
@@ -318,16 +337,16 @@ export function RecruiterContent() {
                 id="availability-heading"
                 className="text-2xl text-primary"
               >
-                {AVAILABILITY.title}
+                {availability.title}
               </CardTitle>
             </CardHeader>
             <CardContent>
               <ul
                 className="grid gap-3 sm:grid-cols-2"
                 role="list"
-                aria-label="Tipos de oportunidade"
+                aria-label={t("availabilityAria")}
               >
-                {AVAILABILITY.roles.map((role) => (
+                {availability.roles.map((role) => (
                   <li key={role}>
                     <div className="flex items-center gap-2 rounded-lg border bg-background/50 px-4 py-3 text-sm font-medium">
                       <span
@@ -347,25 +366,23 @@ export function RecruiterContent() {
       <section className="py-20" aria-labelledby="contact-heading">
         <div className="section-container">
           <SectionHeading
-            eyebrow="Contato"
-            title="Vamos conversar?"
-            description="Canais diretos para recrutadores e empresas."
+            eyebrow={t("contactEyebrow")}
+            title={t("contactTitle")}
+            description={t("contactDescription")}
             id="contact-heading"
           />
 
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {CONTACT_LINKS.map((link) => (
+            {contactLinks.map((link) => (
               <a
-                key={link.label}
+                key={link.channel}
                 href={link.href}
-                target={link.label === "Email" ? undefined : "_blank"}
-                rel={link.label === "Email" ? undefined : "noopener noreferrer"}
-                className="glass group flex items-center gap-4 rounded-xl border p-4 transition-colors hover:border-primary/50 hover:bg-accent/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-                aria-label={
-                  link.label === "Email"
-                    ? "Enviar e-mail"
-                    : `Abrir ${link.label}`
+                target={link.channel === "Email" ? undefined : "_blank"}
+                rel={
+                  link.channel === "Email" ? undefined : "noopener noreferrer"
                 }
+                className="glass group flex items-center gap-4 rounded-xl border p-4 transition-colors hover:border-primary/50 hover:bg-accent/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                aria-label={link.label}
               >
                 <div
                   className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground"
@@ -374,7 +391,7 @@ export function RecruiterContent() {
                   <link.icon className="h-5 w-5" />
                 </div>
                 <div>
-                  <p className="font-medium">{link.label}</p>
+                  <p className="font-medium">{link.channel}</p>
                   {"display" in link && (
                     <p className="text-sm text-muted-foreground">
                       {link.display}

@@ -3,7 +3,8 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Mail, Send } from "lucide-react";
 import Link from "next/link";
-import { useState } from "react";
+import { useTranslations } from "next-intl";
+import { useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import {
@@ -26,49 +27,51 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { SOCIAL_LINKS } from "@/constants/site";
 
-const contactSchema = z.object({
-  name: z
-    .string()
-    .min(2, "Nome deve ter pelo menos 2 caracteres")
-    .max(100, "Nome muito longo"),
-  email: z.string().email("E-mail inválido"),
-  message: z
-    .string()
-    .min(10, "Mensagem deve ter pelo menos 10 caracteres")
-    .max(1000, "Mensagem muito longa"),
-});
-
-type ContactFormValues = z.infer<typeof contactSchema>;
-
-const socialItems = [
-  {
-    label: "LinkedIn",
-    href: SOCIAL_LINKS.linkedin,
-    icon: LinkedinIcon,
-    description: "Conecte-se profissionalmente",
-  },
-  {
-    label: "GitHub",
-    href: SOCIAL_LINKS.github,
-    icon: GithubIcon,
-    description: "Veja meus repositórios",
-  },
-  {
-    label: "Instagram",
-    href: SOCIAL_LINKS.instagram,
-    icon: InstagramIcon,
-    description: "@vivianezzt",
-  },
-  {
-    label: "E-mail",
-    href: SOCIAL_LINKS.email,
-    icon: Mail,
-    description: "contato@viviane.dev",
-  },
-];
+type ContactFormValues = {
+  name: string;
+  email: string;
+  message: string;
+};
 
 export function ContactSection() {
+  const t = useTranslations("contact");
   const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const contactSchema = useMemo(
+    () =>
+      z.object({
+        name: z.string().min(2, t("validation.nameMin")).max(100),
+        email: z.string().email(t("validation.emailInvalid")),
+        message: z.string().min(10, t("validation.messageMin")).max(1000),
+      }),
+    [t],
+  );
+
+  const socialItems = useMemo(
+    () => [
+      {
+        label: t("linkedin"),
+        href: SOCIAL_LINKS.linkedin,
+        icon: LinkedinIcon,
+      },
+      {
+        label: t("github"),
+        href: SOCIAL_LINKS.github,
+        icon: GithubIcon,
+      },
+      {
+        label: t("instagram"),
+        href: SOCIAL_LINKS.instagram,
+        icon: InstagramIcon,
+      },
+      {
+        label: t("emailLabel"),
+        href: SOCIAL_LINKS.email,
+        icon: Mail,
+      },
+    ],
+    [t],
+  );
 
   const {
     register,
@@ -81,7 +84,6 @@ export function ContactSection() {
   });
 
   const onSubmit = async (data: ContactFormValues) => {
-    // Simula envio — integrar com API ou serviço de e-mail em produção
     await new Promise((resolve) => setTimeout(resolve, 1000));
     console.info("Formulário enviado:", data);
     setIsSubmitted(true);
@@ -93,14 +95,14 @@ export function ContactSection() {
     <AnimatedSection id="contato" className="bg-muted/30 py-24">
       <div className="section-container">
         <SectionHeading
-          eyebrow="Contato"
-          title="Vamos conversar?"
-          description="Estou aberta a oportunidades, projetos e parcerias. Entre em contato!"
+          eyebrow={t("eyebrow")}
+          title={t("title")}
+          description={t("description")}
         />
 
         <div className="grid gap-8 lg:grid-cols-2">
           <div className="grid gap-4 sm:grid-cols-2">
-            {socialItems.map(({ label, href, icon: Icon, description }) => (
+            {socialItems.map(({ label, href, icon: Icon }) => (
               <Link
                 key={label}
                 href={href}
@@ -119,7 +121,7 @@ export function ContactSection() {
                     <CardTitle className="text-base">{label}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <CardDescription>{description}</CardDescription>
+                    <CardDescription>{label}</CardDescription>
                   </CardContent>
                 </Card>
               </Link>
@@ -128,10 +130,8 @@ export function ContactSection() {
 
           <Card className="glass">
             <CardHeader>
-              <CardTitle>Envie uma mensagem</CardTitle>
-              <CardDescription>
-                Preencha o formulário e retornarei o mais breve possível.
-              </CardDescription>
+              <CardTitle>{t("formTitle")}</CardTitle>
+              <CardDescription>{t("description")}</CardDescription>
             </CardHeader>
             <CardContent>
               <form
@@ -140,10 +140,10 @@ export function ContactSection() {
                 noValidate
               >
                 <div className="space-y-2">
-                  <Label htmlFor="name">Nome</Label>
+                  <Label htmlFor="name">{t("name")}</Label>
                   <Input
                     id="name"
-                    placeholder="Seu nome"
+                    placeholder={t("namePlaceholder")}
                     aria-invalid={!!errors.name}
                     aria-describedby={errors.name ? "name-error" : undefined}
                     {...register("name")}
@@ -160,11 +160,11 @@ export function ContactSection() {
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="email">E-mail</Label>
+                  <Label htmlFor="email">{t("email")}</Label>
                   <Input
                     id="email"
                     type="email"
-                    placeholder="seu@email.com"
+                    placeholder={t("emailPlaceholder")}
                     aria-invalid={!!errors.email}
                     aria-describedby={errors.email ? "email-error" : undefined}
                     {...register("email")}
@@ -181,10 +181,10 @@ export function ContactSection() {
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="message">Mensagem</Label>
+                  <Label htmlFor="message">{t("message")}</Label>
                   <Textarea
                     id="message"
-                    placeholder="Como posso ajudar?"
+                    placeholder={t("messagePlaceholder")}
                     aria-invalid={!!errors.message}
                     aria-describedby={
                       errors.message ? "message-error" : undefined
@@ -208,7 +208,7 @@ export function ContactSection() {
                   disabled={isSubmitting}
                 >
                   <Send className="h-4 w-4" />
-                  {isSubmitting ? "Enviando..." : "Enviar mensagem"}
+                  {isSubmitting ? t("submitting") : t("submit")}
                 </Button>
 
                 {isSubmitted && (
@@ -216,7 +216,7 @@ export function ContactSection() {
                     className="text-center text-sm text-emerald-600 dark:text-emerald-400"
                     role="status"
                   >
-                    Mensagem enviada com sucesso! Entrarei em contato em breve.
+                    {t("success")}
                   </p>
                 )}
               </form>

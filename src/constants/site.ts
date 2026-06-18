@@ -29,15 +29,3 @@ export const SOCIAL_LINKS = {
   email: "mailto:contato@viviane.dev",
   resume: "/curriculo-viviane.pdf",
 } as const;
-
-export const NAV_ITEMS = [
-  { label: "Início", href: "/#hero" },
-  { label: "Sobre", href: "/#sobre" },
-  { label: "Projetos", href: "/#projetos" },
-  { label: "Engenharia", href: "/#engenharia" },
-  { label: "Formação", href: "/#formacao" },
-  { label: "Certificações", href: "/#certificacoes" },
-  { label: "Stack", href: "/#stack" },
-  { label: "Blog", href: "/blog" },
-  { label: "Contato", href: "/#contato" },
-] as const;

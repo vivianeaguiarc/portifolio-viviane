@@ -1,6 +1,9 @@
+"use client";
+
 import { ArrowUpRight, ExternalLink } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import { GithubIcon } from "@/components/shared/brand-icons";
 import { TechBadgeGroup } from "@/components/shared/tech-badge";
 import { Badge } from "@/components/ui/badge";
@@ -13,6 +16,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { Link as I18nLink } from "@/i18n/routing";
 import { cn } from "@/lib/utils";
 import type { Project, ProjectStatus } from "@/types";
 
@@ -20,9 +24,9 @@ const statusConfig: Record<
   ProjectStatus,
   { variant: "success" | "warning" | "muted" }
 > = {
-  Concluído: { variant: "success" },
-  "Em desenvolvimento": { variant: "warning" },
-  Planejado: { variant: "muted" },
+  completed: { variant: "success" },
+  inDevelopment: { variant: "warning" },
+  planned: { variant: "muted" },
 };
 
 interface ProjectCardProps {
@@ -31,6 +35,7 @@ interface ProjectCardProps {
 }
 
 export function ProjectCard({ project, priority = false }: ProjectCardProps) {
+  const t = useTranslations("projects");
   const status = statusConfig[project.status];
   const hasExternalLinks = Boolean(project.githubUrl || project.deployUrl);
 
@@ -39,14 +44,14 @@ export function ProjectCard({ project, priority = false }: ProjectCardProps) {
       <div className="relative aspect-video overflow-hidden bg-muted">
         <Image
           src={project.image}
-          alt={`Screenshot do projeto ${project.name}`}
+          alt={t("screenshotAlt", { name: project.name })}
           fill
           priority={priority}
           className="object-cover transition-transform duration-300 group-hover:scale-105"
           sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw"
         />
         <Badge variant={status.variant} className="absolute right-3 top-3">
-          {project.status}
+          {t(`status.${project.status}`)}
         </Badge>
       </div>
 
@@ -59,7 +64,7 @@ export function ProjectCard({ project, priority = false }: ProjectCardProps) {
 
       <CardContent className="flex flex-1 flex-col pb-2">
         <TechBadgeGroup
-          title="Tecnologias"
+          title={t("technologies")}
           items={project.technologies}
           variant="secondary"
         />
@@ -81,10 +86,10 @@ export function ProjectCard({ project, priority = false }: ProjectCardProps) {
                   href={project.githubUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label={`GitHub do projeto ${project.name}`}
+                  aria-label={t("githubAria", { name: project.name })}
                 >
                   <GithubIcon className="h-4 w-4 shrink-0" />
-                  <span className="truncate">GitHub</span>
+                  <span className="truncate">{t("github")}</span>
                 </Link>
               </Button>
             )}
@@ -95,10 +100,10 @@ export function ProjectCard({ project, priority = false }: ProjectCardProps) {
                   href={project.deployUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label={`Deploy do projeto ${project.name}`}
+                  aria-label={t("deployAria", { name: project.name })}
                 >
                   <ExternalLink className="h-4 w-4 shrink-0" />
-                  <span className="truncate">Deploy</span>
+                  <span className="truncate">{t("deploy")}</span>
                 </Link>
               </Button>
             )}
@@ -106,13 +111,16 @@ export function ProjectCard({ project, priority = false }: ProjectCardProps) {
         )}
 
         <Button variant="secondary" size="sm" asChild className="w-full">
-          <Link
-            href={`/projetos/${project.slug}`}
-            aria-label={`Ver detalhes do projeto ${project.name}`}
+          <I18nLink
+            href={{
+              pathname: "/projects/[slug]",
+              params: { slug: project.slug },
+            }}
+            aria-label={t("viewDetailsAria", { name: project.name })}
           >
-            <span>Ver detalhes</span>
+            <span>{t("viewDetails")}</span>
             <ArrowUpRight className="h-4 w-4 shrink-0" />
-          </Link>
+          </I18nLink>
         </Button>
       </CardFooter>
     </Card>

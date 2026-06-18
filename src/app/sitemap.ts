@@ -1,43 +1,112 @@
 import type { MetadataRoute } from "next";
 import { SITE_CONFIG } from "@/constants/site";
-import { BLOG_POSTS } from "@/data/blog-posts";
-import { PROJECTS } from "@/data/projects";
+import { getAllBlogSlugs } from "@/data/blog";
+import { getAllProjectSlugs } from "@/data/projects";
+import { getPathname, locales, type Locale } from "@/i18n/routing";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const projectPages = PROJECTS.map((project) => ({
-    url: `${SITE_CONFIG.url}/projetos/${project.slug}`,
-    lastModified: new Date(),
-    changeFrequency: "monthly" as const,
-    priority: 0.8,
-  }));
+  const entries: MetadataRoute.Sitemap = [];
 
-  const blogPages = BLOG_POSTS.map((post) => ({
-    url: `${SITE_CONFIG.url}/blog/${post.slug}`,
-    lastModified: new Date(post.publishedAt),
-    changeFrequency: "weekly" as const,
-    priority: 0.7,
-  }));
+  for (const locale of locales) {
+    const homePath = getPathname({ locale, href: "/" });
+    const blogPath = getPathname({ locale, href: "/blog" });
+    const recruiterPath = getPathname({ locale, href: "/recruiter" });
 
-  return [
-    {
-      url: SITE_CONFIG.url,
+    const alternateLanguages = Object.fromEntries(
+      locales.map((altLocale) => [
+        altLocale,
+        `${SITE_CONFIG.url}${getPathname({ locale: altLocale, href: "/" })}`,
+      ]),
+    );
+
+    entries.push({
+      url: `${SITE_CONFIG.url}${homePath}`,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 1,
-    },
-    {
-      url: `${SITE_CONFIG.url}/blog`,
+      alternates: { languages: alternateLanguages },
+    });
+
+    entries.push({
+      url: `${SITE_CONFIG.url}${blogPath}`,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.9,
-    },
-    {
-      url: `${SITE_CONFIG.url}/recruiter`,
+      alternates: {
+        languages: Object.fromEntries(
+          locales.map((altLocale) => [
+            altLocale,
+            `${SITE_CONFIG.url}${getPathname({ locale: altLocale, href: "/blog" })}`,
+          ]),
+        ),
+      },
+    });
+
+    entries.push({
+      url: `${SITE_CONFIG.url}${recruiterPath}`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.95,
-    },
-    ...blogPages,
-    ...projectPages,
-  ];
+      alternates: {
+        languages: Object.fromEntries(
+          locales.map((altLocale) => [
+            altLocale,
+            `${SITE_CONFIG.url}${getPathname({ locale: altLocale, href: "/recruiter" })}`,
+          ]),
+        ),
+      },
+    });
+
+    for (const slug of getAllProjectSlugs()) {
+      const projectPath = getPathname({
+        locale,
+        href: { pathname: "/projects/[slug]", params: { slug } },
+      });
+
+      entries.push({
+        url: `${SITE_CONFIG.url}${projectPath}`,
+        lastModified: new Date(),
+        changeFrequency: "monthly",
+        priority: 0.8,
+        alternates: {
+          languages: Object.fromEntries(
+            locales.map((altLocale) => [
+              altLocale,
+              `${SITE_CONFIG.url}${getPathname({
+                locale: altLocale as Locale,
+                href: { pathname: "/projects/[slug]", params: { slug } },
+              })}`,
+            ]),
+          ),
+        },
+      });
+    }
+
+    for (const slug of getAllBlogSlugs()) {
+      const postPath = getPathname({
+        locale,
+        href: { pathname: "/blog/[slug]", params: { slug } },
+      });
+
+      entries.push({
+        url: `${SITE_CONFIG.url}${postPath}`,
+        lastModified: new Date(),
+        changeFrequency: "weekly",
+        priority: 0.7,
+        alternates: {
+          languages: Object.fromEntries(
+            locales.map((altLocale) => [
+              altLocale,
+              `${SITE_CONFIG.url}${getPathname({
+                locale: altLocale as Locale,
+                href: { pathname: "/blog/[slug]", params: { slug } },
+              })}`,
+            ]),
+          ),
+        },
+      });
+    }
+  }
+
+  return entries;
 }

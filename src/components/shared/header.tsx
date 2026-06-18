@@ -1,15 +1,31 @@
 "use client";
 
 import { Menu, X } from "lucide-react";
-import Link from "next/link";
+import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
+import { LanguageSwitcher } from "@/components/shared/language-switcher";
 import { NavigationLink } from "@/components/shared/navigation-link";
 import { ThemeToggle } from "@/components/shared/theme-toggle";
 import { Button } from "@/components/ui/button";
-import { NAV_ITEMS, SITE_CONFIG } from "@/constants/site";
+import { SITE_CONFIG } from "@/constants/site";
+import { Link } from "@/i18n/routing";
 import { cn } from "@/lib/utils";
 
+const NAV_ITEMS = [
+  { key: "home", href: "/#hero" },
+  { key: "about", href: "/#sobre" },
+  { key: "projects", href: "/#projetos" },
+  { key: "engineering", href: "/#engenharia" },
+  { key: "education", href: "/#formacao" },
+  { key: "certifications", href: "/#certificacoes" },
+  { key: "stack", href: "/#stack" },
+  { key: "blog", href: "/blog" },
+  { key: "contact", href: "/#contato" },
+] as const;
+
 export function Header() {
+  const t = useTranslations("header");
+  const tNav = useTranslations("nav");
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -38,7 +54,7 @@ export function Header() {
         <Link
           href="/"
           className="text-lg font-bold tracking-tight"
-          aria-label={`${SITE_CONFIG.fullName} - Início`}
+          aria-label={t("homeAria", { name: SITE_CONFIG.fullName })}
         >
           <span className="text-gradient">{SITE_CONFIG.name}</span>
           <span className="text-muted-foreground">.</span>
@@ -46,7 +62,7 @@ export function Header() {
 
         <nav
           className="hidden items-center gap-1 md:flex"
-          aria-label="Principal"
+          aria-label={t("mainNav")}
         >
           {NAV_ITEMS.map((item) => (
             <NavigationLink
@@ -54,12 +70,13 @@ export function Header() {
               href={item.href}
               className="rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
             >
-              {item.label}
+              {tNav(item.key)}
             </NavigationLink>
           ))}
         </nav>
 
         <div className="flex items-center gap-2">
+          <LanguageSwitcher className="hidden sm:flex" />
           <ThemeToggle />
           <Button
             asChild
@@ -67,12 +84,12 @@ export function Header() {
             variant="outline"
             className="hidden md:inline-flex"
           >
-            <Link href="/recruiter" aria-label="Abrir modo recrutador">
-              Modo Recrutador
+            <Link href="/recruiter" aria-label={t("recruiterAria")}>
+              {t("recruiterMode")}
             </Link>
           </Button>
           <Button asChild size="sm" className="hidden sm:inline-flex">
-            <NavigationLink href="/#contato">Contato</NavigationLink>
+            <NavigationLink href="/#contato">{tNav("contact")}</NavigationLink>
           </Button>
           <Button
             variant="ghost"
@@ -81,7 +98,7 @@ export function Header() {
             onClick={() => setIsOpen((prev) => !prev)}
             aria-expanded={isOpen}
             aria-controls="mobile-menu"
-            aria-label={isOpen ? "Fechar menu" : "Abrir menu"}
+            aria-label={isOpen ? t("closeMenu") : t("openMenu")}
           >
             {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </Button>
@@ -92,7 +109,7 @@ export function Header() {
         <nav
           id="mobile-menu"
           className="glass border-t md:hidden"
-          aria-label="Menu mobile"
+          aria-label={t("mobileNav")}
         >
           <div className="section-container flex flex-col gap-1 py-4">
             {NAV_ITEMS.map((item) => (
@@ -102,7 +119,7 @@ export function Header() {
                 onClick={() => setIsOpen(false)}
                 className="rounded-lg px-3 py-3 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
               >
-                {item.label}
+                {tNav(item.key)}
               </NavigationLink>
             ))}
             <Link
@@ -110,8 +127,9 @@ export function Header() {
               onClick={() => setIsOpen(false)}
               className="rounded-lg px-3 py-3 text-sm font-medium text-primary transition-colors hover:bg-accent"
             >
-              Modo Recrutador
+              {t("recruiterMode")}
             </Link>
+            <LanguageSwitcher className="px-3 pt-2 sm:hidden" />
           </div>
         </nav>
       )}

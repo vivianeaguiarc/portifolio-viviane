@@ -1,13 +1,17 @@
 import { Calendar, Clock } from "lucide-react";
+import { getTranslations } from "next-intl/server";
 import { Badge } from "@/components/ui/badge";
+import type { Locale } from "@/i18n/routing";
 import type { BlogPost } from "@/types";
 
 interface BlogPostHeaderProps {
   post: BlogPost;
+  locale: Locale;
 }
 
-export function BlogPostHeader({ post }: BlogPostHeaderProps) {
-  const formattedDate = new Date(post.publishedAt).toLocaleDateString("pt-BR", {
+export async function BlogPostHeader({ post, locale }: BlogPostHeaderProps) {
+  const t = await getTranslations({ locale, namespace: "blog" });
+  const formattedDate = new Date(post.publishedAt).toLocaleDateString(locale, {
     day: "2-digit",
     month: "long",
     year: "numeric",
@@ -29,7 +33,7 @@ export function BlogPostHeader({ post }: BlogPostHeaderProps) {
         </time>
         <span className="flex items-center gap-1.5">
           <Clock className="h-4 w-4" aria-hidden />
-          {post.readingTime} de leitura
+          {t("readingTime", { time: post.readingTime })}
         </span>
       </div>
       <ul className="flex flex-wrap gap-2" role="list" aria-label="Tags">

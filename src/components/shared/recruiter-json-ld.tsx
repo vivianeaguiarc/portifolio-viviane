@@ -1,24 +1,32 @@
+import { getTranslations } from "next-intl/server";
 import { SITE_CONFIG, SOCIAL_LINKS } from "@/constants/site";
 import {
   getRecruiterCertifications,
   getRecruiterEducation,
-  RECRUITER_METADATA,
-  RECRUITER_PROFILE,
+  getRecruiterProfile,
 } from "@/data/recruiter";
+import { getPathname, type Locale } from "@/i18n/routing";
 
-export function RecruiterJsonLd() {
-  const education = getRecruiterEducation();
-  const certifications = getRecruiterCertifications();
-  const recruiterUrl = `${SITE_CONFIG.url}/recruiter`;
+interface RecruiterJsonLdProps {
+  locale: Locale;
+}
+
+export async function RecruiterJsonLd({ locale }: RecruiterJsonLdProps) {
+  const t = await getTranslations({ locale, namespace: "metadata" });
+  const recruiterProfile = getRecruiterProfile(locale);
+  const education = getRecruiterEducation(locale);
+  const certifications = getRecruiterCertifications(locale);
+  const recruiterPath = getPathname({ locale, href: "/recruiter" });
+  const recruiterUrl = `${SITE_CONFIG.url}${recruiterPath}`;
 
   const schema = {
     "@context": "https://schema.org",
     "@type": "Person",
-    name: RECRUITER_PROFILE.fullName,
-    jobTitle: RECRUITER_PROFILE.role,
+    name: recruiterProfile.fullName,
+    jobTitle: recruiterProfile.role,
     image: `${SITE_CONFIG.url}${SITE_CONFIG.profileImage}`,
     url: recruiterUrl,
-    description: RECRUITER_METADATA.description,
+    description: t("recruiterDescription"),
     address: {
       "@type": "PostalAddress",
       addressLocality: "Juiz de Fora",

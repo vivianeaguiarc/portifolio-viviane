@@ -1,22 +1,33 @@
 import { Award } from "lucide-react";
+import { getTranslations } from "next-intl/server";
 import { AnimatedSection } from "@/components/shared/animated-section";
 import { SectionHeading } from "@/components/shared/section-heading";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { CERTIFICATIONS } from "@/data/certifications";
+import { getCertifications } from "@/data/certifications";
+import type { Locale } from "@/i18n/routing";
 
-export function CertificationsSection() {
+interface CertificationsSectionProps {
+  locale: Locale;
+}
+
+export async function CertificationsSection({
+  locale,
+}: CertificationsSectionProps) {
+  const t = await getTranslations({ locale, namespace: "certifications" });
+  const certifications = getCertifications(locale);
+
   return (
     <AnimatedSection id="certificacoes" className="bg-muted/30 py-24">
       <div className="section-container">
         <SectionHeading
-          eyebrow="Certificações"
-          title="Aprendizado contínuo"
-          description="Certificações e cursos que complementam minha formação prática."
+          eyebrow={t("eyebrow")}
+          title={t("title")}
+          description={t("description")}
         />
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {CERTIFICATIONS.map((cert) => (
+          {certifications.map((cert) => (
             <Card
               key={cert.id}
               className="glass transition-shadow hover:shadow-md"

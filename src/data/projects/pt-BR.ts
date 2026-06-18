@@ -8,7 +8,7 @@ export const PROJECTS: Project[] = [
       "API SaaS multiempresa para gestão de estoque com autenticação, RBAC e observabilidade.",
     longDescription:
       "StockFlow é uma plataforma backend pensada para empresas que precisam controlar estoque de forma centralizada em ambiente multi-tenant. A API expõe operações de produtos, movimentações, alertas e auditoria, com documentação OpenAPI e integração ao frontend Next.js em produção na Vercel.",
-    status: "Concluído",
+    status: "completed",
     image: "/projects/stockflow.svg",
     githubUrl: "https://github.com/vivianeaguiarc/StockFlow-api",
     deployUrl: "https://stock-flow-web-six.vercel.app/pt-BR/login",
@@ -107,7 +107,7 @@ export const PROJECTS: Project[] = [
       "API de venda de ingressos com reserva, compra em lote e controle de concorrência.",
     longDescription:
       "Ticket Sales é um backend para eventos que gerencia o ciclo completo de ingressos: reserva temporária, compra de múltiplos tickets, cancelamento e histórico de status. O foco está em integridade transacional e controle de concorrência para evitar overselling.",
-    status: "Concluído",
+    status: "completed",
     image: "/projects/ticket-sales.svg",
     githubUrl: "https://github.com/vivianeaguiarc/ticket-sales",
     deployUrl: "https://ticket-sales-3su2.onrender.com/docs/",
@@ -203,7 +203,7 @@ export const PROJECTS: Project[] = [
       "Plataforma educacional para ENEM com simulados, redação com IA e marketplace.",
     longDescription:
       "Tirei de Letra é um produto EdTech em desenvolvimento voltado à preparação para o ENEM. A proposta combina simulados, correção de redação assistida por IA, marketplace de professores e plano premium, com arquitetura em monorepo e preocupações de segurança e LGPD planejadas para escala.",
-    status: "Em desenvolvimento",
+    status: "inDevelopment",
     image: "/projects/tirei-de-letra.svg",
     technologies: [
       "Next.js",
@@ -290,7 +290,7 @@ export const PROJECTS: Project[] = [
       "API de controle financeiro pessoal com autenticação, transações e dashboard.",
     longDescription:
       "Finance App é uma API backend para gestão financeira pessoal. Permite cadastro de usuários, registro de receitas e despesas, categorização de transações e visualização consolidada via dashboard, com persistência em PostgreSQL e ambiente containerizado com Docker.",
-    status: "Concluído",
+    status: "completed",
     image: "/projects/finance-app.svg",
     githubUrl: "https://github.com/vivianeaguiarc/finance-app",
     deployUrl: "https://finance-app-i600.onrender.com/docs/",
@@ -373,7 +373,7 @@ export const PROJECTS: Project[] = [
       "Portfólio técnico com foco em SEO, performance e apresentação profissional.",
     longDescription:
       "Este portfólio foi construído como produto de apresentação profissional: cada seção comunica competências técnicas de forma objetiva para recrutadores e tech leads, com cases detalhados, SEO otimizado, dark mode e pipeline de qualidade automatizado.",
-    status: "Concluído",
+    status: "completed",
     image: "/projects/portfolio-viviane.svg",
     githubUrl: "https://github.com/vivianeaguiarc/portifolio-viviane",
     deployUrl: "https://portfolio-viviane.vercel.app",

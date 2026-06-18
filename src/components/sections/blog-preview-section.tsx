@@ -1,20 +1,26 @@
-import Link from "next/link";
+import { getTranslations } from "next-intl/server";
 import { AnimatedSection } from "@/components/shared/animated-section";
 import { BlogCard } from "@/components/shared/blog-card";
 import { SectionHeading } from "@/components/shared/section-heading";
 import { Button } from "@/components/ui/button";
-import { getRecentBlogPosts } from "@/data/blog-posts";
+import { getRecentBlogPosts } from "@/data/blog";
+import { Link, type Locale } from "@/i18n/routing";
 
-export function BlogPreviewSection() {
-  const posts = getRecentBlogPosts(3);
+interface BlogPreviewSectionProps {
+  locale: Locale;
+}
+
+export async function BlogPreviewSection({ locale }: BlogPreviewSectionProps) {
+  const t = await getTranslations({ locale, namespace: "blog" });
+  const posts = getRecentBlogPosts(locale, 3);
 
   return (
     <AnimatedSection id="blog" className="bg-muted/30 py-24">
       <div className="section-container">
         <SectionHeading
-          eyebrow="Blog Técnico"
-          title="Artigos Técnicos"
-          description="Conteúdo sobre arquitetura, segurança e engenharia baseado em projetos reais do meu portfólio."
+          eyebrow={t("eyebrow")}
+          title={t("title")}
+          description={t("description")}
         />
 
         <ul className="grid gap-6 md:grid-cols-2 lg:grid-cols-3" role="list">
@@ -27,8 +33,8 @@ export function BlogPreviewSection() {
 
         <div className="mt-10 flex justify-center">
           <Button asChild size="lg">
-            <Link href="/blog" aria-label="Ver todos os artigos do blog">
-              Ver todos os artigos
+            <Link href="/blog" aria-label={t("viewAllAria")}>
+              {t("viewAll")}
             </Link>
           </Button>
         </div>

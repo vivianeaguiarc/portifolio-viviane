@@ -1,20 +1,28 @@
+import { getTranslations } from "next-intl/server";
 import { AnimatedSection } from "@/components/shared/animated-section";
 import { ProjectCard } from "@/components/shared/project-card";
 import { SectionHeading } from "@/components/shared/section-heading";
-import { PROJECTS } from "@/data/projects";
+import { getProjects } from "@/data/projects";
+import type { Locale } from "@/i18n/routing";
 
-export function ProjectsSection() {
+interface ProjectsSectionProps {
+  locale: Locale;
+}
+
+export async function ProjectsSection({ locale }: ProjectsSectionProps) {
+  const t = await getTranslations({ locale, namespace: "projects" });
+
   return (
     <AnimatedSection id="projetos" className="bg-muted/30 py-24">
       <div className="section-container">
         <SectionHeading
-          eyebrow="Projetos"
-          title="Cases técnicos de engenharia"
-          description="Projetos reais com foco em arquitetura e entrega de valor. Veja métricas, conceitos e desafios em cada case."
+          eyebrow={t("eyebrow")}
+          title={t("title")}
+          description={t("description")}
         />
 
         <div className="grid gap-6 lg:grid-cols-2 xl:grid-cols-3">
-          {PROJECTS.map((project, index) => (
+          {getProjects(locale).map((project, index) => (
             <ProjectCard
               key={project.slug}
               project={project}

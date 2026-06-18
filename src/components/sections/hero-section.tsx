@@ -3,6 +3,8 @@
 import { motion } from "framer-motion";
 import { ArrowDown, FileDown } from "lucide-react";
 import Link from "next/link";
+import { useLocale, useTranslations } from "next-intl";
+import { useMemo } from "react";
 import {
   GithubIcon,
   InstagramIcon,
@@ -13,36 +15,41 @@ import { ProfilePhoto } from "@/components/shared/profile-photo";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { SOCIAL_LINKS } from "@/constants/site";
-import { PROFILE } from "@/data/profile";
-
-const socialLinks = [
-  {
-    label: "LinkedIn",
-    href: SOCIAL_LINKS.linkedin,
-    icon: LinkedinIcon,
-    variant: "default" as const,
-  },
-  {
-    label: "GitHub",
-    href: SOCIAL_LINKS.github,
-    icon: GithubIcon,
-    variant: "outline" as const,
-  },
-  {
-    label: "Currículo PDF",
-    href: SOCIAL_LINKS.resume,
-    icon: FileDown,
-    variant: "outline" as const,
-  },
-  {
-    label: "Instagram",
-    href: SOCIAL_LINKS.instagram,
-    icon: InstagramIcon,
-    variant: "outline" as const,
-  },
-];
+import { getProfile } from "@/data/profile";
+import type { Locale } from "@/i18n/routing";
 
 export function HeroSection() {
+  const t = useTranslations("hero");
+  const locale = useLocale() as Locale;
+  const profile = useMemo(() => getProfile(locale), [locale]);
+
+  const socialLinks = [
+    {
+      label: t("linkedin"),
+      href: SOCIAL_LINKS.linkedin,
+      icon: LinkedinIcon,
+      variant: "default" as const,
+    },
+    {
+      label: t("github"),
+      href: SOCIAL_LINKS.github,
+      icon: GithubIcon,
+      variant: "outline" as const,
+    },
+    {
+      label: t("resume"),
+      href: SOCIAL_LINKS.resume,
+      icon: FileDown,
+      variant: "outline" as const,
+    },
+    {
+      label: t("instagram"),
+      href: SOCIAL_LINKS.instagram,
+      icon: InstagramIcon,
+      variant: "outline" as const,
+    },
+  ];
+
   return (
     <section
       id="hero"
@@ -76,22 +83,23 @@ export function HeroSection() {
             className="text-center lg:text-left"
           >
             <Badge variant="secondary" className="mb-6">
-              Disponível para novas oportunidades
+              {t("badge")}
             </Badge>
 
             <h1
               id="hero-heading"
               className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl xl:text-7xl"
             >
-              Olá, sou <span className="text-gradient">{PROFILE.fullName}</span>
+              {t("greeting")}{" "}
+              <span className="text-gradient">{profile.fullName}</span>
             </h1>
 
             <p className="mt-4 text-xl font-medium text-muted-foreground sm:text-2xl">
-              {PROFILE.role}
+              {profile.role}
             </p>
 
             <div className="mt-6 flex flex-wrap items-center justify-center gap-2 lg:justify-start">
-              {PROFILE.mainStack.map((tech) => (
+              {profile.mainStack.map((tech) => (
                 <Badge key={tech} variant="outline">
                   {tech}
                 </Badge>
@@ -99,8 +107,7 @@ export function HeroSection() {
             </div>
 
             <p className="mt-8 max-w-2xl text-lg leading-relaxed text-muted-foreground lg:mx-0 mx-auto">
-              Construo aplicações web modernas, escaláveis e com foco em
-              qualidade de código — do frontend ao backend.
+              {t("intro")}
             </p>
 
             <div className="mt-10 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
@@ -134,9 +141,9 @@ export function HeroSection() {
           <NavigationLink
             href="/#sobre"
             className="flex flex-col items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
-            aria-label="Rolar para a seção Sobre"
+            aria-label={t("exploreAria")}
           >
-            <span>Explorar</span>
+            <span>{t("explore")}</span>
             <ArrowDown className="h-4 w-4 animate-bounce" />
           </NavigationLink>
         </motion.div>

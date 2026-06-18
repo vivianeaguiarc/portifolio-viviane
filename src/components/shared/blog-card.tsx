@@ -1,5 +1,7 @@
+"use client";
+
 import { ArrowUpRight, Calendar, Clock } from "lucide-react";
-import Link from "next/link";
+import { useLocale, useTranslations } from "next-intl";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
@@ -10,6 +12,8 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { Link } from "@/i18n/routing";
+import type { Locale } from "@/i18n/routing";
 import type { BlogPost } from "@/types";
 
 interface BlogCardProps {
@@ -17,7 +21,9 @@ interface BlogCardProps {
 }
 
 export function BlogCard({ post }: BlogCardProps) {
-  const formattedDate = new Date(post.publishedAt).toLocaleDateString("pt-BR", {
+  const t = useTranslations("blog");
+  const locale = useLocale() as Locale;
+  const formattedDate = new Date(post.publishedAt).toLocaleDateString(locale, {
     day: "2-digit",
     month: "short",
     year: "numeric",
@@ -56,10 +62,10 @@ export function BlogCard({ post }: BlogCardProps) {
       <CardFooter>
         <Button variant="secondary" size="sm" asChild className="w-full">
           <Link
-            href={`/blog/${post.slug}`}
-            aria-label={`Ler artigo: ${post.title}`}
+            href={{ pathname: "/blog/[slug]", params: { slug: post.slug } }}
+            aria-label={t("readArticleAria", { title: post.title })}
           >
-            Ler artigo
+            {t("readArticle")}
             <ArrowUpRight className="h-4 w-4" />
           </Link>
         </Button>

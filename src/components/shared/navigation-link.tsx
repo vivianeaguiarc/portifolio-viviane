@@ -1,15 +1,27 @@
 "use client";
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { useLocale } from "next-intl";
 import type { ComponentProps } from "react";
+import { Link, usePathname } from "@/i18n/routing";
 import {
   getHashFromHref,
   getPathFromHref,
   scrollToSection,
 } from "@/lib/navigation";
 
-type NavigationLinkProps = ComponentProps<typeof Link>;
+type HashHref = `/#${string}`;
+
+type NavigationLinkProps = Omit<ComponentProps<typeof Link>, "href"> & {
+  href: ComponentProps<typeof Link>["href"] | HashHref;
+};
+
+function hrefToString(href: NavigationLinkProps["href"]): string {
+  if (typeof href === "string") {
+    return href;
+  }
+
+  return String(href);
+}
 
 export function NavigationLink({
   href,
@@ -18,7 +30,8 @@ export function NavigationLink({
   ...props
 }: NavigationLinkProps) {
   const pathname = usePathname();
-  const hrefString = href.toString();
+  const locale = useLocale();
+  const hrefString = hrefToString(href);
   const hash = getHashFromHref(hrefString);
   const targetPath = getPathFromHref(hrefString);
 
@@ -34,13 +47,15 @@ export function NavigationLink({
     if (isSamePage) {
       event.preventDefault();
       scrollToSection(hash);
-      window.history.pushState(null, "", `/#${hash}`);
+      const localizedPath =
+        targetPath === "/" ? `/${locale}` : `/${locale}${targetPath}`;
+      window.history.pushState(null, "", `${localizedPath}#${hash}`);
     }
   };
 
   return (
     <Link
-      href={href}
+      href={href as ComponentProps<typeof Link>["href"]}
       onClick={handleClick}
       scroll={scroll ?? !hash}
       {...props}
