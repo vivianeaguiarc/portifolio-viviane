@@ -72,7 +72,7 @@ export default async function LocaleLayout({
   return (
     <html
       lang={locale}
-      className={`${geistSans.variable} ${geistMono.variable} h-full`}
+      className={`${geistSans.variable} ${geistMono.variable} dark h-full`}
       suppressHydrationWarning
     >
       <head>

@@ -24,7 +24,8 @@
     "github": "GitHub",
     "architecture": "Architecture",
     "contact": "Contact",
-    "quality": "Quality"
+    "quality": "Quality",
+    "knowledge": "Knowledge"
   },
   "header": {
     "homeAria": "{name} — Home",
@@ -62,7 +63,8 @@
       "security": "Security",
       "engineering": "Engineering",
       "quality": "Quality",
-      "productionReadiness": "Production Readiness"
+      "productionReadiness": "Production Readiness",
+      "technicalKnowledge": "Technical Knowledge"
     }
   },
   "theme": {
@@ -418,5 +420,41 @@
     "dataFlowAria": "Data flow for {name}",
     "caseStudy": "View case study",
     "caseStudyAria": "View case study for {name}"
+  },
+  "technicalKnowledgePage": {
+    "eyebrow": "Interviews",
+    "title": "Technical Knowledge and Professional Skills",
+    "metaTitle": "Technical Knowledge and Professional Skills | Viviane Aguiar",
+    "description": "Fundamental software engineering concepts and professional skills demonstrated through real projects, studies, and experiences.",
+    "explorerTitle": "Explore concepts and skills",
+    "itemsCount": "{technical} technical concepts, {professional} professional skills across {categories} technical categories",
+    "searchLabel": "Search",
+    "searchPlaceholder": "Search by keyword...",
+    "sectionFilterAria": "Filter by type",
+    "filterAria": "Filter by technical category",
+    "allCategories": "All",
+    "noResults": "No items found for the selected filters.",
+    "selectCardAria": "View details for {title}",
+    "whatIs": "What is it",
+    "howItWorks": "How it works",
+    "practicalApplication": "How I apply it",
+    "meaning": "How I understand this skill",
+    "description": "Description",
+    "examples": "Examples and evidence",
+    "cardPracticalApplication": "Practical application",
+    "relatedProjects": "Related projects",
+    "viewProject": "View project",
+    "viewProjectAria": "View project {name}",
+    "professionalCategoryLabel": "Professional Skills"
+  },
+  "knowledgeCrossLink": {
+    "title": "Technical Knowledge",
+    "description": "Backend, architecture, frontend, DevOps, and security concepts connected to real projects.",
+    "cta": "View knowledge"
+  },
+  "professionalSkillsCrossLink": {
+    "title": "Professional Skills",
+    "description": "Soft skills demonstrated in projects, studies, and real experiences — with context, not generic lists.",
+    "cta": "View skills"
   }
 }

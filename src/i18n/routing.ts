@@ -27,6 +27,7 @@ export const routing = defineRouting({
     "/engineering": "/engineering",
     "/quality": "/quality",
     "/production-readiness": "/production-readiness",
+    "/technical-knowledge": "/technical-knowledge",
     "/projects/[slug]": {
       "pt-BR": "/projetos/[slug]",
       "en-US": "/projects/[slug]",

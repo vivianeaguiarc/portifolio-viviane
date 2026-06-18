@@ -24,7 +24,8 @@
     "github": "GitHub",
     "architecture": "Architecture",
     "contact": "Contato",
-    "quality": "Quality"
+    "quality": "Quality",
+    "knowledge": "Conhecimentos"
   },
   "header": {
     "homeAria": "{name} — Início",
@@ -62,7 +63,8 @@
       "security": "Segurança",
       "engineering": "Engenharia",
       "quality": "Quality",
-      "productionReadiness": "Production Readiness"
+      "productionReadiness": "Production Readiness",
+      "technicalKnowledge": "Conhecimentos Técnicos"
     }
   },
   "theme": {
@@ -418,5 +420,41 @@
     "dataFlowAria": "Fluxo de dados de {name}",
     "caseStudy": "Ver case study",
     "caseStudyAria": "Ver case study de {name}"
+  },
+  "technicalKnowledgePage": {
+    "eyebrow": "Entrevistas",
+    "title": "Conhecimentos Técnicos e Competências Profissionais",
+    "metaTitle": "Conhecimentos Técnicos e Competências Profissionais | Viviane Aguiar",
+    "description": "Conceitos fundamentais de engenharia de software e competências profissionais demonstradas em projetos, estudos e experiências reais.",
+    "explorerTitle": "Explorar conceitos e competências",
+    "itemsCount": "{technical} conceitos técnicos, {professional} competências profissionais em {categories} categorias técnicas",
+    "searchLabel": "Buscar",
+    "searchPlaceholder": "Buscar por palavra-chave...",
+    "sectionFilterAria": "Filtrar por tipo",
+    "filterAria": "Filtrar por categoria técnica",
+    "allCategories": "Todas",
+    "noResults": "Nenhum item encontrado para os filtros selecionados.",
+    "selectCardAria": "Ver detalhes de {title}",
+    "whatIs": "O que é",
+    "howItWorks": "Como funciona",
+    "practicalApplication": "Como aplico na prática",
+    "meaning": "Como entendo essa competência",
+    "description": "Descrição",
+    "examples": "Exemplos e evidências",
+    "cardPracticalApplication": "Aplicação prática",
+    "relatedProjects": "Projetos relacionados",
+    "viewProject": "Ver projeto",
+    "viewProjectAria": "Ver projeto {name}",
+    "professionalCategoryLabel": "Competências Profissionais"
+  },
+  "knowledgeCrossLink": {
+    "title": "Conhecimentos Técnicos",
+    "description": "Conceitos de backend, arquitetura, frontend, DevOps e segurança conectados aos projetos reais.",
+    "cta": "Ver conhecimentos"
+  },
+  "professionalSkillsCrossLink": {
+    "title": "Competências Profissionais",
+    "description": "Soft skills demonstradas em projetos, estudos e experiências reais — com contexto, não listas genéricas.",
+    "cta": "Ver competências"
   }
 }

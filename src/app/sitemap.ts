@@ -40,6 +40,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       "/engineering",
       "/quality",
       "/production-readiness",
+      "/technical-knowledge",
     ] as const;
 
     for (const page of staticPages) {

@@ -4,7 +4,7 @@ import {
   createContext,
   useCallback,
   useContext,
-  useEffect,
+  useLayoutEffect,
   useMemo,
   useSyncExternalStore,
   type ReactNode,
@@ -124,7 +124,7 @@ export function ThemeProvider({
 
   const resolvedTheme = theme === "system" ? getSystemTheme() : theme;
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const cleanup = disableTransitionOnChange
       ? disableTransitions()
       : undefined;

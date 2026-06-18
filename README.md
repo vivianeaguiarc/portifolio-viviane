@@ -158,6 +158,25 @@ Cada projeto documenta: visão geral, objetivo, arquitetura, fluxo de dados, tec
 
 Componentes reutilizáveis em `src/components/architecture/`: `ArchitectureCard`, `ArchitectureDiagram`, `ArchitectureNode`, `ArchitectureFlow`.
 
+## Technical Knowledge
+
+Página dedicada: [`/technical-knowledge`](/pt-BR/technical-knowledge)
+
+Base de conhecimento técnico com 40 conceitos frequentemente cobrados em entrevistas, organizados em 6 categorias:
+
+| Categoria      | Exemplos                                           |
+| -------------- | -------------------------------------------------- |
+| Backend        | Node.js, REST API, Middleware, JWT, Autenticação   |
+| Banco de Dados | Chave Primária, ACID, Transações, Índices          |
+| Arquitetura    | SOLID, Clean Architecture, DDD, Repository Pattern |
+| Frontend       | React, Next.js, SSR, Server Components, useEffect  |
+| DevOps         | Docker, CI/CD, GitHub Actions, Deploy              |
+| Segurança      | OWASP, Rate Limiting, Hash de Senhas, Validação    |
+
+Cada conceito inclui: definição, funcionamento, aplicação prática e projetos relacionados do portfólio.
+
+Dados centralizados em `src/data/technical-knowledge.ts`. Componentes em `src/components/knowledge/`: `KnowledgeCard`, `KnowledgeCategoryFilter`, `KnowledgeSearch`, `KnowledgeDetails`.
+
 ## Scripts
 
 | Comando              | Descrição                   |
@@ -210,6 +229,7 @@ Acesse [http://localhost:3000](http://localhost:3000) (redireciona para `/pt-BR`
 | Security              | `/pt-BR/security`              | `/en-US/security`              |
 | Engineering           | `/pt-BR/engineering`           | `/en-US/engineering`           |
 | Architecture Showcase | `/pt-BR/architecture-showcase` | `/en-US/architecture-showcase` |
+| Technical Knowledge   | `/pt-BR/technical-knowledge`   | `/en-US/technical-knowledge`   |
 | Quality               | `/pt-BR/quality`               | `/en-US/quality`               |
 | Production Readiness  | `/pt-BR/production-readiness`  | `/en-US/production-readiness`  |
 | GitHub                | `/pt-BR/github`                | `/en-US/github`                |

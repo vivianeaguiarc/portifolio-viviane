@@ -18,8 +18,8 @@ const NAV_ITEMS = [
   { key: "education", href: "/#formacao" },
   { key: "stack", href: "/#stack" },
   { key: "blog", href: "/blog" },
-  { key: "github", href: "/github" },
   { key: "architecture", href: "/architecture-showcase" },
+  { key: "knowledge", href: "/technical-knowledge" },
   { key: "quality", href: "/quality" },
   { key: "contact", href: "/#contato" },
 ] as const;

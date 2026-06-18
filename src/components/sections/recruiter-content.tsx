@@ -15,6 +15,8 @@ import {
 import { NavigationLink } from "@/components/shared/navigation-link";
 import { PortfolioMetrics } from "@/components/shared/portfolio-metrics";
 import { ProfilePhoto } from "@/components/shared/profile-photo";
+import { KnowledgeCrossLink } from "@/components/shared/knowledge-cross-link";
+import { ProfessionalSkillsCrossLink } from "@/components/shared/professional-skills-cross-link";
 import { QualityCrossLink } from "@/components/shared/quality-cross-link";
 import { RecruiterGithubSummary } from "@/components/shared/recruiter-github-summary";
 import { RecruiterQuickSummary } from "@/components/shared/recruiter-quick-summary";
@@ -165,6 +167,8 @@ export async function RecruiterContent({ locale }: RecruiterContentProps) {
             <PortfolioMetrics />
             <RecruiterQuickSummary locale={locale} />
             <RecruiterGithubSummary locale={locale} />
+            <KnowledgeCrossLink locale={locale} />
+            <ProfessionalSkillsCrossLink locale={locale} />
             <QualityCrossLink locale={locale} />
           </div>
         </div>
