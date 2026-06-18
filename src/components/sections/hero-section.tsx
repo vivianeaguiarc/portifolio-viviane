@@ -8,6 +8,7 @@ import {
   InstagramIcon,
   LinkedinIcon,
 } from "@/components/shared/brand-icons";
+import { NavigationLink } from "@/components/shared/navigation-link";
 import { ProfilePhoto } from "@/components/shared/profile-photo";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -130,14 +131,14 @@ export function HeroSection() {
           transition={{ delay: 1, duration: 0.6 }}
           className="mt-16 flex justify-center"
         >
-          <Link
-            href="#sobre"
+          <NavigationLink
+            href="/#sobre"
             className="flex flex-col items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
             aria-label="Rolar para a seção Sobre"
           >
             <span>Explorar</span>
             <ArrowDown className="h-4 w-4 animate-bounce" />
-          </Link>
+          </NavigationLink>
         </motion.div>
       </div>
     </section>

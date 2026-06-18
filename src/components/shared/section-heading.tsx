@@ -3,6 +3,7 @@ interface SectionHeadingProps {
   title: string;
   description?: string;
   align?: "left" | "center";
+  id?: string;
 }
 
 export function SectionHeading({
@@ -10,6 +11,7 @@ export function SectionHeading({
   title,
   description,
   align = "center",
+  id,
 }: SectionHeadingProps) {
   const alignment = align === "center" ? "text-center mx-auto" : "text-left";
 
@@ -20,7 +22,9 @@ export function SectionHeading({
           {eyebrow}
         </p>
       )}
-      <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">{title}</h2>
+      <h2 id={id} className="text-3xl font-bold tracking-tight sm:text-4xl">
+        {title}
+      </h2>
       {description && (
         <p className="mt-4 text-lg text-muted-foreground">{description}</p>
       )}

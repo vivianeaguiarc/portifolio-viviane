@@ -3,6 +3,7 @@
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { NavigationLink } from "@/components/shared/navigation-link";
 import { ThemeToggle } from "@/components/shared/theme-toggle";
 import { Button } from "@/components/ui/button";
 import { NAV_ITEMS, SITE_CONFIG } from "@/constants/site";
@@ -35,7 +36,7 @@ export function Header() {
     >
       <div className="section-container flex h-16 items-center justify-between">
         <Link
-          href="#hero"
+          href="/"
           className="text-lg font-bold tracking-tight"
           aria-label={`${SITE_CONFIG.fullName} - Início`}
         >
@@ -48,20 +49,30 @@ export function Header() {
           aria-label="Principal"
         >
           {NAV_ITEMS.map((item) => (
-            <Link
+            <NavigationLink
               key={item.href}
               href={item.href}
               className="rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
             >
               {item.label}
-            </Link>
+            </NavigationLink>
           ))}
         </nav>
 
         <div className="flex items-center gap-2">
           <ThemeToggle />
+          <Button
+            asChild
+            size="sm"
+            variant="outline"
+            className="hidden md:inline-flex"
+          >
+            <Link href="/recruiter" aria-label="Abrir modo recrutador">
+              Modo Recrutador
+            </Link>
+          </Button>
           <Button asChild size="sm" className="hidden sm:inline-flex">
-            <Link href="#contato">Contato</Link>
+            <NavigationLink href="/#contato">Contato</NavigationLink>
           </Button>
           <Button
             variant="ghost"
@@ -85,15 +96,22 @@ export function Header() {
         >
           <div className="section-container flex flex-col gap-1 py-4">
             {NAV_ITEMS.map((item) => (
-              <Link
+              <NavigationLink
                 key={item.href}
                 href={item.href}
                 onClick={() => setIsOpen(false)}
                 className="rounded-lg px-3 py-3 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
               >
                 {item.label}
-              </Link>
+              </NavigationLink>
             ))}
+            <Link
+              href="/recruiter"
+              onClick={() => setIsOpen(false)}
+              className="rounded-lg px-3 py-3 text-sm font-medium text-primary transition-colors hover:bg-accent"
+            >
+              Modo Recrutador
+            </Link>
           </div>
         </nav>
       )}

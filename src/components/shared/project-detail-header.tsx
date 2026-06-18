@@ -1,6 +1,7 @@
 import { ArrowLeft, ExternalLink } from "lucide-react";
 import Link from "next/link";
 import { GithubIcon } from "@/components/shared/brand-icons";
+import { NavigationLink } from "@/components/shared/navigation-link";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import type { Project, ProjectStatus } from "@/types";
@@ -24,10 +25,13 @@ export function ProjectDetailHeader({ project }: ProjectDetailHeaderProps) {
   return (
     <header className="space-y-6">
       <Button variant="ghost" size="sm" asChild className="-ml-2 w-fit">
-        <Link href="/#projetos" aria-label="Voltar para a seção de projetos">
+        <NavigationLink
+          href="/#projetos"
+          aria-label="Voltar para a seção de projetos"
+        >
           <ArrowLeft className="h-4 w-4" />
           Voltar aos projetos
-        </Link>
+        </NavigationLink>
       </Button>
 
       <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
