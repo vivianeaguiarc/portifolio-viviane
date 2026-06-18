@@ -53,7 +53,11 @@
       "mediaKit": "Media Kit",
       "pressKit": "Press Kit",
       "recruiter": "Recruiter Mode",
-      "github": "GitHub Activity"
+      "github": "GitHub Activity",
+      "status": "Status",
+      "architecture": "Architecture",
+      "security": "Security",
+      "engineering": "Engineering"
     }
   },
   "theme": {
@@ -235,6 +239,11 @@
     "description": "The page you're looking for doesn't exist or has been moved.",
     "backHome": "Back to home"
   },
+  "error": {
+    "title": "Something went wrong",
+    "description": "An unexpected error occurred. Please try again shortly.",
+    "retry": "Try again"
+  },
   "principleCategories": {
     "architecture": "Architecture",
     "quality": "Quality",
@@ -304,5 +313,52 @@
     "errorTitle": "Could not load GitHub data",
     "errorDescription": "Check your connection or GITHUB_USERNAME and GITHUB_TOKEN variables.",
     "cacheNote": "Data refreshes every 24 hours."
+  },
+  "status": {
+    "eyebrow": "Operations",
+    "title": "Portfolio Status",
+    "metaTitle": "Status | Viviane Aguiar Silva Simões",
+    "description": "Operational health of the portfolio, integrations, and services.",
+    "overallTitle": "Overall status",
+    "environment": "Environment",
+    "version": "Version",
+    "lastDeploy": "Last deploy",
+    "healthEndpoint": "Health check",
+    "notAvailable": "N/A",
+    "servicesTitle": "Services",
+    "states": {
+      "operational": "Operational",
+      "degraded": "Degraded",
+      "not_configured": "Not configured"
+    },
+    "checks": {
+      "github": "GitHub",
+      "blog": "Blog",
+      "database": "Database",
+      "analytics": "Analytics"
+    }
+  },
+  "architecture": {
+    "eyebrow": "Architecture",
+    "title": "Portfolio Architecture",
+    "metaTitle": "Architecture | Viviane Aguiar Silva Simões",
+    "description": "Stack overview, data flow, and architectural decisions of portfolio-viviane.",
+    "flowTitle": "Platform flow",
+    "decisionsTitle": "Architectural decisions"
+  },
+  "security": {
+    "eyebrow": "Security",
+    "title": "Security Practices",
+    "metaTitle": "Security | Viviane Aguiar Silva Simões",
+    "description": "Headers, validation, OWASP, and security practices applied in the portfolio."
+  },
+  "engineeringPage": {
+    "eyebrow": "Engineering",
+    "title": "Engineering Principles",
+    "metaTitle": "Engineering | Viviane Aguiar Silva Simões",
+    "description": "How SOLID, Clean Architecture, DDD, testing, and CI/CD are applied in projects.",
+    "principlesTitle": "Principles",
+    "applicationsTitle": "How I apply them in projects",
+    "categoriesTitle": "Categories"
   }
 }

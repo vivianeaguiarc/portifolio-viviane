@@ -20,6 +20,10 @@ export const routing = defineRouting({
     "/media-kit": "/media-kit",
     "/press-kit": "/press-kit",
     "/github": "/github",
+    "/status": "/status",
+    "/architecture": "/architecture",
+    "/security": "/security",
+    "/engineering": "/engineering",
     "/projects/[slug]": {
       "pt-BR": "/projetos/[slug]",
       "en-US": "/projects/[slug]",

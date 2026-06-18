@@ -9,7 +9,7 @@ export const PROJECTS_EN: Project[] = [
     longDescription:
       "StockFlow is a backend platform designed for companies that need centralized inventory control in a multi-tenant environment. The API exposes product, movement, alert, and audit operations, with OpenAPI documentation and a Next.js frontend integrated in production on Vercel.",
     status: "completed",
-    image: "/projects/stockflow.svg",
+    image: "/projects/2-login-light.png",
     githubUrl: "https://github.com/vivianeaguiarc/StockFlow-api",
     deployUrl: "https://stock-flow-web-six.vercel.app/pt-BR/login",
     technologies: [
@@ -108,7 +108,7 @@ export const PROJECTS_EN: Project[] = [
     longDescription:
       "Ticket Sales is a backend for events that manages the full ticket lifecycle: temporary reservation, multi-ticket purchase, cancellation, and status history. The focus is on transactional integrity and concurrency control to prevent overselling.",
     status: "completed",
-    image: "/projects/ticket-sales.svg",
+    image: "/projects/tickets-sales-web.png",
     githubUrl: "https://github.com/vivianeaguiarc/ticket-sales",
     deployUrl: "https://ticket-sales-3su2.onrender.com/docs/",
     technologies: [
@@ -291,7 +291,7 @@ export const PROJECTS_EN: Project[] = [
     longDescription:
       "Finance App is a backend API for personal financial management. It enables user registration, income and expense tracking, transaction categorization, and consolidated dashboard views, with PostgreSQL persistence and a containerized Docker environment.",
     status: "completed",
-    image: "/projects/finance-app.svg",
+    image: "/projects/finance-app.png",
     githubUrl: "https://github.com/vivianeaguiarc/finance-app",
     deployUrl: "https://finance-app-i600.onrender.com/docs/",
     technologies: ["Node.js", "Express", "PostgreSQL", "Docker", "JavaScript"],
@@ -374,7 +374,7 @@ export const PROJECTS_EN: Project[] = [
     longDescription:
       "This portfolio was built as a professional presentation product: each section communicates technical skills objectively for recruiters and tech leads, with detailed case studies, optimized SEO, dark mode, and an automated quality pipeline.",
     status: "completed",
-    image: "/projects/portfolio-viviane.svg",
+    image: "/projects/portifolio-viviane.png",
     githubUrl: "https://github.com/vivianeaguiarc/portifolio-viviane",
     deployUrl: "https://portfolio-viviane.vercel.app",
     technologies: [

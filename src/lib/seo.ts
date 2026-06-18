@@ -276,7 +276,16 @@ export function getRecruiterAlternatePaths(): Record<Locale, string> {
 }
 
 export function getStaticPageAlternatePaths(
-  href: "/changelog" | "/now" | "/media-kit" | "/press-kit" | "/github",
+  href:
+    | "/changelog"
+    | "/now"
+    | "/media-kit"
+    | "/press-kit"
+    | "/github"
+    | "/status"
+    | "/architecture"
+    | "/security"
+    | "/engineering",
 ): Record<Locale, string> {
   return {
     "pt-BR": getPathname({ locale: "pt-BR", href }),

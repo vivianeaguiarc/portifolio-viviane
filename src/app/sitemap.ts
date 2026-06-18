@@ -33,6 +33,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       "/media-kit",
       "/press-kit",
       "/github",
+      "/status",
+      "/architecture",
+      "/security",
+      "/engineering",
     ] as const;
 
     for (const page of staticPages) {

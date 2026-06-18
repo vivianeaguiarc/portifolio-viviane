@@ -157,15 +157,44 @@ Acesse [http://localhost:3000](http://localhost:3000) (redireciona para `/pt-BR`
 
 ## Rotas principais
 
-| Página    | pt-BR              | en-US              |
-| --------- | ------------------ | ------------------ |
-| Home      | `/pt-BR`           | `/en-US`           |
-| Blog      | `/pt-BR/blog`      | `/en-US/blog`      |
-| Recruiter | `/pt-BR/recruiter` | `/en-US/recruiter` |
-| Changelog | `/pt-BR/changelog` | `/en-US/changelog` |
-| Now       | `/pt-BR/now`       | `/en-US/now`       |
-| Media Kit | `/pt-BR/media-kit` | `/en-US/media-kit` |
-| Press Kit | `/pt-BR/press-kit` | `/en-US/press-kit` |
+| Página       | pt-BR                 | en-US                 |
+| ------------ | --------------------- | --------------------- |
+| Home         | `/pt-BR`              | `/en-US`              |
+| Blog         | `/pt-BR/blog`         | `/en-US/blog`         |
+| Recruiter    | `/pt-BR/recruiter`    | `/en-US/recruiter`    |
+| Changelog    | `/pt-BR/changelog`    | `/en-US/changelog`    |
+| Now          | `/pt-BR/now`          | `/en-US/now`          |
+| Media Kit    | `/pt-BR/media-kit`    | `/en-US/media-kit`    |
+| Press Kit    | `/pt-BR/press-kit`    | `/en-US/press-kit`    |
+| Status       | `/pt-BR/status`       | `/en-US/status`       |
+| Architecture | `/pt-BR/architecture` | `/en-US/architecture` |
+| Security     | `/pt-BR/security`     | `/en-US/security`     |
+| Engineering  | `/pt-BR/engineering`  | `/en-US/engineering`  |
+| GitHub       | `/pt-BR/github`       | `/en-US/github`       |
+
+## Production Readiness
+
+### Arquitetura
+
+- Next.js 16 App Router com Server Components e i18n
+- Stack preparada: PostgreSQL, Prisma, Auth.js (schema em `prisma/schema.prisma`)
+- Página dedicada: [`/architecture`](/pt-BR/architecture)
+
+### Segurança
+
+- Security headers no middleware (`X-Frame-Options`, `X-Content-Type-Options`, `Referrer-Policy`)
+- Validação Zod no formulário de contato
+- Página dedicada: [`/security`](/pt-BR/security)
+
+### Observabilidade
+
+- **Health check:** `GET /api/health` → `{ status, version, timestamp }`
+- **Status page:** [`/status`](/pt-BR/status) — GitHub, blog, DB, analytics
+- **Logger:** `src/lib/logger.ts` (info, warn, error) — pronto para Sentry/Datadog/Logtail
+- **Audit log:** `src/lib/audit-log.ts` + modelo `AuditLog` no Prisma
+- Vercel Analytics + Speed Insights
+
+Documentação: [`docs/production-readiness.md`](docs/production-readiness.md)
 
 ## Documentação
 
@@ -175,6 +204,7 @@ Acesse [http://localhost:3000](http://localhost:3000) (redireciona para `/pt-BR`
 | [`docs/seo-checklist.md`](docs/seo-checklist.md)                     | Validação SEO            |
 | [`docs/accessibility-checklist.md`](docs/accessibility-checklist.md) | Acessibilidade           |
 | [`docs/performance-audit.md`](docs/performance-audit.md)             | Performance e Lighthouse |
+| [`docs/production-readiness.md`](docs/production-readiness.md)       | Production readiness     |
 
 ## Screenshots
 

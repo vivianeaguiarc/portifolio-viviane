@@ -53,7 +53,11 @@
       "mediaKit": "Media Kit",
       "pressKit": "Press Kit",
       "recruiter": "Recruiter Mode",
-      "github": "GitHub Activity"
+      "github": "GitHub Activity",
+      "status": "Status",
+      "architecture": "Arquitetura",
+      "security": "Segurança",
+      "engineering": "Engenharia"
     }
   },
   "theme": {
@@ -235,6 +239,11 @@
     "description": "A página que você procura não existe ou foi movida.",
     "backHome": "Voltar ao início"
   },
+  "error": {
+    "title": "Algo deu errado",
+    "description": "Ocorreu um erro inesperado. Tente novamente em instantes.",
+    "retry": "Tentar novamente"
+  },
   "principleCategories": {
     "architecture": "Arquitetura",
     "quality": "Qualidade",
@@ -304,5 +313,52 @@
     "errorTitle": "Não foi possível carregar os dados do GitHub",
     "errorDescription": "Verifique a conexão ou as variáveis GITHUB_USERNAME e GITHUB_TOKEN.",
     "cacheNote": "Dados atualizados a cada 24 horas."
+  },
+  "status": {
+    "eyebrow": "Operações",
+    "title": "Status do Portfólio",
+    "metaTitle": "Status | Viviane Aguiar Silva Simões",
+    "description": "Saúde operacional do portfólio, integrações e serviços em tempo real.",
+    "overallTitle": "Status geral",
+    "environment": "Ambiente",
+    "version": "Versão",
+    "lastDeploy": "Último deploy",
+    "healthEndpoint": "Health check",
+    "notAvailable": "N/A",
+    "servicesTitle": "Serviços",
+    "states": {
+      "operational": "Operacional",
+      "degraded": "Degradado",
+      "not_configured": "Não configurado"
+    },
+    "checks": {
+      "github": "GitHub",
+      "blog": "Blog",
+      "database": "Banco de Dados",
+      "analytics": "Analytics"
+    }
+  },
+  "architecture": {
+    "eyebrow": "Arquitetura",
+    "title": "Arquitetura do Portfólio",
+    "metaTitle": "Arquitetura | Viviane Aguiar Silva Simões",
+    "description": "Visão da stack, fluxo de dados e decisões arquiteturais do portfolio-viviane.",
+    "flowTitle": "Fluxo da plataforma",
+    "decisionsTitle": "Decisões arquiteturais"
+  },
+  "security": {
+    "eyebrow": "Segurança",
+    "title": "Práticas de Segurança",
+    "metaTitle": "Segurança | Viviane Aguiar Silva Simões",
+    "description": "Headers, validação, OWASP e práticas de segurança aplicadas no portfólio."
+  },
+  "engineeringPage": {
+    "eyebrow": "Engenharia",
+    "title": "Princípios de Engenharia",
+    "metaTitle": "Engenharia | Viviane Aguiar Silva Simões",
+    "description": "Como SOLID, Clean Architecture, DDD, testes e CI/CD são aplicados nos projetos.",
+    "principlesTitle": "Princípios",
+    "applicationsTitle": "Como aplico nos projetos",
+    "categoriesTitle": "Categorias"
   }
 }

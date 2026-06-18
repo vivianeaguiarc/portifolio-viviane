@@ -39,8 +39,8 @@ const CAREER_TIMELINE_SOURCE = [
     id: "fullstack-projects-2025",
     year: "2025",
     title: {
-      "pt-BR": "Primeiros projetos Fullstack publicados",
-      "en-US": "First published Fullstack projects",
+      "pt-BR": "Projetos publicados",
+      "en-US": "Published projects",
     },
   },
   {
