@@ -17,7 +17,6 @@ const NAV_ITEMS = [
   { key: "projects", href: "/#projetos" },
   { key: "engineering", href: "/#engenharia" },
   { key: "education", href: "/#formacao" },
-  { key: "certifications", href: "/#certificacoes" },
   { key: "stack", href: "/#stack" },
   { key: "blog", href: "/blog" },
   { key: "github", href: "/github" },

@@ -164,9 +164,9 @@ createMovement(@Body() dto: CreateMovementDto) {
           },
         },
         {
-          heading: "Relação com Tirei de Letra",
+          heading: "Aplicação em novos produtos",
           paragraphs: [
-            "No Tirei de Letra, o modelo premium e marketplace de professores também exigirão isolamento por instituição e LGPD desde o design — lições do StockFlow serão reaproveitadas no monorepo EdTech.",
+            "Os aprendizados de isolamento por tenant e LGPD por design podem ser reaproveitados em futuros produtos SaaS e EdTech.",
           ],
         },
       ],

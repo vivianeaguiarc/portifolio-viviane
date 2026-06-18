@@ -1,11 +1,11 @@
 {
   "metadata": {
-    "siteTitle": "Desenvolvedora Fullstack",
-    "siteDescription": "Portfólio profissional de Viviane — Desenvolvedora Fullstack especializada em Next.js, TypeScript, arquitetura de software e soluções escaláveis.",
-    "ogImageAlt": "Viviane — Portfólio técnico",
+    "siteTitle": "Desenvolvedora Fullstack Júnior",
+    "siteDescription": "Portfólio de Viviane Aguiar Silva Simões — Desenvolvedora Fullstack Júnior com foco em backend, TypeScript, Node.js, Java, Spring Boot, APIs REST e arquitetura de software.",
+    "ogImageAlt": "Viviane Aguiar Silva Simões — Portfólio técnico",
     "portfolioName": "Portfólio",
-    "recruiterTitle": "Viviane Aguiar Silva Simões | Desenvolvedora Fullstack",
-    "recruiterDescription": "Portfólio profissional com projetos Fullstack, backend Node.js, TypeScript, arquitetura de software e engenharia de software.",
+    "recruiterTitle": "Viviane Aguiar Silva Simões | Desenvolvedora Fullstack Júnior",
+    "recruiterDescription": "Portfólio de Viviane Aguiar Silva Simões com projetos Fullstack, backend Node.js, TypeScript, Java, Spring Boot, APIs REST e arquitetura de software.",
     "blogTitle": "Blog Técnico",
     "blogDescription": "Artigos sobre arquitetura, segurança, backend e qualidade de código baseados em projetos reais.",
     "caseStudy": "Case Técnico",
@@ -19,7 +19,6 @@
     "projects": "Projetos",
     "engineering": "Engenharia",
     "education": "Formação",
-    "certifications": "Certificações",
     "stack": "Stack",
     "blog": "Blog",
     "github": "GitHub",
@@ -191,9 +190,9 @@
     "metricsAria": "Indicadores do portfólio",
     "metrics": {
       "projects": "Projetos publicados",
+      "deploys": "Projetos com deploy",
       "articles": "Artigos técnicos",
-      "certifications": "Certificações",
-      "years": "Anos estudando tecnologia"
+      "studyAreas": "Áreas de estudo"
     },
     "skillsEyebrow": "Competências",
     "skillsTitle": "Stack e arquitetura",

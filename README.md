@@ -9,21 +9,29 @@ Portfólio profissional bilíngue (pt-BR / en-US) para apresentação técnica, 
 
 ## Visão geral
 
-Plataforma completa de personal branding para desenvolvedora Fullstack/Backend, com foco em recrutadores e empresas de tecnologia — nacional e internacional.
+Plataforma completa de personal branding para **Viviane Aguiar Silva Simões** — Desenvolvedora Fullstack Júnior, com foco em recrutadores e empresas de tecnologia — nacional e internacional.
+
+### Formação acadêmica
+
+| Curso                                                                                        | Instituição    | Período           | Status       |
+| -------------------------------------------------------------------------------------------- | -------------- | ----------------- | ------------ |
+| Análise e Desenvolvimento de Sistemas                                                        | UNIASSELVI     | 02/2019 — 12/2023 | Concluído    |
+| Pós-graduação em Arquitetura e Desenvolvimento de Sistemas com Ênfase em Padrões de Projetos | GRAN Faculdade | 12/2023 — 04/2025 | Concluído    |
+| Engenharia de Software                                                                       | UNIASSELVI     | 08/2025 — 12/2027 | Em andamento |
 
 ### Funcionalidades
 
-| Área                      | Descrição                                                                    |
-| ------------------------- | ---------------------------------------------------------------------------- |
-| **Landing**               | Hero, sobre, projetos, social proof, formação, certificações, stack, contato |
-| **Case Studies**          | Páginas individuais por projeto com arquitetura e desafios                   |
-| **Blog técnico**          | Artigos com SEO, JSON-LD e rotas localizadas                                 |
-| **Recruiter Mode**        | Página otimizada para triagem rápida (< 2 min)                               |
-| **Internacionalização**   | pt-BR (padrão) e en-US com next-intl                                         |
-| **Páginas de lançamento** | Changelog, Now, Media Kit, Press Kit                                         |
-| **Tema**                  | Dark / Light mode com next-themes                                            |
-| **SEO**                   | Metadata, OG, Twitter Cards, sitemap, robots, JSON-LD                        |
-| **Analytics**             | Vercel Analytics + Speed Insights                                            |
+| Área                      | Descrição                                                     |
+| ------------------------- | ------------------------------------------------------------- |
+| **Landing**               | Hero, sobre, projetos, social proof, formação, stack, contato |
+| **Case Studies**          | Páginas individuais por projeto com arquitetura e desafios    |
+| **Blog técnico**          | Artigos com SEO, JSON-LD e rotas localizadas                  |
+| **Recruiter Mode**        | Página otimizada para triagem rápida (< 2 min)                |
+| **Internacionalização**   | pt-BR (padrão) e en-US com next-intl                          |
+| **Páginas de lançamento** | Changelog, Now, Media Kit, Press Kit                          |
+| **Tema**                  | Dark / Light mode com next-themes                             |
+| **SEO**                   | Metadata, OG, Twitter Cards, sitemap, robots, JSON-LD         |
+| **Analytics**             | Vercel Analytics + Speed Insights                             |
 
 ## Tecnologias
 
@@ -99,7 +107,7 @@ src/
 
 Rota `/recruiter` com:
 
-- Métricas do portfólio (projetos, certificações)
+- Métricas do portfólio (projetos, deploys, artigos, áreas de estudo)
 - Resumo rápido (formação, stack, links)
 - Timeline profissional
 - Download de currículo

@@ -411,7 +411,7 @@ export const PROJECTS_EN: Project[] = [
       "Optimized static build",
     ],
     problem:
-      "Recruiters and tech leads evaluate candidates in minutes. A portfolio was needed that communicates technical seniority, real projects, and engineering best practices clearly and performantly.",
+      "Recruiters and tech leads evaluate candidates in minutes. A portfolio was needed that clearly and performantly communicates real projects, technical decisions, and engineering best practices.",
     businessRules: [
       "Content oriented to technical decisions, not just a technology list.",
       "Each project must have a case study accessible via its own URL.",

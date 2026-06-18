@@ -164,9 +164,9 @@ createMovement(@Body() dto: CreateMovementDto) {
           },
         },
         {
-          heading: "Connection to Tirei de Letra",
+          heading: "Applying to future products",
           paragraphs: [
-            "In Tirei de Letra, the premium model and teacher marketplace will also require isolation by institution and LGPD by design — StockFlow lessons will be reused in the EdTech monorepo.",
+            "Lessons on tenant isolation and LGPD by design can be reused in future SaaS and EdTech products.",
           ],
         },
       ],

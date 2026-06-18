@@ -1,11 +1,11 @@
 import { getBlogPosts } from "@/data/blog";
-import { getCertifications } from "@/data/certifications";
+import { getCurrentLearningTopics } from "@/data/current-learning";
 import { getEducation } from "@/data/education";
 import { getProfile } from "@/data/profile";
 import { getProjects } from "@/data/projects";
 import type { Locale } from "@/i18n/routing";
 import { pickLocalized, type Localized } from "@/lib/localized";
-import type { Certification, Education, Project } from "@/types";
+import type { Education, Project } from "@/types";
 
 const RECRUITER_PROFILE_SOURCE = {
   fullName: {
@@ -13,8 +13,8 @@ const RECRUITER_PROFILE_SOURCE = {
     "en-US": "Viviane Aguiar Silva Simões",
   },
   role: {
-    "pt-BR": "Desenvolvedora Fullstack",
-    "en-US": "Fullstack Developer",
+    "pt-BR": "Desenvolvedora Fullstack Júnior",
+    "en-US": "Junior Fullstack Developer",
   },
   location: {
     "pt-BR": "Juiz de Fora, MG — Brasil",
@@ -24,14 +24,14 @@ const RECRUITER_PROFILE_SOURCE = {
 
 const RECRUITER_METADATA_SOURCE = {
   title: {
-    "pt-BR": "Viviane Aguiar Silva Simões | Desenvolvedora Fullstack",
-    "en-US": "Viviane Aguiar Silva Simões | Fullstack Developer",
+    "pt-BR": "Viviane Aguiar Silva Simões | Desenvolvedora Fullstack Júnior",
+    "en-US": "Viviane Aguiar Silva Simões | Junior Fullstack Developer",
   },
   description: {
     "pt-BR":
-      "Portfólio profissional com projetos Fullstack, backend Node.js, TypeScript, arquitetura de software e engenharia de software.",
+      "Portfólio de Viviane Aguiar Silva Simões — Desenvolvedora Fullstack Júnior com foco em backend, TypeScript, Node.js, Java, Spring Boot, APIs REST e arquitetura de software.",
     "en-US":
-      "Professional portfolio featuring Fullstack projects, Node.js backend, TypeScript, software architecture, and software engineering.",
+      "Portfolio of Viviane Aguiar Silva Simões — Junior Fullstack Developer focused on backend, TypeScript, Node.js, Java, Spring Boot, REST APIs, and software architecture.",
   },
 } as const satisfies Record<string, Localized<string>>;
 
@@ -107,14 +107,7 @@ const RECRUITER_SKILL_CATEGORIES_SOURCE = [
 export const FEATURED_PROJECT_SLUGS = [
   "stockflow",
   "ticket-sales",
-  "tirei-de-letra",
-] as const;
-
-export const RECRUITER_CERTIFICATION_IDS = [
-  "aws-cloud-practitioner",
-  "docker-kubernetes",
-  "typescript-advanced",
-  "nodejs-microservices",
+  "portfolio-viviane",
 ] as const;
 
 const AVAILABILITY_TITLE: Localized<string> = {
@@ -124,8 +117,8 @@ const AVAILABILITY_TITLE: Localized<string> = {
 
 const AVAILABILITY_ROLES: Localized<string[]> = {
   "pt-BR": [
-    "Backend Júnior",
-    "Fullstack Júnior",
+    "Desenvolvedora Backend Júnior",
+    "Desenvolvedora Fullstack Júnior",
     "Estágio em Desenvolvimento",
     "Analista de Sistemas Júnior",
   ],
@@ -139,7 +132,7 @@ const AVAILABILITY_ROLES: Localized<string[]> = {
 
 const RECRUITER_EDUCATION_ORDER = [
   "ads",
-  "pos-arquitetura-java",
+  "pos-padroes-projetos",
   "engenharia-software",
 ] as const;
 
@@ -177,23 +170,19 @@ export function getAvailability(locale: Locale) {
 }
 
 export function getPortfolioMetrics(locale: Locale) {
+  const projects = getProjects(locale);
+
   return {
-    projectsPublished: getProjects(locale).length,
+    projectsPublished: projects.length,
+    projectsWithDeploy: projects.filter((project) => project.deployUrl).length,
     technicalArticles: getBlogPosts(locale).length,
-    certifications: getCertifications(locale).length,
-    yearsInTech: new Date().getFullYear() - 2020,
+    studyAreas: getCurrentLearningTopics(locale).length,
   };
 }
 
 export function getFeaturedProjects(locale: Locale): Project[] {
   return getProjects(locale).filter((project) =>
     (FEATURED_PROJECT_SLUGS as readonly string[]).includes(project.slug),
-  );
-}
-
-export function getRecruiterCertifications(locale: Locale): Certification[] {
-  return getCertifications(locale).filter((cert) =>
-    (RECRUITER_CERTIFICATION_IDS as readonly string[]).includes(cert.id),
   );
 }
 

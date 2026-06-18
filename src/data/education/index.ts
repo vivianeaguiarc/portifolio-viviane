@@ -4,66 +4,68 @@ import type { Education } from "@/types";
 
 const EDUCATION_SOURCE = [
   {
-    id: "engenharia-software",
-    degree: {
-      "pt-BR": "Engenharia de Software",
-      "en-US": "Software Engineering",
-    },
-    institution: {
-      "pt-BR": "Universidade",
-      "en-US": "University",
-    },
-    period: {
-      "pt-BR": "2022 — Presente",
-      "en-US": "2022 — Present",
-    },
-    description: {
-      "pt-BR":
-        "Formação em engenharia de software com ênfase em arquitetura de sistemas, qualidade de software e metodologias ágeis.",
-      "en-US":
-        "Software engineering degree with emphasis on system architecture, software quality, and agile methodologies.",
-    },
-  },
-  {
-    id: "pos-arquitetura-java",
-    degree: {
-      "pt-BR": "Pós-graduação em Arquitetura de Sistemas e Padrões Java",
-      "en-US": "Postgraduate in System Architecture and Java Patterns",
-    },
-    institution: {
-      "pt-BR": "Instituição de Ensino",
-      "en-US": "Educational Institution",
-    },
-    period: {
-      "pt-BR": "2023 — 2024",
-      "en-US": "2023 — 2024",
-    },
-    description: {
-      "pt-BR":
-        "Especialização em padrões de projeto, arquitetura distribuída, microsserviços e boas práticas com ecossistema Java.",
-      "en-US":
-        "Specialization in design patterns, distributed architecture, microservices, and best practices with the Java ecosystem.",
-    },
-  },
-  {
     id: "ads",
     degree: {
       "pt-BR": "Análise e Desenvolvimento de Sistemas",
       "en-US": "Systems Analysis and Development",
     },
     institution: {
-      "pt-BR": "Faculdade",
-      "en-US": "College",
+      "pt-BR": "UNIASSELVI",
+      "en-US": "UNIASSELVI",
     },
     period: {
-      "pt-BR": "2019 — 2021",
-      "en-US": "2019 — 2021",
+      "pt-BR": "02/2019 — 12/2023",
+      "en-US": "02/2019 — 12/2023",
     },
     description: {
       "pt-BR":
-        "Base sólida em lógica de programação, estruturas de dados, banco de dados e desenvolvimento web e mobile.",
+        "Concluído. Base em lógica de programação, estruturas de dados, banco de dados e desenvolvimento web.",
       "en-US":
-        "Strong foundation in programming logic, data structures, databases, and web and mobile development.",
+        "Completed. Foundation in programming logic, data structures, databases, and web development.",
+    },
+  },
+  {
+    id: "pos-padroes-projetos",
+    degree: {
+      "pt-BR":
+        "Pós-graduação em Arquitetura e Desenvolvimento de Sistemas com Ênfase em Padrões de Projetos",
+      "en-US":
+        "Postgraduate in Systems Architecture and Development with Design Patterns Emphasis",
+    },
+    institution: {
+      "pt-BR": "GRAN Faculdade",
+      "en-US": "GRAN Faculdade",
+    },
+    period: {
+      "pt-BR": "12/2023 — 04/2025",
+      "en-US": "12/2023 — 04/2025",
+    },
+    description: {
+      "pt-BR":
+        "Concluído. Padrões de projeto, arquitetura de software e boas práticas de engenharia.",
+      "en-US":
+        "Completed. Design patterns, software architecture, and engineering best practices.",
+    },
+  },
+  {
+    id: "engenharia-software",
+    degree: {
+      "pt-BR": "Engenharia de Software",
+      "en-US": "Software Engineering",
+    },
+    institution: {
+      "pt-BR": "UNIASSELVI",
+      "en-US": "UNIASSELVI",
+    },
+    period: {
+      "pt-BR": "08/2025 — 12/2027",
+      "en-US": "08/2025 — 12/2027",
+    },
+    description: {
+      "pt-BR":
+        "Em andamento. Aprofundamento em arquitetura, qualidade de software e engenharia de sistemas.",
+      "en-US":
+        "In progress. Deepening knowledge in architecture, software quality, and systems engineering.",
     },
   },
 ] as const satisfies readonly {

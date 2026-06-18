@@ -1,11 +1,11 @@
 {
   "metadata": {
-    "siteTitle": "Fullstack Developer",
-    "siteDescription": "Professional portfolio of Viviane — Fullstack Developer specialized in Next.js, TypeScript, software architecture, and scalable solutions.",
-    "ogImageAlt": "Viviane — Technical portfolio",
+    "siteTitle": "Junior Fullstack Developer",
+    "siteDescription": "Portfolio of Viviane Aguiar Silva Simões — Junior Fullstack Developer focused on backend, TypeScript, Node.js, Java, Spring Boot, REST APIs, and software architecture.",
+    "ogImageAlt": "Viviane Aguiar Silva Simões — Technical portfolio",
     "portfolioName": "Portfolio",
-    "recruiterTitle": "Viviane Aguiar Silva Simões | Fullstack Developer",
-    "recruiterDescription": "Professional portfolio with Fullstack projects, Node.js backend, TypeScript, software architecture, and software engineering.",
+    "recruiterTitle": "Viviane Aguiar Silva Simões | Junior Fullstack Developer",
+    "recruiterDescription": "Portfolio of Viviane Aguiar Silva Simões with Fullstack projects, Node.js backend, TypeScript, Java, Spring Boot, REST APIs, and software architecture.",
     "blogTitle": "Technical Blog",
     "blogDescription": "Articles on architecture, security, backend, and code quality based on real projects.",
     "caseStudy": "Technical Case Study",
@@ -19,7 +19,6 @@
     "projects": "Projects",
     "engineering": "Engineering",
     "education": "Education",
-    "certifications": "Certifications",
     "stack": "Stack",
     "blog": "Blog",
     "github": "GitHub",
@@ -191,9 +190,9 @@
     "metricsAria": "Portfolio indicators",
     "metrics": {
       "projects": "Published projects",
+      "deploys": "Projects with deploy",
       "articles": "Technical articles",
-      "certifications": "Certifications",
-      "years": "Years studying technology"
+      "studyAreas": "Study areas"
     },
     "skillsEyebrow": "Skills",
     "skillsTitle": "Stack and architecture",

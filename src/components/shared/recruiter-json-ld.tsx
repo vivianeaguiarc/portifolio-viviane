@@ -1,10 +1,6 @@
 import { getTranslations } from "next-intl/server";
 import { SITE_CONFIG, SOCIAL_LINKS } from "@/constants/site";
-import {
-  getRecruiterCertifications,
-  getRecruiterEducation,
-  getRecruiterProfile,
-} from "@/data/recruiter";
+import { getRecruiterEducation, getRecruiterProfile } from "@/data/recruiter";
 import { getPathname, type Locale } from "@/i18n/routing";
 
 interface RecruiterJsonLdProps {
@@ -15,7 +11,6 @@ export async function RecruiterJsonLd({ locale }: RecruiterJsonLdProps) {
   const t = await getTranslations({ locale, namespace: "metadata" });
   const recruiterProfile = getRecruiterProfile(locale);
   const education = getRecruiterEducation(locale);
-  const certifications = getRecruiterCertifications(locale);
   const recruiterPath = getPathname({ locale, href: "/recruiter" });
   const recruiterUrl = `${SITE_CONFIG.url}${recruiterPath}`;
 
@@ -38,15 +33,6 @@ export async function RecruiterJsonLd({ locale }: RecruiterJsonLdProps) {
       "@type": "EducationalOrganization",
       name: item.institution,
       description: item.degree,
-    })),
-    hasCredential: certifications.map((cert) => ({
-      "@type": "EducationalOccupationalCredential",
-      name: cert.name,
-      credentialCategory: cert.category,
-      recognizedBy: {
-        "@type": "Organization",
-        name: cert.institution,
-      },
     })),
   };
 

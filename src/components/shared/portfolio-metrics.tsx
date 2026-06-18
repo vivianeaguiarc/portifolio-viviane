@@ -1,6 +1,6 @@
 "use client";
 
-import { BookOpen, Briefcase, Calendar, Medal } from "lucide-react";
+import { BookOpen, Briefcase, Layers, Rocket } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import { useMemo } from "react";
 import { Card, CardContent } from "@/components/ui/card";
@@ -14,19 +14,19 @@ const METRIC_ITEMS = [
     icon: Briefcase,
   },
   {
+    key: "projectsWithDeploy",
+    translationKey: "deploys",
+    icon: Rocket,
+  },
+  {
     key: "technicalArticles",
     translationKey: "articles",
     icon: BookOpen,
   },
   {
-    key: "certifications",
-    translationKey: "certifications",
-    icon: Medal,
-  },
-  {
-    key: "yearsInTech",
-    translationKey: "years",
-    icon: Calendar,
+    key: "studyAreas",
+    translationKey: "studyAreas",
+    icon: Layers,
   },
 ] as const;
 

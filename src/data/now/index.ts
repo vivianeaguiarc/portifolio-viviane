@@ -2,8 +2,26 @@ import type { Locale } from "@/i18n/routing";
 
 export const NOW_PAGE_SOURCE = {
   studying: {
-    "pt-BR": ["Java", "Spring Boot", "Arquitetura Hexagonal", "DDD", "Cloud"],
-    "en-US": ["Java", "Spring Boot", "Hexagonal Architecture", "DDD", "Cloud"],
+    "pt-BR": [
+      "Java",
+      "Spring Boot",
+      "Arquitetura Hexagonal",
+      "DDD",
+      "Segurança de APIs",
+      "Docker",
+      "Cloud Computing",
+      "Engenharia de Software",
+    ],
+    "en-US": [
+      "Java",
+      "Spring Boot",
+      "Hexagonal Architecture",
+      "DDD",
+      "API Security",
+      "Docker",
+      "Cloud Computing",
+      "Software Engineering",
+    ],
   },
   currentProjects: {
     "pt-BR": [
@@ -33,12 +51,16 @@ export const NOW_PAGE_SOURCE = {
   },
   goals: {
     "pt-BR": [
-      "Primeira oportunidade como Desenvolvedora Fullstack",
-      "Primeira oportunidade como Desenvolvedora Backend",
+      "Desenvolvedora Backend Júnior",
+      "Desenvolvedora Fullstack Júnior",
+      "Estágio em Desenvolvimento",
+      "Analista de Sistemas Júnior",
     ],
     "en-US": [
-      "First opportunity as a Fullstack Developer",
-      "First opportunity as a Backend Developer",
+      "Junior Backend Developer",
+      "Junior Fullstack Developer",
+      "Development Internship",
+      "Junior Systems Analyst",
     ],
   },
   updatedAt: {

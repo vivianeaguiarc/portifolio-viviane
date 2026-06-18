@@ -411,7 +411,7 @@ export const PROJECTS: Project[] = [
       "Build estático otimizado",
     ],
     problem:
-      "Recrutadores e tech leads avaliam candidatos em poucos minutos. Era necessário um portfólio que comunicasse senioridade técnica, projetos reais e boas práticas de engenharia de forma clara e performática.",
+      "Recrutadores e tech leads avaliam candidatos em poucos minutos. Era necessário um portfólio que comunicasse projetos reais, decisões técnicas e boas práticas de engenharia de forma clara e performática.",
     businessRules: [
       "Conteúdo orientado a decisões técnicas, não apenas lista de tecnologias.",
       "Cada projeto deve ter case study acessível por URL própria.",

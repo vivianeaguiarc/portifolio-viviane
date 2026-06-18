@@ -5,25 +5,25 @@ import { SITE_CONFIG, SOCIAL_LINKS } from "@/constants/site";
 const MEDIA_KIT_SOURCE = {
   shortBio: {
     "pt-BR":
-      "Desenvolvedora Fullstack focada em arquitetura de software, APIs escaláveis e entrega de valor com Next.js, TypeScript e Node.js.",
+      "Desenvolvedora Fullstack Júnior em evolução, com foco em backend, TypeScript, Node.js, APIs REST e arquitetura de software.",
     "en-US":
-      "Fullstack Developer focused on software architecture, scalable APIs, and value-driven delivery with Next.js, TypeScript, and Node.js.",
+      "Junior Fullstack Developer in growth, focused on backend, TypeScript, Node.js, REST APIs, and software architecture.",
   },
   mediumBio: {
     "pt-BR":
-      "Viviane é Desenvolvedora Fullstack com experiência em construção de aplicações web modernas, APIs RESTful e arquitetura de software. Atua com Next.js, TypeScript, Node.js, PostgreSQL e boas práticas de engenharia como Clean Code, testes automatizados e CI/CD. Seu portfólio reúne cases reais como StockFlow, Ticket Sales e Finance App.",
+      "Viviane Aguiar Silva Simões é Desenvolvedora Fullstack Júnior que constrói aplicações web e APIs com Next.js, TypeScript, Node.js e PostgreSQL. Seu portfólio reúne cases reais como StockFlow, Ticket Sales, Finance App e este portfolio técnico com SEO, i18n e modo recrutador.",
     "en-US":
-      "Viviane is a Fullstack Developer with experience building modern web applications, RESTful APIs, and software architecture. She works with Next.js, TypeScript, Node.js, PostgreSQL, and engineering best practices such as Clean Code, automated testing, and CI/CD. Her portfolio includes real cases such as StockFlow, Ticket Sales, and Finance App.",
+      "Viviane Aguiar Silva Simões is a Junior Fullstack Developer building web applications and APIs with Next.js, TypeScript, Node.js, and PostgreSQL. Her portfolio includes real cases such as StockFlow, Ticket Sales, Finance App, and this technical portfolio with SEO, i18n, and recruiter mode.",
   },
   longBio: {
     "pt-BR":
-      "Viviane Aguiar Silva Simões é Desenvolvedora Fullstack em formação contínua em Engenharia de Software. Combina base acadêmica sólida com projetos práticos que demonstram domínio de backend, frontend, segurança e arquitetura. Já desenvolveu plataformas SaaS multi-tenant, APIs de alta concorrência e portfólio técnico com SEO avançado, internacionalização e modo dedicado para recrutadores. Busca sua primeira oportunidade como Desenvolvedora Fullstack ou Backend para contribuir em times que valorizam qualidade, aprendizado e impacto.",
+      "Viviane Aguiar Silva Simões é Desenvolvedora Fullstack Júnior em formação em Engenharia de Software na UNIASSELVI, com graduação em ADS e pós-graduação em Arquitetura e Padrões de Projetos pela GRAN Faculdade. Desenvolve projetos práticos que demonstram backend, frontend, segurança e arquitetura — incluindo plataforma SaaS multi-tenant, API de venda de ingressos com concorrência e portfólio técnico bilíngue. Busca oportunidade como Desenvolvedora Backend ou Fullstack Júnior, estágio ou Analista de Sistemas Júnior.",
     "en-US":
-      "Viviane Aguiar Silva Simões is a Fullstack Developer continuously studying Software Engineering. She combines a strong academic foundation with hands-on projects demonstrating backend, frontend, security, and architecture skills. She has built multi-tenant SaaS platforms, high-concurrency APIs, and a technical portfolio with advanced SEO, internationalization, and a dedicated recruiter mode. She is seeking her first opportunity as a Fullstack or Backend Developer to contribute to teams that value quality, learning, and impact.",
+      "Viviane Aguiar Silva Simões is a Junior Fullstack Developer studying Software Engineering at UNIASSELVI, with a degree in Systems Analysis and Development and a postgraduate degree in Architecture and Design Patterns from GRAN Faculdade. She builds hands-on projects demonstrating backend, frontend, security, and architecture — including a multi-tenant SaaS platform, a high-concurrency ticket sales API, and a bilingual technical portfolio. She is seeking opportunities as a Junior Backend or Fullstack Developer, internship, or Junior Systems Analyst.",
   },
   tagline: {
-    "pt-BR": "Desenvolvedora Fullstack · Arquitetura · APIs",
-    "en-US": "Fullstack Developer · Architecture · APIs",
+    "pt-BR": "Desenvolvedora Fullstack Júnior · Backend · APIs REST",
+    "en-US": "Junior Fullstack Developer · Backend · REST APIs",
   },
 } as const;
 
@@ -74,7 +74,11 @@ export function getPressKitContent(locale: Locale) {
     ],
   };
 
-  const featuredSlugs = ["stockflow", "ticket-sales"] as const;
+  const featuredSlugs = [
+    "stockflow",
+    "ticket-sales",
+    "portfolio-viviane",
+  ] as const;
 
   return {
     ...media,

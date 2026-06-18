@@ -74,7 +74,7 @@ export async function RecruiterQuickSummary({
                 {metrics.projectsPublished} {t("metrics.projects")}
               </li>
               <li>
-                {metrics.certifications} {t("metrics.certifications")}
+                {metrics.technicalArticles} {t("metrics.articles")}
               </li>
             </ul>
           </div>

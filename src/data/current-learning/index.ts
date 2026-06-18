@@ -59,13 +59,6 @@ const CURRENT_LEARNING_TOPICS_SOURCE = [
     },
   },
   {
-    id: "kubernetes",
-    name: {
-      "pt-BR": "Kubernetes",
-      "en-US": "Kubernetes",
-    },
-  },
-  {
     id: "software-engineering",
     name: {
       "pt-BR": "Engenharia de Software",

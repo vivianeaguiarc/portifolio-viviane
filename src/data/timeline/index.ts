@@ -4,43 +4,43 @@ import type { TimelineEvent } from "@/types";
 
 const CAREER_TIMELINE_SOURCE = [
   {
-    id: "ads-2020",
-    year: "2020",
+    id: "ads-start-2019",
+    year: "2019",
     title: {
-      "pt-BR": "Análise e Desenvolvimento de Sistemas",
-      "en-US": "Systems Analysis and Development",
+      "pt-BR": "Início em Análise e Desenvolvimento de Sistemas",
+      "en-US": "Systems Analysis and Development begins",
     },
   },
   {
     id: "ads-conclusion-2023",
     year: "2023",
     title: {
-      "pt-BR": "Conclusão ADS",
-      "en-US": "ADS Graduation",
-    },
-  },
-  {
-    id: "software-engineering-2024",
-    year: "2024",
-    title: {
-      "pt-BR": "Início Engenharia de Software",
-      "en-US": "Software Engineering Studies Begin",
+      "pt-BR": "Conclusão do ADS — UNIASSELVI",
+      "en-US": "ADS completed — UNIASSELVI",
     },
   },
   {
     id: "postgrad-2025",
     year: "2025",
     title: {
-      "pt-BR": "Pós-graduação em Arquitetura de Sistemas Java",
-      "en-US": "Postgraduate in Java System Architecture",
+      "pt-BR": "Pós-graduação em Arquitetura e Padrões de Projetos — GRAN",
+      "en-US": "Postgraduate in Architecture and Design Patterns — GRAN",
     },
   },
   {
-    id: "fullstack-2025",
+    id: "software-engineering-2025",
     year: "2025",
     title: {
-      "pt-BR": "Primeiros projetos Fullstack",
-      "en-US": "First Fullstack Projects",
+      "pt-BR": "Início em Engenharia de Software — UNIASSELVI",
+      "en-US": "Software Engineering studies begin — UNIASSELVI",
+    },
+  },
+  {
+    id: "fullstack-projects-2025",
+    year: "2025",
+    title: {
+      "pt-BR": "Primeiros projetos Fullstack publicados",
+      "en-US": "First published Fullstack projects",
     },
   },
   {
@@ -60,19 +60,11 @@ const CAREER_TIMELINE_SOURCE = [
     },
   },
   {
-    id: "tirei-de-letra-2026",
-    year: "2026",
-    title: {
-      "pt-BR": "Tirei de Letra",
-      "en-US": "Tirei de Letra",
-    },
-  },
-  {
     id: "portfolio-2026",
     year: "2026",
     title: {
-      "pt-BR": "Portfolio Profissional",
-      "en-US": "Professional Portfolio",
+      "pt-BR": "Portfolio Viviane",
+      "en-US": "Portfolio Viviane",
     },
   },
 ] as const satisfies readonly {

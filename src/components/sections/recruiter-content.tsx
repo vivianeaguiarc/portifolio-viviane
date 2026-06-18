@@ -1,6 +1,5 @@
 import {
   ArrowRight,
-  Award,
   Briefcase,
   FileDown,
   GraduationCap,
@@ -27,7 +26,6 @@ import { SOCIAL_LINKS } from "@/constants/site";
 import {
   getAvailability,
   getFeaturedProjects,
-  getRecruiterCertifications,
   getRecruiterEducation,
   getRecruiterProfile,
   getRecruiterSkillCategories,
@@ -46,7 +44,6 @@ export async function RecruiterContent({ locale }: RecruiterContentProps) {
   const availability = getAvailability(locale);
   const featuredProjects = getFeaturedProjects(locale);
   const education = getRecruiterEducation(locale);
-  const certifications = getRecruiterCertifications(locale);
 
   const contactLinks = [
     {
@@ -288,41 +285,6 @@ export async function RecruiterContent({ locale }: RecruiterContentProps) {
                   <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                     {item.description}
                   </p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-20" aria-labelledby="certifications-heading">
-        <div className="section-container">
-          <SectionHeading
-            eyebrow={t("certEyebrow")}
-            title={t("certTitle")}
-            description={t("certDescription")}
-            id="certifications-heading"
-          />
-
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {certifications.map((cert) => (
-              <Card key={cert.id} className="glass">
-                <CardHeader className="pb-3">
-                  <div className="mb-2 flex items-center justify-between">
-                    <Award className="h-5 w-5 text-primary" aria-hidden />
-                    <Badge variant="outline">{cert.year}</Badge>
-                  </div>
-                  <CardTitle className="text-base leading-snug">
-                    {cert.name}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-muted-foreground">
-                    {cert.institution}
-                  </p>
-                  <Badge variant="secondary" className="mt-3">
-                    {cert.category}
-                  </Badge>
                 </CardContent>
               </Card>
             ))}
