@@ -1,15 +1,24 @@
-export type ProjectStatus = "production" | "development" | "archived";
+export type ProjectStatus = "Concluído" | "Em desenvolvimento" | "Planejado";
+
+export interface ProjectMetric {
+  label: string;
+  value: string;
+}
 
 export interface Project {
-  id: string;
+  slug: string;
   name: string;
   description: string;
+  longDescription: string;
+  status: ProjectStatus;
   image: string;
+  githubUrl?: string;
+  deployUrl?: string;
   technologies: string[];
   concepts: string[];
-  githubUrl: string;
-  deployUrl: string;
-  status: ProjectStatus;
+  metrics: ProjectMetric[];
+  challenges: string[];
+  highlights: string[];
 }
 
 export interface Education {
