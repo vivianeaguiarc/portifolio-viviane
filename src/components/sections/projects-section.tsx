@@ -10,7 +10,7 @@ export function ProjectsSection() {
         <SectionHeading
           eyebrow="Projetos"
           title="Cases técnicos de engenharia"
-          description="Projetos reais com foco em arquitetura, decisões técnicas, métricas e desafios resolvidos em produção."
+          description="Projetos reais com foco em arquitetura e entrega de valor. Veja métricas, conceitos e desafios em cada case."
         />
 
         <div className="grid gap-6 lg:grid-cols-2 xl:grid-cols-3">

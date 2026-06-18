@@ -2,7 +2,6 @@ import { ArrowUpRight, ExternalLink } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { GithubIcon } from "@/components/shared/brand-icons";
-import { ProjectMetricGrid } from "@/components/shared/project-metric";
 import { TechBadgeGroup } from "@/components/shared/tech-badge";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -58,30 +57,11 @@ export function ProjectCard({ project, priority = false }: ProjectCardProps) {
         </CardDescription>
       </CardHeader>
 
-      <CardContent className="flex flex-1 flex-col gap-4">
+      <CardContent className="flex flex-1 flex-col pb-2">
         <TechBadgeGroup
           title="Tecnologias"
           items={project.technologies}
           variant="secondary"
-        />
-
-        <div>
-          <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-            Métricas
-          </p>
-          <ProjectMetricGrid metrics={project.metrics} />
-        </div>
-
-        <TechBadgeGroup
-          title="Conceitos"
-          items={project.concepts}
-          variant="outline"
-        />
-
-        <TechBadgeGroup
-          title="Desafios"
-          items={project.challenges}
-          variant="outline"
         />
       </CardContent>
 
