@@ -37,7 +37,23 @@
     "rights": "Todos os direitos reservados.",
     "madeWith": "Feito com",
     "and": "e",
-    "githubAria": "GitHub"
+    "githubAria": "GitHub",
+    "roadmapTitle": "Próximos passos",
+    "utilityNav": "Páginas do portfólio",
+    "roadmap": {
+      "aws": "AWS",
+      "kubernetes": "Kubernetes",
+      "springBoot": "Spring Boot",
+      "distributedArchitecture": "Arquitetura Distribuída",
+      "microservices": "Microsserviços"
+    },
+    "links": {
+      "changelog": "Changelog",
+      "now": "Now",
+      "mediaKit": "Media Kit",
+      "pressKit": "Press Kit",
+      "recruiter": "Recruiter Mode"
+    }
   },
   "theme": {
     "toggleAria": "Alternar tema",
@@ -198,7 +214,14 @@
     "contactTitle": "Vamos conversar?",
     "contactDescription": "Canais diretos para recrutadores e empresas.",
     "sendEmailAria": "Enviar e-mail",
-    "openChannelAria": "Abrir {channel}"
+    "openChannelAria": "Abrir {channel}",
+    "quickSummaryTitle": "Resumo rápido para recrutadores",
+    "quickSummaryHint": "Visão geral em menos de 2 minutos de leitura.",
+    "readingTime": "< 2 min",
+    "quickEducation": "Formação",
+    "quickStack": "Stack principal",
+    "quickNumbers": "Números",
+    "quickLinks": "Links rápidos"
   },
   "notFound": {
     "title": "Página não encontrada",
@@ -210,5 +233,46 @@
     "quality": "Qualidade",
     "security": "Segurança",
     "operations": "Operação"
+  },
+  "changelog": {
+    "eyebrow": "Evolução",
+    "title": "Release Notes",
+    "description": "Histórico de evolução do portfólio por versões e fases de desenvolvimento."
+  },
+  "now": {
+    "eyebrow": "Agora",
+    "title": "O que estou fazendo agora",
+    "description": "Foco atual de estudos, projetos e objetivos profissionais.",
+    "updatedAt": "Atualizado em",
+    "studyingTitle": "Atualmente estudando",
+    "projectsTitle": "Projetos atuais",
+    "goalsTitle": "Objetivos profissionais",
+    "inspiredBy": "Inspirado no movimento"
+  },
+  "mediaKit": {
+    "eyebrow": "Media Kit",
+    "title": "Kit de mídia",
+    "description": "Materiais oficiais para eventos, comunidades e compartilhamento profissional.",
+    "shortBio": "Bio curta",
+    "mediumBio": "Bio média",
+    "longBio": "Bio longa",
+    "officialLinks": "Links oficiais",
+    "photoAlt": "Foto profissional de {name}"
+  },
+  "pressKit": {
+    "eyebrow": "Press Kit",
+    "title": "Kit para recrutadores",
+    "description": "Recursos essenciais para avaliação rápida do perfil técnico.",
+    "resume": "Currículo PDF",
+    "recruiterPage": "Recruiter Mode",
+    "stackTitle": "Tecnologias dominadas",
+    "featuredProjects": "Principais projetos"
+  },
+  "socialProof": {
+    "eyebrow": "Destaques",
+    "title": "Principais projetos",
+    "description": "Cases que demonstram impacto técnico, arquitetura e resolução de desafios reais.",
+    "concepts": "Conceitos aplicados",
+    "challenges": "Desafios resolvidos"
   }
 }

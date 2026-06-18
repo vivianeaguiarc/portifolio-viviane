@@ -274,3 +274,12 @@ export function getRecruiterAlternatePaths(): Record<Locale, string> {
     "en-US": getPathname({ locale: "en-US", href: "/recruiter" }),
   };
 }
+
+export function getStaticPageAlternatePaths(
+  href: "/changelog" | "/now" | "/media-kit" | "/press-kit",
+): Record<Locale, string> {
+  return {
+    "pt-BR": getPathname({ locale: "pt-BR", href }),
+    "en-US": getPathname({ locale: "en-US", href }),
+  };
+}

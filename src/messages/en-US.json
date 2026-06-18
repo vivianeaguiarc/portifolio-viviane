@@ -37,7 +37,23 @@
     "rights": "All rights reserved.",
     "madeWith": "Made with",
     "and": "and",
-    "githubAria": "GitHub"
+    "githubAria": "GitHub",
+    "roadmapTitle": "Next steps",
+    "utilityNav": "Portfolio pages",
+    "roadmap": {
+      "aws": "AWS",
+      "kubernetes": "Kubernetes",
+      "springBoot": "Spring Boot",
+      "distributedArchitecture": "Distributed Architecture",
+      "microservices": "Microservices"
+    },
+    "links": {
+      "changelog": "Changelog",
+      "now": "Now",
+      "mediaKit": "Media Kit",
+      "pressKit": "Press Kit",
+      "recruiter": "Recruiter Mode"
+    }
   },
   "theme": {
     "toggleAria": "Toggle theme",
@@ -198,7 +214,14 @@
     "contactTitle": "Let's talk?",
     "contactDescription": "Direct channels for recruiters and companies.",
     "sendEmailAria": "Send email",
-    "openChannelAria": "Open {channel}"
+    "openChannelAria": "Open {channel}",
+    "quickSummaryTitle": "Quick summary for recruiters",
+    "quickSummaryHint": "Overview in under 2 minutes of reading.",
+    "readingTime": "< 2 min",
+    "quickEducation": "Education",
+    "quickStack": "Core stack",
+    "quickNumbers": "Numbers",
+    "quickLinks": "Quick links"
   },
   "notFound": {
     "title": "Page not found",
@@ -210,5 +233,46 @@
     "quality": "Quality",
     "security": "Security",
     "operations": "Operations"
+  },
+  "changelog": {
+    "eyebrow": "Evolution",
+    "title": "Release Notes",
+    "description": "Portfolio version history across development phases."
+  },
+  "now": {
+    "eyebrow": "Now",
+    "title": "What I'm doing now",
+    "description": "Current focus on learning, projects, and professional goals.",
+    "updatedAt": "Updated",
+    "studyingTitle": "Currently studying",
+    "projectsTitle": "Current projects",
+    "goalsTitle": "Professional goals",
+    "inspiredBy": "Inspired by the"
+  },
+  "mediaKit": {
+    "eyebrow": "Media Kit",
+    "title": "Media kit",
+    "description": "Official materials for events, communities, and professional sharing.",
+    "shortBio": "Short bio",
+    "mediumBio": "Medium bio",
+    "longBio": "Long bio",
+    "officialLinks": "Official links",
+    "photoAlt": "Professional photo of {name}"
+  },
+  "pressKit": {
+    "eyebrow": "Press Kit",
+    "title": "Recruiter kit",
+    "description": "Essential resources for quick technical profile evaluation.",
+    "resume": "Resume PDF",
+    "recruiterPage": "Recruiter Mode",
+    "stackTitle": "Core technologies",
+    "featuredProjects": "Featured projects"
+  },
+  "socialProof": {
+    "eyebrow": "Highlights",
+    "title": "Featured projects",
+    "description": "Cases demonstrating technical impact, architecture, and real-world challenges solved.",
+    "concepts": "Concepts applied",
+    "challenges": "Challenges solved"
   }
 }

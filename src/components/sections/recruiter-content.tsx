@@ -16,6 +16,7 @@ import {
 import { NavigationLink } from "@/components/shared/navigation-link";
 import { PortfolioMetrics } from "@/components/shared/portfolio-metrics";
 import { ProfilePhoto } from "@/components/shared/profile-photo";
+import { RecruiterQuickSummary } from "@/components/shared/recruiter-quick-summary";
 import { SectionHeading } from "@/components/shared/section-heading";
 import { TechBadgeGroup } from "@/components/shared/tech-badge";
 import { Badge } from "@/components/ui/badge";
@@ -159,8 +160,9 @@ export async function RecruiterContent({ locale }: RecruiterContentProps) {
             </div>
           </div>
 
-          <div className="mt-16">
+          <div className="mt-16 space-y-8">
             <PortfolioMetrics />
+            <RecruiterQuickSummary locale={locale} />
           </div>
         </div>
       </section>

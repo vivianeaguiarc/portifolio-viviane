@@ -5,6 +5,7 @@ import { ContactSection } from "@/components/sections/contact-section";
 import { EducationSection } from "@/components/sections/education-section";
 import { HeroSection } from "@/components/sections/hero-section";
 import { ProjectsSection } from "@/components/sections/projects-section";
+import { SocialProofSection } from "@/components/sections/social-proof-section";
 import { SoftwareEngineeringSection } from "@/components/sections/software-engineering-section";
 import { StackSection } from "@/components/sections/stack-section";
 import { setRequestLocale } from "next-intl/server";
@@ -27,6 +28,7 @@ export default async function HomePage({ params }: HomePageProps) {
       <HeroSection />
       <AboutSection locale={locale as Locale} />
       <ProjectsSection locale={locale as Locale} />
+      <SocialProofSection locale={locale as Locale} />
       <SoftwareEngineeringSection locale={locale as Locale} />
       <EducationSection locale={locale as Locale} />
       <CertificationsSection locale={locale as Locale} />

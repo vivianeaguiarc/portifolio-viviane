@@ -9,8 +9,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   for (const locale of locales) {
     const homePath = getPathname({ locale, href: "/" });
-    const blogPath = getPathname({ locale, href: "/blog" });
-    const recruiterPath = getPathname({ locale, href: "/recruiter" });
 
     const alternateLanguages = Object.fromEntries(
       locales.map((altLocale) => [
@@ -27,35 +25,31 @@ export default function sitemap(): MetadataRoute.Sitemap {
       alternates: { languages: alternateLanguages },
     });
 
-    entries.push({
-      url: `${SITE_CONFIG.url}${blogPath}`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.9,
-      alternates: {
-        languages: Object.fromEntries(
-          locales.map((altLocale) => [
-            altLocale,
-            `${SITE_CONFIG.url}${getPathname({ locale: altLocale, href: "/blog" })}`,
-          ]),
-        ),
-      },
-    });
+    const staticPages = [
+      "/blog",
+      "/recruiter",
+      "/changelog",
+      "/now",
+      "/media-kit",
+      "/press-kit",
+    ] as const;
 
-    entries.push({
-      url: `${SITE_CONFIG.url}${recruiterPath}`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.95,
-      alternates: {
-        languages: Object.fromEntries(
-          locales.map((altLocale) => [
-            altLocale,
-            `${SITE_CONFIG.url}${getPathname({ locale: altLocale, href: "/recruiter" })}`,
-          ]),
-        ),
-      },
-    });
+    for (const page of staticPages) {
+      entries.push({
+        url: `${SITE_CONFIG.url}${getPathname({ locale, href: page })}`,
+        lastModified: new Date(),
+        changeFrequency: page === "/blog" ? "weekly" : "monthly",
+        priority: page === "/recruiter" ? 0.95 : page === "/blog" ? 0.9 : 0.85,
+        alternates: {
+          languages: Object.fromEntries(
+            locales.map((altLocale) => [
+              altLocale,
+              `${SITE_CONFIG.url}${getPathname({ locale: altLocale as Locale, href: page })}`,
+            ]),
+          ),
+        },
+      });
+    }
 
     for (const slug of getAllProjectSlugs()) {
       const projectPath = getPathname({
