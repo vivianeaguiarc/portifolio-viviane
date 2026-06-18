@@ -36,9 +36,11 @@ export function TechBadgeGroup({
 }: TechBadgeGroupProps) {
   return (
     <div className={className}>
-      <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-        {title}
-      </p>
+      {title && (
+        <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+          {title}
+        </p>
+      )}
       <ul className="flex flex-wrap gap-1.5" role="list">
         {items.map((item) => (
           <li key={item}>

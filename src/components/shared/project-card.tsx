@@ -14,6 +14,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { cn } from "@/lib/utils";
 import type { Project, ProjectStatus } from "@/types";
 
 const statusConfig: Record<
@@ -32,6 +33,7 @@ interface ProjectCardProps {
 
 export function ProjectCard({ project, priority = false }: ProjectCardProps) {
   const status = statusConfig[project.status];
+  const hasExternalLinks = Boolean(project.githubUrl || project.deployUrl);
 
   return (
     <Card className="group flex flex-col overflow-hidden transition-shadow hover:shadow-lg">
@@ -83,47 +85,53 @@ export function ProjectCard({ project, priority = false }: ProjectCardProps) {
         />
       </CardContent>
 
-      <CardFooter className="flex-col gap-2 sm:flex-row">
-        {project.githubUrl && (
-          <Button
-            variant="outline"
-            size="sm"
-            asChild
-            className="w-full sm:flex-1"
+      <CardFooter className="flex flex-col gap-2 border-t bg-muted/20 p-4 sm:p-6">
+        {hasExternalLinks && (
+          <div
+            className={cn(
+              "grid w-full gap-2",
+              project.githubUrl && project.deployUrl
+                ? "grid-cols-2"
+                : "grid-cols-1",
+            )}
           >
-            <Link
-              href={project.githubUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`GitHub do projeto ${project.name}`}
-            >
-              <GithubIcon className="h-4 w-4" />
-              GitHub
-            </Link>
-          </Button>
+            {project.githubUrl && (
+              <Button variant="outline" size="sm" asChild className="w-full">
+                <Link
+                  href={project.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`GitHub do projeto ${project.name}`}
+                >
+                  <GithubIcon className="h-4 w-4 shrink-0" />
+                  <span className="truncate">GitHub</span>
+                </Link>
+              </Button>
+            )}
+
+            {project.deployUrl && (
+              <Button size="sm" asChild className="w-full">
+                <Link
+                  href={project.deployUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Deploy do projeto ${project.name}`}
+                >
+                  <ExternalLink className="h-4 w-4 shrink-0" />
+                  <span className="truncate">Deploy</span>
+                </Link>
+              </Button>
+            )}
+          </div>
         )}
 
-        {project.deployUrl && (
-          <Button size="sm" asChild className="w-full sm:flex-1">
-            <Link
-              href={project.deployUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`Deploy do projeto ${project.name}`}
-            >
-              <ExternalLink className="h-4 w-4" />
-              Deploy
-            </Link>
-          </Button>
-        )}
-
-        <Button variant="ghost" size="sm" asChild className="w-full sm:flex-1">
+        <Button variant="secondary" size="sm" asChild className="w-full">
           <Link
             href={`/projetos/${project.slug}`}
             aria-label={`Ver detalhes do projeto ${project.name}`}
           >
-            Ver detalhes
-            <ArrowUpRight className="h-4 w-4" />
+            <span>Ver detalhes</span>
+            <ArrowUpRight className="h-4 w-4 shrink-0" />
           </Link>
         </Button>
       </CardFooter>

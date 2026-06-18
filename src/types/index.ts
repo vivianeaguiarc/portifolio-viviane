@@ -5,6 +5,17 @@ export interface ProjectMetric {
   value: string;
 }
 
+export interface ProjectArchitecture {
+  title: string;
+  description: string;
+  flow: string[];
+}
+
+export interface ProjectTechnicalDecision {
+  title: string;
+  description: string;
+}
+
 export interface Project {
   slug: string;
   name: string;
@@ -19,6 +30,12 @@ export interface Project {
   metrics: ProjectMetric[];
   challenges: string[];
   highlights: string[];
+  problem: string;
+  businessRules: string[];
+  architecture: ProjectArchitecture;
+  technicalDecisions: ProjectTechnicalDecision[];
+  learnings: string[];
+  roadmap: string[];
 }
 
 export interface Education {
