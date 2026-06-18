@@ -81,3 +81,40 @@ export interface ContactFormData {
   email: string;
   message: string;
 }
+
+export type PrincipleCategory =
+  | "Arquitetura"
+  | "Qualidade"
+  | "Segurança"
+  | "Operação";
+
+export type PrincipleIcon =
+  | "layers"
+  | "building"
+  | "boxes"
+  | "component"
+  | "puzzle"
+  | "flask"
+  | "git-branch"
+  | "activity"
+  | "shield"
+  | "lock";
+
+export interface SoftwarePrinciple {
+  id: string;
+  name: string;
+  description: string;
+  category: PrincipleCategory;
+  icon: PrincipleIcon;
+}
+
+export interface TimelineEvent {
+  id: string;
+  year: string;
+  title: string;
+}
+
+export interface LearningTopic {
+  id: string;
+  name: string;
+}
