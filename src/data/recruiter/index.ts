@@ -9,8 +9,8 @@ import type { Education, Project } from "@/types";
 
 const RECRUITER_PROFILE_SOURCE = {
   fullName: {
-    "pt-BR": "Viviane Aguiar Silva Simões",
-    "en-US": "Viviane Aguiar Silva Simões",
+    "pt-BR": "Viviane Aguiar",
+    "en-US": "Viviane Aguiar",
   },
   role: {
     "pt-BR": "Desenvolvedora Fullstack Júnior",
@@ -24,14 +24,14 @@ const RECRUITER_PROFILE_SOURCE = {
 
 const RECRUITER_METADATA_SOURCE = {
   title: {
-    "pt-BR": "Viviane Aguiar Silva Simões | Desenvolvedora Fullstack Júnior",
-    "en-US": "Viviane Aguiar Silva Simões | Junior Fullstack Developer",
+    "pt-BR": "Viviane Aguiar | Desenvolvedora Fullstack Júnior",
+    "en-US": "Viviane Aguiar | Junior Fullstack Developer",
   },
   description: {
     "pt-BR":
-      "Portfólio de Viviane Aguiar Silva Simões — Desenvolvedora Fullstack Júnior com foco em backend, TypeScript, Node.js, Java, Spring Boot, APIs REST e arquitetura de software.",
+      "Portfólio de Viviane Aguiar — Desenvolvedora Fullstack Júnior com foco em backend, TypeScript, Node.js, Java, Spring Boot, APIs REST e arquitetura de software.",
     "en-US":
-      "Portfolio of Viviane Aguiar Silva Simões — Junior Fullstack Developer focused on backend, TypeScript, Node.js, Java, Spring Boot, REST APIs, and software architecture.",
+      "Portfolio of Viviane Aguiar — Junior Fullstack Developer focused on backend, TypeScript, Node.js, Java, Spring Boot, REST APIs, and software architecture.",
   },
 } as const satisfies Record<string, Localized<string>>;
 

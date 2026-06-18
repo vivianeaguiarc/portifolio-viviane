@@ -4,8 +4,8 @@ import { pickLocalized, type Localized } from "@/lib/localized";
 export const PROFILE_SOURCE = {
   name: { "pt-BR": "Viviane", "en-US": "Viviane" },
   fullName: {
-    "pt-BR": "Viviane Aguiar Silva Simões",
-    "en-US": "Viviane Aguiar Silva Simões",
+    "pt-BR": "Viviane Aguiar",
+    "en-US": "Viviane Aguiar",
   },
   role: {
     "pt-BR": "Desenvolvedora Fullstack Júnior",

@@ -9,7 +9,7 @@ Portfólio profissional bilíngue (pt-BR / en-US) para apresentação técnica, 
 
 ## Visão geral
 
-Plataforma completa de personal branding para **Viviane Aguiar Silva Simões** — Desenvolvedora Fullstack Júnior, com foco em recrutadores e empresas de tecnologia — nacional e internacional.
+Plataforma completa de personal branding para **Viviane Aguiar** — Desenvolvedora Fullstack Júnior, com foco em recrutadores e empresas de tecnologia — nacional e internacional.
 
 ### Formação acadêmica
 

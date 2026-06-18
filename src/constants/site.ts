@@ -1,17 +1,17 @@
 export const SITE_CONFIG = {
   name: "Viviane",
-  fullName: "Viviane Aguiar Silva Simões",
+  fullName: "Viviane Aguiar",
   title: "Desenvolvedora Fullstack Júnior",
   description:
-    "Portfólio de Viviane Aguiar Silva Simões — Desenvolvedora Fullstack Júnior com foco em backend, TypeScript, Node.js, Java, Spring Boot, APIs REST e arquitetura de software.",
+    "Portfólio de Viviane Aguiar — Desenvolvedora Fullstack Júnior com foco em backend, TypeScript, Node.js, Java, Spring Boot, APIs REST e arquitetura de software.",
   url:
     process.env.NEXT_PUBLIC_SITE_URL ?? "https://portfolio-viviane.vercel.app",
   locale: "pt_BR",
-  author: "Viviane Aguiar Silva Simões",
+  author: "Viviane Aguiar",
   profileImage: "/profile/viviane-2.jpg",
   ogImage: "/og-image.svg",
   keywords: [
-    "Viviane Aguiar Silva Simões",
+    "Viviane Aguiar",
     "desenvolvedora fullstack júnior",
     "desenvolvedora backend júnior",
     "Node.js",

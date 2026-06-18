@@ -4,7 +4,7 @@ Revisão concluída em **18/06/2025** para divulgação no LinkedIn, currículo,
 
 ## Dados profissionais revisados
 
-- [x] Nome: **Viviane Aguiar Silva Simões**
+- [x] Nome: **Viviane Aguiar**
 - [x] Cargo: **Desenvolvedora Fullstack Júnior** / **Junior Fullstack Developer**
 - [x] Foco: Node.js, TypeScript, React, Next.js, APIs REST, Java, Spring Boot e Arquitetura de Software
 - [x] Objetivo profissional: Backend Júnior, Fullstack Júnior, Estágio ou Analista de Sistemas Júnior
@@ -62,8 +62,8 @@ Revisão concluída em **18/06/2025** para divulgação no LinkedIn, currículo,
 
 ## SEO revisado
 
-- [x] PT-BR: `Viviane Aguiar Silva Simões | Desenvolvedora Fullstack Júnior`
-- [x] EN-US: `Viviane Aguiar Silva Simões | Junior Fullstack Developer`
+- [x] PT-BR: `Viviane Aguiar | Desenvolvedora Fullstack Júnior`
+- [x] EN-US: `Viviane Aguiar | Junior Fullstack Developer`
 - [x] Keywords: Node.js, TypeScript, React, Next.js, Java, Spring Boot, APIs REST, Backend, Fullstack, Software Architecture
 
 ## Blog revisado

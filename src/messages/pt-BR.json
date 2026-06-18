@@ -1,11 +1,11 @@
 {
   "metadata": {
     "siteTitle": "Desenvolvedora Fullstack Júnior",
-    "siteDescription": "Portfólio de Viviane Aguiar Silva Simões — Desenvolvedora Fullstack Júnior com foco em backend, TypeScript, Node.js, Java, Spring Boot, APIs REST e arquitetura de software.",
-    "ogImageAlt": "Viviane Aguiar Silva Simões — Portfólio técnico",
+    "siteDescription": "Portfólio de Viviane Aguiar — Desenvolvedora Fullstack Júnior com foco em backend, TypeScript, Node.js, Java, Spring Boot, APIs REST e arquitetura de software.",
+    "ogImageAlt": "Viviane Aguiar — Portfólio técnico",
     "portfolioName": "Portfólio",
-    "recruiterTitle": "Viviane Aguiar Silva Simões | Desenvolvedora Fullstack Júnior",
-    "recruiterDescription": "Portfólio de Viviane Aguiar Silva Simões com projetos Fullstack, backend Node.js, TypeScript, Java, Spring Boot, APIs REST e arquitetura de software.",
+    "recruiterTitle": "Viviane Aguiar | Desenvolvedora Fullstack Júnior",
+    "recruiterDescription": "Portfólio de Viviane Aguiar com projetos Fullstack, backend Node.js, TypeScript, Java, Spring Boot, APIs REST e arquitetura de software.",
     "blogTitle": "Blog Técnico",
     "blogDescription": "Artigos sobre arquitetura, segurança, backend e qualidade de código baseados em projetos reais.",
     "caseStudy": "Case Técnico",
@@ -299,7 +299,7 @@
   "github": {
     "eyebrow": "Open Source",
     "title": "Atividade no GitHub",
-    "metaTitle": "GitHub Activity | Viviane Aguiar Silva Simões",
+    "metaTitle": "GitHub Activity | Viviane Aguiar",
     "description": "Perfil, repositórios em destaque, linguagens e atividade recente no GitHub.",
     "followers": "Seguidores",
     "following": "Seguindo",
@@ -322,7 +322,7 @@
   "status": {
     "eyebrow": "Operações",
     "title": "Status do Portfólio",
-    "metaTitle": "Status | Viviane Aguiar Silva Simões",
+    "metaTitle": "Status | Viviane Aguiar",
     "description": "Saúde operacional do portfólio, integrações e serviços em tempo real.",
     "overallTitle": "Status geral",
     "environment": "Ambiente",
@@ -346,7 +346,7 @@
   "architecture": {
     "eyebrow": "Arquitetura",
     "title": "Arquitetura do Portfólio",
-    "metaTitle": "Arquitetura | Viviane Aguiar Silva Simões",
+    "metaTitle": "Arquitetura | Viviane Aguiar",
     "description": "Visão da stack, fluxo de dados e decisões arquiteturais do portfolio-viviane.",
     "flowTitle": "Fluxo da plataforma",
     "decisionsTitle": "Decisões arquiteturais"
@@ -354,13 +354,13 @@
   "security": {
     "eyebrow": "Segurança",
     "title": "Práticas de Segurança",
-    "metaTitle": "Segurança | Viviane Aguiar Silva Simões",
+    "metaTitle": "Segurança | Viviane Aguiar",
     "description": "Headers, validação, OWASP e práticas de segurança aplicadas no portfólio."
   },
   "engineeringPage": {
     "eyebrow": "Engenharia",
     "title": "Princípios de Engenharia",
-    "metaTitle": "Engenharia | Viviane Aguiar Silva Simões",
+    "metaTitle": "Engenharia | Viviane Aguiar",
     "description": "Como SOLID, Clean Architecture, DDD, testes e CI/CD são aplicados nos projetos.",
     "principlesTitle": "Princípios",
     "applicationsTitle": "Como aplico nos projetos",
@@ -369,7 +369,7 @@
   "qualityPage": {
     "eyebrow": "Qualidade",
     "title": "Qualidade de Software",
-    "metaTitle": "Quality | Viviane Aguiar Silva Simões",
+    "metaTitle": "Quality | Viviane Aguiar",
     "description": "Ferramentas, estratégia de testes, pipeline CI/CD e padrões de engenharia aplicados no portfólio.",
     "toolsTitle": "Ferramentas de qualidade",
     "toolsHint": "Stack de validação automatizada em cada etapa do desenvolvimento.",
@@ -388,7 +388,7 @@
   "productionReadinessPage": {
     "eyebrow": "Produção",
     "title": "Production Readiness",
-    "metaTitle": "Production Readiness | Viviane Aguiar Silva Simões",
+    "metaTitle": "Production Readiness | Viviane Aguiar",
     "description": "Checklist de prontidão para produção: SEO, performance, acessibilidade, segurança, i18n e CI/CD.",
     "checklistTitle": "Checklist de prontidão",
     "qualityLinkTitle": "Link para qualidade",
@@ -404,7 +404,7 @@
   "architectureShowcasePage": {
     "eyebrow": "Arquitetura",
     "title": "Architecture Showcase",
-    "metaTitle": "Architecture Showcase | Viviane Aguiar Silva Simões",
+    "metaTitle": "Architecture Showcase | Viviane Aguiar",
     "description": "Diagramas e decisões arquiteturais dos projetos StockFlow, Ticket Sales, Finance App e Portfolio Viviane.",
     "projectsTitle": "Arquiteturas dos Projetos",
     "overview": "Visão Geral",
