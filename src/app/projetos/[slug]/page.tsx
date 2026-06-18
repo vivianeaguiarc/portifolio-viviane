@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ProjectDetailContent } from "@/components/sections/project-detail-content";
+import { ProjectJsonLd } from "@/components/shared/project-json-ld";
 import { SITE_CONFIG } from "@/constants/site";
 import { PROJECTS, getProjectBySlug } from "@/data/projects";
+import { createPageMetadata } from "@/lib/seo";
 
 interface ProjectPageProps {
   params: Promise<{ slug: string }>;
@@ -23,29 +25,14 @@ export async function generateMetadata({
   }
 
   const title = `${project.name} | Case Técnico | ${SITE_CONFIG.fullName}`;
-  const description = project.description;
-  const imageUrl = `${SITE_CONFIG.url}${project.image}`;
 
-  return {
+  return createPageMetadata({
     title,
-    description,
-    openGraph: {
-      title,
-      description,
-      type: "article",
-      url: `${SITE_CONFIG.url}/projetos/${project.slug}`,
-      images: [{ url: imageUrl, alt: `Screenshot do projeto ${project.name}` }],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title,
-      description,
-      images: [imageUrl],
-    },
-    alternates: {
-      canonical: `${SITE_CONFIG.url}/projetos/${project.slug}`,
-    },
-  };
+    description: project.description,
+    path: `/projetos/${project.slug}`,
+    type: "article",
+    image: project.image,
+  });
 }
 
 export default async function ProjectPage({ params }: ProjectPageProps) {
@@ -56,5 +43,10 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
     notFound();
   }
 
-  return <ProjectDetailContent project={project} />;
+  return (
+    <>
+      <ProjectJsonLd project={project} />
+      <ProjectDetailContent project={project} />
+    </>
+  );
 }

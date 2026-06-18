@@ -1,5 +1,6 @@
 import { AboutSection } from "@/components/sections/about-section";
 import { CertificationsSection } from "@/components/sections/certifications-section";
+import { BlogPreviewSection } from "@/components/sections/blog-preview-section";
 import { ContactSection } from "@/components/sections/contact-section";
 import { EducationSection } from "@/components/sections/education-section";
 import { HeroSection } from "@/components/sections/hero-section";
@@ -17,6 +18,7 @@ export default function HomePage() {
       <EducationSection />
       <CertificationsSection />
       <StackSection />
+      <BlogPreviewSection />
       <ContactSection />
     </>
   );

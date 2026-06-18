@@ -9,6 +9,7 @@ export const SITE_CONFIG = {
   locale: "pt_BR",
   author: "Viviane",
   profileImage: "/viviane.jpg",
+  ogImage: "/og-image.svg",
   keywords: [
     "desenvolvedora fullstack",
     "Next.js",
@@ -37,5 +38,6 @@ export const NAV_ITEMS = [
   { label: "Formação", href: "#formacao" },
   { label: "Certificações", href: "#certificacoes" },
   { label: "Stack", href: "#stack" },
+  { label: "Blog", href: "/blog" },
   { label: "Contato", href: "#contato" },
 ] as const;

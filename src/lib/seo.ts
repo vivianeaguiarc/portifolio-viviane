@@ -1,11 +1,19 @@
 import type { Metadata } from "next";
 import { SITE_CONFIG, SOCIAL_LINKS } from "@/constants/site";
+import type { BlogPost, Project } from "@/types";
 
 const siteUrl = SITE_CONFIG.url;
+const ogImage = SITE_CONFIG.ogImage;
+
+export function getOgImageUrl(path?: string): string {
+  const image = path ?? ogImage;
+  return image.startsWith("http") ? image : `${siteUrl}${image}`;
+}
 
 export function createMetadata(): Metadata {
   const title = `${SITE_CONFIG.fullName} | ${SITE_CONFIG.title}`;
   const description = SITE_CONFIG.description;
+  const imageUrl = getOgImageUrl();
 
   return {
     metadataBase: new URL(siteUrl),
@@ -26,10 +34,10 @@ export function createMetadata(): Metadata {
       siteName: SITE_CONFIG.name,
       images: [
         {
-          url: SITE_CONFIG.profileImage,
+          url: imageUrl,
           width: 1200,
           height: 630,
-          alt: `Foto profissional de ${SITE_CONFIG.fullName}`,
+          alt: `${SITE_CONFIG.fullName} — Portfólio técnico`,
         },
       ],
     },
@@ -38,7 +46,7 @@ export function createMetadata(): Metadata {
       title,
       description,
       creator: "@vivianezzt",
-      images: [SITE_CONFIG.profileImage],
+      images: [imageUrl],
     },
     robots: {
       index: true,
@@ -57,14 +65,52 @@ export function createMetadata(): Metadata {
   };
 }
 
-export function createJsonLd() {
+export function createPageMetadata({
+  title,
+  description,
+  path,
+  type = "website",
+  image,
+}: {
+  title: string;
+  description: string;
+  path: string;
+  type?: "website" | "article";
+  image?: string;
+}): Metadata {
+  const url = `${siteUrl}${path}`;
+  const imageUrl = getOgImageUrl(image);
+
+  return {
+    title,
+    description,
+    openGraph: {
+      type,
+      locale: SITE_CONFIG.locale,
+      url,
+      title,
+      description,
+      siteName: SITE_CONFIG.name,
+      images: [{ url: imageUrl, alt: title }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [imageUrl],
+    },
+    alternates: { canonical: url },
+  };
+}
+
+export function createPersonJsonLd() {
   return {
     "@context": "https://schema.org",
     "@type": "Person",
     name: SITE_CONFIG.fullName,
     jobTitle: SITE_CONFIG.title,
-    image: `${SITE_CONFIG.url}${SITE_CONFIG.profileImage}`,
-    url: SITE_CONFIG.url,
+    image: `${siteUrl}${SITE_CONFIG.profileImage}`,
+    url: siteUrl,
     description: SITE_CONFIG.description,
     knowsAbout: SITE_CONFIG.keywords,
     sameAs: [
@@ -72,5 +118,68 @@ export function createJsonLd() {
       SOCIAL_LINKS.github,
       SOCIAL_LINKS.instagram,
     ],
+  };
+}
+
+export function createWebsiteJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: `${SITE_CONFIG.fullName} — Portfólio`,
+    url: siteUrl,
+    description: SITE_CONFIG.description,
+    inLanguage: "pt-BR",
+    publisher: {
+      "@type": "Person",
+      name: SITE_CONFIG.fullName,
+    },
+  };
+}
+
+export function createJsonLd() {
+  return [createPersonJsonLd(), createWebsiteJsonLd()];
+}
+
+export function createBlogPostingJsonLd(post: BlogPost) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.description,
+    datePublished: post.publishedAt,
+    author: {
+      "@type": "Person",
+      name: SITE_CONFIG.fullName,
+      url: siteUrl,
+    },
+    publisher: {
+      "@type": "Person",
+      name: SITE_CONFIG.fullName,
+    },
+    url: `${siteUrl}/blog/${post.slug}`,
+    keywords: post.tags.join(", "),
+    inLanguage: "pt-BR",
+    image: getOgImageUrl(),
+  };
+}
+
+export function createSoftwareApplicationJsonLd(project: Project) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: project.name,
+    description: project.description,
+    applicationCategory: "DeveloperApplication",
+    operatingSystem: "Web",
+    url: project.deployUrl ?? `${siteUrl}/projetos/${project.slug}`,
+    author: {
+      "@type": "Person",
+      name: SITE_CONFIG.fullName,
+    },
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "BRL",
+    },
   };
 }

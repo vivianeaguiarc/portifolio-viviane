@@ -118,3 +118,30 @@ export interface LearningTopic {
   id: string;
   name: string;
 }
+
+export interface BlogPostCodeBlock {
+  language: string;
+  content: string;
+}
+
+export interface BlogPostSection {
+  heading: string;
+  paragraphs: string[];
+  code?: BlogPostCodeBlock;
+  list?: string[];
+}
+
+export interface BlogPostContent {
+  sections: BlogPostSection[];
+}
+
+export interface BlogPost {
+  slug: string;
+  title: string;
+  description: string;
+  category: string;
+  publishedAt: string;
+  readingTime: string;
+  tags: string[];
+  content: BlogPostContent;
+}
