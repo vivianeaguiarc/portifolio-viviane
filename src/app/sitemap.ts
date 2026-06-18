@@ -32,14 +32,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
       "/now",
       "/media-kit",
       "/press-kit",
+      "/github",
     ] as const;
 
     for (const page of staticPages) {
       entries.push({
         url: `${SITE_CONFIG.url}${getPathname({ locale, href: page })}`,
         lastModified: new Date(),
-        changeFrequency: page === "/blog" ? "weekly" : "monthly",
-        priority: page === "/recruiter" ? 0.95 : page === "/blog" ? 0.9 : 0.85,
+        changeFrequency:
+          page === "/blog" || page === "/github" ? "weekly" : "monthly",
+        priority:
+          page === "/recruiter"
+            ? 0.95
+            : page === "/blog"
+              ? 0.9
+              : page === "/github"
+                ? 0.88
+                : 0.85,
         alternates: {
           languages: Object.fromEntries(
             locales.map((altLocale) => [

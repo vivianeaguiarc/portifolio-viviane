@@ -21,6 +21,7 @@ const UTILITY_LINKS = [
   { key: "mediaKit", href: "/media-kit" as const },
   { key: "pressKit", href: "/press-kit" as const },
   { key: "recruiter", href: "/recruiter" as const },
+  { key: "github", href: "/github" as const },
 ] as const;
 
 export function Footer() {

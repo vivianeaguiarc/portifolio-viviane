@@ -22,6 +22,7 @@
     "certifications": "Certifications",
     "stack": "Stack",
     "blog": "Blog",
+    "github": "GitHub",
     "contact": "Contact"
   },
   "header": {
@@ -52,7 +53,8 @@
       "now": "Now",
       "mediaKit": "Media Kit",
       "pressKit": "Press Kit",
-      "recruiter": "Recruiter Mode"
+      "recruiter": "Recruiter Mode",
+      "github": "GitHub Activity"
     }
   },
   "theme": {
@@ -221,7 +223,13 @@
     "quickEducation": "Education",
     "quickStack": "Core stack",
     "quickNumbers": "Numbers",
-    "quickLinks": "Quick links"
+    "quickLinks": "Quick links",
+    "githubSummaryTitle": "GitHub activity",
+    "githubSummaryHint": "Live data from the public GitHub account.",
+    "githubPublicRepos": "Public repositories",
+    "githubTopLanguage": "Primary language",
+    "githubMostRecent": "Most recently updated",
+    "githubViewActivity": "View full GitHub activity →"
   },
   "notFound": {
     "title": "Page not found",
@@ -274,5 +282,28 @@
     "description": "Cases demonstrating technical impact, architecture, and real-world challenges solved.",
     "concepts": "Concepts applied",
     "challenges": "Challenges solved"
+  },
+  "github": {
+    "eyebrow": "Open Source",
+    "title": "GitHub Activity",
+    "metaTitle": "GitHub Activity | Viviane Aguiar Silva Simões",
+    "description": "Profile, featured repositories, languages, and recent activity on GitHub.",
+    "followers": "Followers",
+    "following": "Following",
+    "publicRepos": "Repositories",
+    "viewProfile": "View GitHub profile",
+    "avatarAlt": "GitHub avatar for {name}",
+    "featuredRepos": "Featured repositories",
+    "languagesTitle": "Most used languages",
+    "recentActivity": "Recent activity",
+    "recentlyUpdated": "Recently updated repositories",
+    "lastUpdated": "Last updated",
+    "noDescription": "No description",
+    "noRepos": "No repositories found.",
+    "noLanguages": "Language data unavailable.",
+    "noActivity": "No recent activity found.",
+    "errorTitle": "Could not load GitHub data",
+    "errorDescription": "Check your connection or GITHUB_USERNAME and GITHUB_TOKEN variables.",
+    "cacheNote": "Data refreshes every 24 hours."
   }
 }

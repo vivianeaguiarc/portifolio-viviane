@@ -19,6 +19,7 @@ export const routing = defineRouting({
     "/now": "/now",
     "/media-kit": "/media-kit",
     "/press-kit": "/press-kit",
+    "/github": "/github",
     "/projects/[slug]": {
       "pt-BR": "/projetos/[slug]",
       "en-US": "/projects/[slug]",

@@ -22,6 +22,7 @@
     "certifications": "Certificações",
     "stack": "Stack",
     "blog": "Blog",
+    "github": "GitHub",
     "contact": "Contato"
   },
   "header": {
@@ -52,7 +53,8 @@
       "now": "Now",
       "mediaKit": "Media Kit",
       "pressKit": "Press Kit",
-      "recruiter": "Recruiter Mode"
+      "recruiter": "Recruiter Mode",
+      "github": "GitHub Activity"
     }
   },
   "theme": {
@@ -221,7 +223,13 @@
     "quickEducation": "Formação",
     "quickStack": "Stack principal",
     "quickNumbers": "Números",
-    "quickLinks": "Links rápidos"
+    "quickLinks": "Links rápidos",
+    "githubSummaryTitle": "Atividade no GitHub",
+    "githubSummaryHint": "Dados reais da conta pública no GitHub.",
+    "githubPublicRepos": "Repositórios públicos",
+    "githubTopLanguage": "Linguagem principal",
+    "githubMostRecent": "Projeto mais atualizado",
+    "githubViewActivity": "Ver atividade completa no GitHub →"
   },
   "notFound": {
     "title": "Página não encontrada",
@@ -274,5 +282,28 @@
     "description": "Cases que demonstram impacto técnico, arquitetura e resolução de desafios reais.",
     "concepts": "Conceitos aplicados",
     "challenges": "Desafios resolvidos"
+  },
+  "github": {
+    "eyebrow": "Open Source",
+    "title": "Atividade no GitHub",
+    "metaTitle": "GitHub Activity | Viviane Aguiar Silva Simões",
+    "description": "Perfil, repositórios em destaque, linguagens e atividade recente no GitHub.",
+    "followers": "Seguidores",
+    "following": "Seguindo",
+    "publicRepos": "Repositórios",
+    "viewProfile": "Ver perfil no GitHub",
+    "avatarAlt": "Avatar de {name} no GitHub",
+    "featuredRepos": "Repositórios em destaque",
+    "languagesTitle": "Linguagens mais utilizadas",
+    "recentActivity": "Atividade recente",
+    "recentlyUpdated": "Repositórios atualizados",
+    "lastUpdated": "Última atualização",
+    "noDescription": "Sem descrição",
+    "noRepos": "Nenhum repositório encontrado.",
+    "noLanguages": "Dados de linguagens indisponíveis.",
+    "noActivity": "Nenhuma atividade recente encontrada.",
+    "errorTitle": "Não foi possível carregar os dados do GitHub",
+    "errorDescription": "Verifique a conexão ou as variáveis GITHUB_USERNAME e GITHUB_TOKEN.",
+    "cacheNote": "Dados atualizados a cada 24 horas."
   }
 }

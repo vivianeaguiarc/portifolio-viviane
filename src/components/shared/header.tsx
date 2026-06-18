@@ -20,6 +20,7 @@ const NAV_ITEMS = [
   { key: "certifications", href: "/#certificacoes" },
   { key: "stack", href: "/#stack" },
   { key: "blog", href: "/blog" },
+  { key: "github", href: "/github" },
   { key: "contact", href: "/#contato" },
 ] as const;
 
