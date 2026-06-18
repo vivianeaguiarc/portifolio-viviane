@@ -22,6 +22,7 @@
     "stack": "Stack",
     "blog": "Blog",
     "github": "GitHub",
+    "architecture": "Architecture",
     "contact": "Contato",
     "quality": "Quality"
   },
@@ -57,6 +58,7 @@
       "github": "GitHub Activity",
       "status": "Status",
       "architecture": "Arquitetura",
+      "architectureShowcase": "Architecture Showcase",
       "security": "Segurança",
       "engineering": "Engenharia",
       "quality": "Quality",
@@ -398,5 +400,23 @@
     "title": "Qualidade de Software",
     "description": "Ferramentas, testes automatizados, CI/CD e padrões de engenharia aplicados neste portfólio.",
     "cta": "Ver Quality"
+  },
+  "architectureShowcasePage": {
+    "eyebrow": "Arquitetura",
+    "title": "Architecture Showcase",
+    "metaTitle": "Architecture Showcase | Viviane Aguiar Silva Simões",
+    "description": "Diagramas e decisões arquiteturais dos projetos StockFlow, Ticket Sales, Finance App e Portfolio Viviane.",
+    "projectsTitle": "Arquiteturas dos Projetos",
+    "overview": "Visão Geral",
+    "objective": "Objetivo",
+    "architecture": "Arquitetura",
+    "dataFlow": "Fluxo de Dados",
+    "technologies": "Tecnologias",
+    "decisions": "Decisões Técnicas",
+    "features": "Recursos",
+    "diagramAria": "Diagrama de arquitetura de {name}",
+    "dataFlowAria": "Fluxo de dados de {name}",
+    "caseStudy": "Ver case study",
+    "caseStudyAria": "Ver case study de {name}"
   }
 }

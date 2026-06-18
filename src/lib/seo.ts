@@ -284,6 +284,7 @@ export function getStaticPageAlternatePaths(
     | "/github"
     | "/status"
     | "/architecture"
+    | "/architecture-showcase"
     | "/security"
     | "/engineering"
     | "/quality"

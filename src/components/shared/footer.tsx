@@ -24,6 +24,7 @@ const UTILITY_LINKS = [
   { key: "github", href: "/github" as const },
   { key: "status", href: "/status" as const },
   { key: "architecture", href: "/architecture" as const },
+  { key: "architectureShowcase", href: "/architecture-showcase" as const },
   { key: "security", href: "/security" as const },
   { key: "engineering", href: "/engineering" as const },
   { key: "quality", href: "/quality" as const },

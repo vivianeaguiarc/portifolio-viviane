@@ -22,6 +22,7 @@ export const routing = defineRouting({
     "/github": "/github",
     "/status": "/status",
     "/architecture": "/architecture",
+    "/architecture-showcase": "/architecture-showcase",
     "/security": "/security",
     "/engineering": "/engineering",
     "/quality": "/quality",

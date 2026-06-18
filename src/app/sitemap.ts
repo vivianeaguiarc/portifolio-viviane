@@ -35,6 +35,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       "/github",
       "/status",
       "/architecture",
+      "/architecture-showcase",
       "/security",
       "/engineering",
       "/quality",

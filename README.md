@@ -141,6 +141,23 @@ Página dedicada: [`/production-readiness`](/pt-BR/production-readiness)
 
 Checklist validado: SEO, Performance, Acessibilidade, Responsividade, Segurança, i18n, Observabilidade, Analytics e CI/CD.
 
+## System Architecture
+
+Página dedicada: [`/architecture-showcase`](/pt-BR/architecture-showcase)
+
+Diagramas React responsivos para os principais projetos:
+
+| Projeto               | Fluxo principal                                                        |
+| --------------------- | ---------------------------------------------------------------------- |
+| **StockFlow**         | Client → API → Controller → Service → Repository → Prisma → PostgreSQL |
+| **Ticket Sales**      | Client → Reservation → Purchase → Transaction → Database               |
+| **Finance App**       | Frontend → API → Database                                              |
+| **Portfolio Viviane** | Next.js → App Router → SEO → Analytics → Deploy                        |
+
+Cada projeto documenta: visão geral, objetivo, arquitetura, fluxo de dados, tecnologias e decisões técnicas.
+
+Componentes reutilizáveis em `src/components/architecture/`: `ArchitectureCard`, `ArchitectureDiagram`, `ArchitectureNode`, `ArchitectureFlow`.
+
 ## Scripts
 
 | Comando              | Descrição                   |
@@ -179,22 +196,23 @@ Acesse [http://localhost:3000](http://localhost:3000) (redireciona para `/pt-BR`
 
 ## Rotas principais
 
-| Página               | pt-BR                         | en-US                         |
-| -------------------- | ----------------------------- | ----------------------------- |
-| Home                 | `/pt-BR`                      | `/en-US`                      |
-| Blog                 | `/pt-BR/blog`                 | `/en-US/blog`                 |
-| Recruiter            | `/pt-BR/recruiter`            | `/en-US/recruiter`            |
-| Changelog            | `/pt-BR/changelog`            | `/en-US/changelog`            |
-| Now                  | `/pt-BR/now`                  | `/en-US/now`                  |
-| Media Kit            | `/pt-BR/media-kit`            | `/en-US/media-kit`            |
-| Press Kit            | `/pt-BR/press-kit`            | `/en-US/press-kit`            |
-| Status               | `/pt-BR/status`               | `/en-US/status`               |
-| Architecture         | `/pt-BR/architecture`         | `/en-US/architecture`         |
-| Security             | `/pt-BR/security`             | `/en-US/security`             |
-| Engineering          | `/pt-BR/engineering`          | `/en-US/engineering`          |
-| Quality              | `/pt-BR/quality`              | `/en-US/quality`              |
-| Production Readiness | `/pt-BR/production-readiness` | `/en-US/production-readiness` |
-| GitHub               | `/pt-BR/github`               | `/en-US/github`               |
+| Página                | pt-BR                          | en-US                          |
+| --------------------- | ------------------------------ | ------------------------------ |
+| Home                  | `/pt-BR`                       | `/en-US`                       |
+| Blog                  | `/pt-BR/blog`                  | `/en-US/blog`                  |
+| Recruiter             | `/pt-BR/recruiter`             | `/en-US/recruiter`             |
+| Changelog             | `/pt-BR/changelog`             | `/en-US/changelog`             |
+| Now                   | `/pt-BR/now`                   | `/en-US/now`                   |
+| Media Kit             | `/pt-BR/media-kit`             | `/en-US/media-kit`             |
+| Press Kit             | `/pt-BR/press-kit`             | `/en-US/press-kit`             |
+| Status                | `/pt-BR/status`                | `/en-US/status`                |
+| Architecture          | `/pt-BR/architecture`          | `/en-US/architecture`          |
+| Security              | `/pt-BR/security`              | `/en-US/security`              |
+| Engineering           | `/pt-BR/engineering`           | `/en-US/engineering`           |
+| Architecture Showcase | `/pt-BR/architecture-showcase` | `/en-US/architecture-showcase` |
+| Quality               | `/pt-BR/quality`               | `/en-US/quality`               |
+| Production Readiness  | `/pt-BR/production-readiness`  | `/en-US/production-readiness`  |
+| GitHub                | `/pt-BR/github`                | `/en-US/github`                |
 
 ## Production Readiness
 
