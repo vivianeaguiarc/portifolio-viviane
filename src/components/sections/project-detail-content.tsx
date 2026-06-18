@@ -1,5 +1,5 @@
-import Image from "next/image";
 import { getTranslations } from "next-intl/server";
+import { ProjectCoverImage } from "@/components/shared/project-cover-image";
 import { ProjectArchitectureFlow } from "@/components/shared/project-architecture-flow";
 import { ProjectDetailHeader } from "@/components/shared/project-detail-header";
 import { ProjectMetricGrid } from "@/components/shared/project-metric";
@@ -25,12 +25,10 @@ export async function ProjectDetailContent({
       <ProjectDetailHeader project={project} locale={locale} />
 
       <div className="relative aspect-video overflow-hidden rounded-2xl border bg-muted shadow-lg">
-        <Image
+        <ProjectCoverImage
           src={project.image}
           alt={tProjects("screenshotAlt", { name: project.name })}
-          fill
           priority
-          className="object-cover"
           sizes="(max-width: 1280px) 100vw, 1152px"
         />
       </div>

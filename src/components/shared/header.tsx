@@ -13,7 +13,6 @@ import { cn } from "@/lib/utils";
 
 const NAV_ITEMS = [
   { key: "home", href: "/#hero" },
-  { key: "about", href: "/#sobre" },
   { key: "projects", href: "/#projetos" },
   { key: "engineering", href: "/#engenharia" },
   { key: "education", href: "/#formacao" },

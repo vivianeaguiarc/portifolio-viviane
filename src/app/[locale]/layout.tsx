@@ -12,6 +12,7 @@ import { Footer } from "@/components/shared/footer";
 import { HashScrollHandler } from "@/components/shared/hash-scroll-handler";
 import { Header } from "@/components/shared/header";
 import { JsonLd } from "@/components/shared/json-ld";
+import { ThemeScript } from "@/components/shared/theme-script";
 import { ThemeProvider } from "@/components/shared/theme-provider";
 import { VercelObservability } from "@/components/shared/vercel-observability";
 import { routing, type Locale } from "@/i18n/routing";
@@ -74,10 +75,12 @@ export default async function LocaleLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full`}
       suppressHydrationWarning
     >
+      <head>
+        <ThemeScript />
+      </head>
       <body className="min-h-full flex flex-col">
         <NextIntlClientProvider messages={messages}>
           <ThemeProvider
-            attribute="class"
             defaultTheme="dark"
             enableSystem
             disableTransitionOnChange

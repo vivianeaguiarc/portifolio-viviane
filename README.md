@@ -196,6 +196,19 @@ Acesse [http://localhost:3000](http://localhost:3000) (redireciona para `/pt-BR`
 
 Documentação: [`docs/production-readiness.md`](docs/production-readiness.md)
 
+## Production Review
+
+Revisão final de conteúdo, links e prontidão para divulgação (LinkedIn, currículo, GitHub e processos seletivos).
+
+| Área                       | Status                                                                                   |
+| -------------------------- | ---------------------------------------------------------------------------------------- |
+| **Conteúdo real validado** | Nome, cargo, formação, projetos e objetivo profissional alinhados aos dados reais        |
+| **Links revisados**        | GitHub, LinkedIn, Instagram, e-mail, deploys, currículos PT/EN e páginas institucionais  |
+| **SEO**                    | Títulos bilíngues, keywords e metadata coerentes com posicionamento júnior               |
+| **Acessibilidade**         | Alt text, aria-labels, foco visível, HTML semântico e contraste de tema                  |
+| **Performance**            | Imagens otimizadas via Next/Image, fallback de cover, Vercel Speed Insights              |
+| **Pronto para publicação** | Checklist completo em [`docs/final-review-checklist.md`](docs/final-review-checklist.md) |
+
 ## Documentação
 
 | Arquivo                                                              | Conteúdo                 |
@@ -205,6 +218,7 @@ Documentação: [`docs/production-readiness.md`](docs/production-readiness.md)
 | [`docs/accessibility-checklist.md`](docs/accessibility-checklist.md) | Acessibilidade           |
 | [`docs/performance-audit.md`](docs/performance-audit.md)             | Performance e Lighthouse |
 | [`docs/production-readiness.md`](docs/production-readiness.md)       | Production readiness     |
+| [`docs/final-review-checklist.md`](docs/final-review-checklist.md)   | Revisão final LinkedIn   |
 
 ## Screenshots
 
@@ -216,7 +230,7 @@ Documentação: [`docs/production-readiness.md`](docs/production-readiness.md)
 | Blog            | Listagem e artigos técnicos                                 |
 | Changelog / Now | Páginas de evolução e foco atual                            |
 
-> Substitua placeholders em `public/projects/` por screenshots reais quando disponíveis.
+> Screenshots em `public/projects/{slug}/cover.png`. Fallback em `public/projects/default-cover.svg`.
 
 ## CI/CD
 

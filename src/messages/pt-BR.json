@@ -74,10 +74,10 @@
   "hero": {
     "badge": "Disponível para novas oportunidades",
     "greeting": "Olá, sou",
-    "intro": "Construo aplicações web modernas, escaláveis e com foco em qualidade de código — do frontend ao backend.",
-    "resume": "Currículo PDF",
+    "intro": "Desenvolvedora Fullstack Júnior com foco em Node.js, TypeScript, React, Next.js, APIs REST, Java, Spring Boot e arquitetura de software.",
+    "resume": "Baixar currículo",
     "explore": "Explorar",
-    "exploreAria": "Rolar para a seção Sobre",
+    "exploreAria": "Rolar para a seção Projetos",
     "linkedin": "LinkedIn",
     "github": "GitHub",
     "instagram": "Instagram"
@@ -185,7 +185,7 @@
   },
   "recruiter": {
     "badge": "Modo Recrutador",
-    "downloadCv": "Download CV",
+    "downloadCv": "Baixar currículo",
     "downloadCvAria": "Baixar currículo em PDF",
     "linkedinAria": "Perfil no LinkedIn",
     "githubAria": "Perfil no GitHub",
@@ -279,7 +279,7 @@
     "eyebrow": "Press Kit",
     "title": "Kit para recrutadores",
     "description": "Recursos essenciais para avaliação rápida do perfil técnico.",
-    "resume": "Currículo PDF",
+    "resume": "Baixar currículo",
     "recruiterPage": "Recruiter Mode",
     "stackTitle": "Tecnologias dominadas",
     "featuredProjects": "Principais projetos"

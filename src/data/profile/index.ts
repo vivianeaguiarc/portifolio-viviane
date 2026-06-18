@@ -12,14 +12,14 @@ export const PROFILE_SOURCE = {
     "en-US": "Junior Fullstack Developer",
   },
   mainStack: {
-    "pt-BR": ["TypeScript", "Node.js", "Next.js", "PostgreSQL"],
-    "en-US": ["TypeScript", "Node.js", "Next.js", "PostgreSQL"],
+    "pt-BR": ["Node.js", "TypeScript", "React", "Next.js"],
+    "en-US": ["Node.js", "TypeScript", "React", "Next.js"],
   },
   summary: {
     "pt-BR":
-      "Desenvolvedora Fullstack em evolução, com foco em backend, TypeScript, Node.js, APIs REST, arquitetura de software e boas práticas de engenharia.",
+      "Desenvolvedora Fullstack Júnior com foco em Node.js, TypeScript, React, Next.js, APIs REST, Java, Spring Boot e arquitetura de software.",
     "en-US":
-      "Fullstack Developer in growth, focused on backend, TypeScript, Node.js, REST APIs, software architecture, and engineering best practices.",
+      "Junior Fullstack Developer focused on Node.js, TypeScript, React, Next.js, REST APIs, Java, Spring Boot, and software architecture.",
   },
   specialties: {
     "pt-BR": [

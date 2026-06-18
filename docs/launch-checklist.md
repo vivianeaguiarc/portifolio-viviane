@@ -20,7 +20,8 @@ Use este checklist antes de divulgar o portfólio publicamente.
 
 ## Conteúdo profissional
 
-- [ ] Currículo PDF atualizado em `/public/curriculo-viviane.pdf`
+- [x] Currículo PT-BR: `/public/resume/viviane-aguiar-cv-ptbr.pdf`
+- [x] Currículo EN-US: `/public/resume/viviane-aguiar-cv-en.pdf`
 - [ ] GitHub atualizado com README e projetos em destaque
 - [ ] LinkedIn atualizado com link do portfólio
 - [ ] Bio alinhada com Media Kit e Press Kit

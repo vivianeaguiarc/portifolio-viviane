@@ -1,4 +1,3 @@
-import { AboutSection } from "@/components/sections/about-section";
 import { BlogPreviewSection } from "@/components/sections/blog-preview-section";
 import { ContactSection } from "@/components/sections/contact-section";
 import { EducationSection } from "@/components/sections/education-section";
@@ -24,7 +23,6 @@ export default async function HomePage({ params }: HomePageProps) {
   return (
     <>
       <HeroSection />
-      <AboutSection locale={locale as Locale} />
       <ProjectsSection locale={locale as Locale} />
       <SoftwareEngineeringSection locale={locale as Locale} />
       <EducationSection locale={locale as Locale} />

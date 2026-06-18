@@ -74,10 +74,10 @@
   "hero": {
     "badge": "Open to new opportunities",
     "greeting": "Hi, I'm",
-    "intro": "I build modern, scalable web applications with a strong focus on code quality — from frontend to backend.",
-    "resume": "Resume PDF",
+    "intro": "Junior Fullstack Developer focused on Node.js, TypeScript, React, Next.js, REST APIs, Java, Spring Boot, and software architecture.",
+    "resume": "Download resume",
     "explore": "Explore",
-    "exploreAria": "Scroll to About section",
+    "exploreAria": "Scroll to Projects section",
     "linkedin": "LinkedIn",
     "github": "GitHub",
     "instagram": "Instagram"
@@ -185,7 +185,7 @@
   },
   "recruiter": {
     "badge": "Recruiter Mode",
-    "downloadCv": "Download CV",
+    "downloadCv": "Download resume",
     "downloadCvAria": "Download resume PDF",
     "linkedinAria": "LinkedIn profile",
     "githubAria": "GitHub profile",
@@ -279,7 +279,7 @@
     "eyebrow": "Press Kit",
     "title": "Recruiter kit",
     "description": "Essential resources for quick technical profile evaluation.",
-    "resume": "Resume PDF",
+    "resume": "Download resume",
     "recruiterPage": "Recruiter Mode",
     "stackTitle": "Core technologies",
     "featuredProjects": "Featured projects"

@@ -17,6 +17,7 @@ import { Button } from "@/components/ui/button";
 import { SOCIAL_LINKS } from "@/constants/site";
 import { getProfile } from "@/data/profile";
 import type { Locale } from "@/i18n/routing";
+import { getResumeUrl, isPdfHref } from "@/lib/resume";
 
 export function HeroSection() {
   const t = useTranslations("hero");
@@ -38,7 +39,7 @@ export function HeroSection() {
     },
     {
       label: t("resume"),
-      href: SOCIAL_LINKS.resume,
+      href: getResumeUrl(locale),
       icon: FileDown,
       variant: "outline" as const,
     },
@@ -115,9 +116,13 @@ export function HeroSection() {
                 <Button key={label} variant={variant} asChild>
                   <Link
                     href={href}
-                    target={href.startsWith("http") ? "_blank" : undefined}
+                    target={
+                      href.startsWith("http") || isPdfHref(href)
+                        ? "_blank"
+                        : undefined
+                    }
                     rel={
-                      href.startsWith("http")
+                      href.startsWith("http") || isPdfHref(href)
                         ? "noopener noreferrer"
                         : undefined
                     }
@@ -139,7 +144,7 @@ export function HeroSection() {
           className="mt-16 flex justify-center"
         >
           <NavigationLink
-            href="/#sobre"
+            href="/#projetos"
             className="flex flex-col items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
             aria-label={t("exploreAria")}
           >

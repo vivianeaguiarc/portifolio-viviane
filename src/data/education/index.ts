@@ -14,8 +14,8 @@ const EDUCATION_SOURCE = [
       "en-US": "UNIASSELVI",
     },
     period: {
-      "pt-BR": "02/2019 — 12/2023",
-      "en-US": "02/2019 — 12/2023",
+      "pt-BR": "02/2019 a 12/2023",
+      "en-US": "02/2019 to 12/2023",
     },
     description: {
       "pt-BR":
@@ -37,8 +37,8 @@ const EDUCATION_SOURCE = [
       "en-US": "GRAN Faculdade",
     },
     period: {
-      "pt-BR": "12/2023 — 04/2025",
-      "en-US": "12/2023 — 04/2025",
+      "pt-BR": "12/2023 a 04/2025",
+      "en-US": "12/2023 to 04/2025",
     },
     description: {
       "pt-BR":
@@ -58,8 +58,8 @@ const EDUCATION_SOURCE = [
       "en-US": "UNIASSELVI",
     },
     period: {
-      "pt-BR": "08/2025 — 12/2027",
-      "en-US": "08/2025 — 12/2027",
+      "pt-BR": "08/2025 a 12/2027",
+      "en-US": "08/2025 to 12/2027",
     },
     description: {
       "pt-BR":

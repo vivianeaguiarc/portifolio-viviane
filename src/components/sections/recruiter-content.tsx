@@ -31,6 +31,7 @@ import {
   getRecruiterSkillCategories,
 } from "@/data/recruiter";
 import { Link, type Locale } from "@/i18n/routing";
+import { getResumeUrl } from "@/lib/resume";
 
 interface RecruiterContentProps {
   locale: Locale;
@@ -67,9 +68,9 @@ export async function RecruiterContent({ locale }: RecruiterContentProps) {
     {
       label: t("sendEmailAria"),
       channel: "Email",
-      href: SOCIAL_LINKS.email,
+      href: `mailto:${SOCIAL_LINKS.email}`,
       icon: Mail,
-      display: "contato@viviane.dev",
+      display: SOCIAL_LINKS.email,
     },
   ] as const;
 
@@ -116,8 +117,9 @@ export async function RecruiterContent({ locale }: RecruiterContentProps) {
               <div className="mt-8 flex flex-wrap justify-center gap-3 lg:justify-start">
                 <Button asChild>
                   <a
-                    href={SOCIAL_LINKS.resume}
-                    download
+                    href={getResumeUrl(locale)}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     aria-label={t("downloadCvAria")}
                   >
                     <FileDown className="mr-2 h-4 w-4" aria-hidden />

@@ -1,10 +1,10 @@
 "use client";
 
 import { ArrowUpRight, ExternalLink } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { GithubIcon } from "@/components/shared/brand-icons";
+import { ProjectCoverImage } from "@/components/shared/project-cover-image";
 import { TechBadgeGroup } from "@/components/shared/tech-badge";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -42,13 +42,11 @@ export function ProjectCard({ project, priority = false }: ProjectCardProps) {
   return (
     <Card className="group flex flex-col overflow-hidden transition-shadow hover:shadow-lg">
       <div className="relative aspect-video overflow-hidden bg-muted">
-        <Image
+        <ProjectCoverImage
           src={project.image}
           alt={t("screenshotAlt", { name: project.name })}
-          fill
           priority={priority}
-          className="object-cover transition-transform duration-300 group-hover:scale-105"
-          sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw"
+          className="transition-transform duration-300 group-hover:scale-105"
         />
         <Badge variant={status.variant} className="absolute right-3 top-3">
           {t(`status.${project.status}`)}

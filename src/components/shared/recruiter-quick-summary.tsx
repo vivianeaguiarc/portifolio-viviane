@@ -8,6 +8,7 @@ import { SOCIAL_LINKS } from "@/constants/site";
 import { getProfile } from "@/data/profile";
 import { getPortfolioMetrics, getRecruiterEducation } from "@/data/recruiter";
 import type { Locale } from "@/i18n/routing";
+import { getResumeUrl } from "@/lib/resume";
 
 interface RecruiterQuickSummaryProps {
   locale: Locale;
@@ -22,7 +23,7 @@ export async function RecruiterQuickSummary({
   const education = getRecruiterEducation(locale);
 
   const quickLinks = [
-    { label: t("downloadCv"), href: SOCIAL_LINKS.resume, external: true },
+    { label: t("downloadCv"), href: getResumeUrl(locale), external: true },
     { label: "LinkedIn", href: SOCIAL_LINKS.linkedin, external: true },
     { label: "GitHub", href: SOCIAL_LINKS.github, external: true },
     { label: t("contactAria"), href: "/#contato", external: false },

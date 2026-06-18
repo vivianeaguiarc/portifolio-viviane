@@ -32,7 +32,7 @@ export async function PressKitContent({ locale }: PressKitContentProps) {
       label: t("resume"),
       href: content.resume,
       icon: FileDown,
-      type: "download" as const,
+      type: "external" as const,
     },
     {
       label: "GitHub",
@@ -104,12 +104,9 @@ export async function PressKitContent({ locale }: PressKitContentProps) {
             >
               <a
                 href={link.href}
-                target={link.type === "external" ? "_blank" : undefined}
-                rel={
-                  link.type === "external" ? "noopener noreferrer" : undefined
-                }
+                target="_blank"
+                rel="noopener noreferrer"
                 className={className}
-                {...(link.type === "download" ? { download: true } : {})}
               >
                 <Icon className="h-4 w-4" aria-hidden />
                 {link.label}

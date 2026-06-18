@@ -1,6 +1,7 @@
 import type { Locale } from "@/i18n/routing";
 import { pickLocalized, type Localized } from "@/lib/localized";
 import { SITE_CONFIG, SOCIAL_LINKS } from "@/constants/site";
+import { getResumeUrl } from "@/lib/resume";
 
 const MEDIA_KIT_SOURCE = {
   shortBio: {
@@ -82,7 +83,7 @@ export function getPressKitContent(locale: Locale) {
 
   return {
     ...media,
-    resume: SOCIAL_LINKS.resume,
+    resume: getResumeUrl(locale),
     recruiterPath: "/recruiter" as const,
     stack: pickLocalized(stackLabels, locale),
     featuredSlugs: [...featuredSlugs],

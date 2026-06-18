@@ -66,7 +66,7 @@ export function ContactSection() {
       },
       {
         label: t("emailLabel"),
-        href: SOCIAL_LINKS.email,
+        href: `mailto:${SOCIAL_LINKS.email}`,
         icon: Mail,
       },
     ],
