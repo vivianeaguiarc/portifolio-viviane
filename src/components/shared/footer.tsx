@@ -26,6 +26,8 @@ const UTILITY_LINKS = [
   { key: "architecture", href: "/architecture" as const },
   { key: "security", href: "/security" as const },
   { key: "engineering", href: "/engineering" as const },
+  { key: "quality", href: "/quality" as const },
+  { key: "productionReadiness", href: "/production-readiness" as const },
 ] as const;
 
 export function Footer() {

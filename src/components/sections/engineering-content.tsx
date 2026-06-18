@@ -1,4 +1,5 @@
 import { getTranslations } from "next-intl/server";
+import { QualityCrossLink } from "@/components/shared/quality-cross-link";
 import { PrincipleCard } from "@/components/shared/principle-card";
 import { SectionHeading } from "@/components/shared/section-heading";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -98,6 +99,8 @@ export async function EngineeringContent({ locale }: EngineeringContentProps) {
           ))}
         </ul>
       </section>
+
+      <QualityCrossLink locale={locale} />
     </div>
   );
 }

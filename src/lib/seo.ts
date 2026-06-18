@@ -285,7 +285,9 @@ export function getStaticPageAlternatePaths(
     | "/status"
     | "/architecture"
     | "/security"
-    | "/engineering",
+    | "/engineering"
+    | "/quality"
+    | "/production-readiness",
 ): Record<Locale, string> {
   return {
     "pt-BR": getPathname({ locale: "pt-BR", href }),

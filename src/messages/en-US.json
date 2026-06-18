@@ -22,7 +22,8 @@
     "stack": "Stack",
     "blog": "Blog",
     "github": "GitHub",
-    "contact": "Contact"
+    "contact": "Contact",
+    "quality": "Quality"
   },
   "header": {
     "homeAria": "{name} — Home",
@@ -57,7 +58,9 @@
       "status": "Status",
       "architecture": "Architecture",
       "security": "Security",
-      "engineering": "Engineering"
+      "engineering": "Engineering",
+      "quality": "Quality",
+      "productionReadiness": "Production Readiness"
     }
   },
   "theme": {
@@ -360,5 +363,40 @@
     "principlesTitle": "Principles",
     "applicationsTitle": "How I apply them in projects",
     "categoriesTitle": "Categories"
+  },
+  "qualityPage": {
+    "eyebrow": "Quality",
+    "title": "Software Quality",
+    "metaTitle": "Quality | Viviane Aguiar Silva Simões",
+    "description": "Tools, testing strategy, CI/CD pipeline, and engineering patterns applied to this portfolio.",
+    "toolsTitle": "Quality tools",
+    "toolsHint": "Automated validation stack at every stage of development.",
+    "purposeLabel": "Purpose",
+    "testingTitle": "Testing Strategy",
+    "testingStrategy": "Pragmatic test pyramid: pure functions and utilities with Vitest, critical components with Testing Library, and planned E2E scenarios with Playwright for high-impact routes.",
+    "plannedBadge": "Planned",
+    "pipelineTitle": "Quality Pipeline",
+    "pipelineHint": "Flow executed in GitHub Actions before every Vercel deploy.",
+    "patternsTitle": "Adopted patterns",
+    "relatedTitle": "Related pages",
+    "readinessTitle": "Production Readiness",
+    "readinessDescription": "Checklist for SEO, performance, accessibility, security, and observability.",
+    "readinessCta": "View readiness"
+  },
+  "productionReadinessPage": {
+    "eyebrow": "Production",
+    "title": "Production Readiness",
+    "metaTitle": "Production Readiness | Viviane Aguiar Silva Simões",
+    "description": "Production readiness checklist: SEO, performance, accessibility, security, i18n, and CI/CD.",
+    "checklistTitle": "Readiness checklist",
+    "qualityLinkTitle": "Quality link",
+    "qualityTitle": "Software Quality",
+    "qualityDescription": "Documented tools, tests, and quality pipeline.",
+    "qualityCta": "View Quality"
+  },
+  "qualityCrossLink": {
+    "title": "Software Quality",
+    "description": "Tools, automated tests, CI/CD, and engineering patterns applied to this portfolio.",
+    "cta": "View Quality"
   }
 }

@@ -1,6 +1,7 @@
 import { getTranslations } from "next-intl/server";
-import { ProjectCoverImage } from "@/components/shared/project-cover-image";
 import { ProjectArchitectureFlow } from "@/components/shared/project-architecture-flow";
+import { ProjectCoverImage } from "@/components/shared/project-cover-image";
+import { QualityCrossLink } from "@/components/shared/quality-cross-link";
 import { ProjectDetailHeader } from "@/components/shared/project-detail-header";
 import { ProjectMetricGrid } from "@/components/shared/project-metric";
 import { ProjectSection } from "@/components/shared/project-section";
@@ -160,6 +161,8 @@ export async function ProjectDetailContent({
           </ProjectSection>
         </aside>
       </div>
+
+      <QualityCrossLink locale={locale} />
     </article>
   );
 }

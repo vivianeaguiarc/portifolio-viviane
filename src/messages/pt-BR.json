@@ -22,7 +22,8 @@
     "stack": "Stack",
     "blog": "Blog",
     "github": "GitHub",
-    "contact": "Contato"
+    "contact": "Contato",
+    "quality": "Quality"
   },
   "header": {
     "homeAria": "{name} — Início",
@@ -57,7 +58,9 @@
       "status": "Status",
       "architecture": "Arquitetura",
       "security": "Segurança",
-      "engineering": "Engenharia"
+      "engineering": "Engenharia",
+      "quality": "Quality",
+      "productionReadiness": "Production Readiness"
     }
   },
   "theme": {
@@ -360,5 +363,40 @@
     "principlesTitle": "Princípios",
     "applicationsTitle": "Como aplico nos projetos",
     "categoriesTitle": "Categorias"
+  },
+  "qualityPage": {
+    "eyebrow": "Qualidade",
+    "title": "Qualidade de Software",
+    "metaTitle": "Quality | Viviane Aguiar Silva Simões",
+    "description": "Ferramentas, estratégia de testes, pipeline CI/CD e padrões de engenharia aplicados no portfólio.",
+    "toolsTitle": "Ferramentas de qualidade",
+    "toolsHint": "Stack de validação automatizada em cada etapa do desenvolvimento.",
+    "purposeLabel": "Objetivo",
+    "testingTitle": "Testing Strategy",
+    "testingStrategy": "Pirâmide de testes pragmática: funções puras e utilitários com Vitest, componentes críticos com Testing Library e cenários E2E planejados com Playwright para rotas de maior impacto.",
+    "plannedBadge": "Planejado",
+    "pipelineTitle": "Pipeline de Qualidade",
+    "pipelineHint": "Fluxo executado no GitHub Actions antes de cada deploy na Vercel.",
+    "patternsTitle": "Padrões adotados",
+    "relatedTitle": "Páginas relacionadas",
+    "readinessTitle": "Production Readiness",
+    "readinessDescription": "Checklist de SEO, performance, acessibilidade, segurança e observabilidade.",
+    "readinessCta": "Ver prontidão"
+  },
+  "productionReadinessPage": {
+    "eyebrow": "Produção",
+    "title": "Production Readiness",
+    "metaTitle": "Production Readiness | Viviane Aguiar Silva Simões",
+    "description": "Checklist de prontidão para produção: SEO, performance, acessibilidade, segurança, i18n e CI/CD.",
+    "checklistTitle": "Checklist de prontidão",
+    "qualityLinkTitle": "Link para qualidade",
+    "qualityTitle": "Qualidade de Software",
+    "qualityDescription": "Ferramentas, testes e pipeline de qualidade documentados.",
+    "qualityCta": "Ver Quality"
+  },
+  "qualityCrossLink": {
+    "title": "Qualidade de Software",
+    "description": "Ferramentas, testes automatizados, CI/CD e padrões de engenharia aplicados neste portfólio.",
+    "cta": "Ver Quality"
   }
 }

@@ -119,6 +119,28 @@ Rota `/recruiter` com:
 - Metadata e structured data por post
 - Conteúdo em MDX/markdown em `src/data/blog/`
 
+## Software Quality
+
+Página dedicada: [`/quality`](/pt-BR/quality)
+
+- **Ferramentas:** TypeScript, ESLint, Prettier, Husky, Commitlint, lint-staged, GitHub Actions, Vitest, Testing Library
+- **Testing Strategy:** unitários (Vitest), integração (Testing Library), E2E planejado (Playwright)
+- **Padrões:** SOLID, Clean Code, Clean Architecture, Conventional Commits, Code Review, Git Flow
+
+### CI/CD
+
+Pipeline em `.github/workflows/ci.yml`:
+
+```
+Commit → Lint → Type Check → Build → Deploy (Vercel)
+```
+
+### Production Readiness
+
+Página dedicada: [`/production-readiness`](/pt-BR/production-readiness)
+
+Checklist validado: SEO, Performance, Acessibilidade, Responsividade, Segurança, i18n, Observabilidade, Analytics e CI/CD.
+
 ## Scripts
 
 | Comando              | Descrição                   |
@@ -157,20 +179,22 @@ Acesse [http://localhost:3000](http://localhost:3000) (redireciona para `/pt-BR`
 
 ## Rotas principais
 
-| Página       | pt-BR                 | en-US                 |
-| ------------ | --------------------- | --------------------- |
-| Home         | `/pt-BR`              | `/en-US`              |
-| Blog         | `/pt-BR/blog`         | `/en-US/blog`         |
-| Recruiter    | `/pt-BR/recruiter`    | `/en-US/recruiter`    |
-| Changelog    | `/pt-BR/changelog`    | `/en-US/changelog`    |
-| Now          | `/pt-BR/now`          | `/en-US/now`          |
-| Media Kit    | `/pt-BR/media-kit`    | `/en-US/media-kit`    |
-| Press Kit    | `/pt-BR/press-kit`    | `/en-US/press-kit`    |
-| Status       | `/pt-BR/status`       | `/en-US/status`       |
-| Architecture | `/pt-BR/architecture` | `/en-US/architecture` |
-| Security     | `/pt-BR/security`     | `/en-US/security`     |
-| Engineering  | `/pt-BR/engineering`  | `/en-US/engineering`  |
-| GitHub       | `/pt-BR/github`       | `/en-US/github`       |
+| Página               | pt-BR                         | en-US                         |
+| -------------------- | ----------------------------- | ----------------------------- |
+| Home                 | `/pt-BR`                      | `/en-US`                      |
+| Blog                 | `/pt-BR/blog`                 | `/en-US/blog`                 |
+| Recruiter            | `/pt-BR/recruiter`            | `/en-US/recruiter`            |
+| Changelog            | `/pt-BR/changelog`            | `/en-US/changelog`            |
+| Now                  | `/pt-BR/now`                  | `/en-US/now`                  |
+| Media Kit            | `/pt-BR/media-kit`            | `/en-US/media-kit`            |
+| Press Kit            | `/pt-BR/press-kit`            | `/en-US/press-kit`            |
+| Status               | `/pt-BR/status`               | `/en-US/status`               |
+| Architecture         | `/pt-BR/architecture`         | `/en-US/architecture`         |
+| Security             | `/pt-BR/security`             | `/en-US/security`             |
+| Engineering          | `/pt-BR/engineering`          | `/en-US/engineering`          |
+| Quality              | `/pt-BR/quality`              | `/en-US/quality`              |
+| Production Readiness | `/pt-BR/production-readiness` | `/en-US/production-readiness` |
+| GitHub               | `/pt-BR/github`               | `/en-US/github`               |
 
 ## Production Readiness
 
