@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { SITE_CONFIG } from "@/constants/site";
+import { SITE_CONFIG, SOCIAL_LINKS } from "@/constants/site";
 
 const siteUrl = SITE_CONFIG.url;
 
@@ -37,7 +37,7 @@ export function createMetadata(): Metadata {
       card: "summary_large_image",
       title,
       description,
-      creator: `@${SITE_CONFIG.author.toLowerCase()}`,
+      creator: "@vivianezzt",
       images: [SITE_CONFIG.profileImage],
     },
     robots: {
@@ -68,9 +68,9 @@ export function createJsonLd() {
     description: SITE_CONFIG.description,
     knowsAbout: SITE_CONFIG.keywords,
     sameAs: [
-      "https://www.linkedin.com/in/viviane-dev",
-      "https://github.com/viviane-dev",
-      "https://www.instagram.com/viviane.dev",
+      SOCIAL_LINKS.linkedin,
+      SOCIAL_LINKS.github,
+      SOCIAL_LINKS.instagram,
     ],
   };
 }

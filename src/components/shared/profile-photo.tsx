@@ -27,7 +27,7 @@ export function ProfilePhoto({
         aria-hidden
       />
       <Image
-        src="/viviane.jpg"
+        src={SITE_CONFIG.profileImage}
         alt={`Foto profissional de ${SITE_CONFIG.fullName}`}
         fill
         priority={priority}

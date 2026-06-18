@@ -22,9 +22,9 @@ export const SITE_CONFIG = {
 } as const;
 
 export const SOCIAL_LINKS = {
-  linkedin: "https://www.linkedin.com/in/viviane-dev",
-  github: "https://github.com/viviane-dev",
-  instagram: "https://www.instagram.com/viviane.dev",
+  linkedin: "https://www.linkedin.com/in/vivianeaguiarc/",
+  github: "https://github.com/vivianeaguiarc",
+  instagram: "https://www.instagram.com/vivianezzt/",
   email: "mailto:contato@viviane.dev",
   resume: "/curriculo-viviane.pdf",
 } as const;

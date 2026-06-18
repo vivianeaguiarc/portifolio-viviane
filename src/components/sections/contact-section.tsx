@@ -57,7 +57,7 @@ const socialItems = [
     label: "Instagram",
     href: SOCIAL_LINKS.instagram,
     icon: InstagramIcon,
-    description: "Acompanhe meu dia a dia",
+    description: "@vivianezzt",
   },
   {
     label: "E-mail",
