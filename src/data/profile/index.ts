@@ -8,18 +8,18 @@ export const PROFILE_SOURCE = {
     "en-US": "Viviane Aguiar",
   },
   role: {
-    "pt-BR": "Desenvolvedora Fullstack Júnior",
-    "en-US": "Junior Fullstack Developer",
+    "pt-BR": "Desenvolvedora Backend",
+    "en-US": "Backend Developer",
   },
   mainStack: {
-    "pt-BR": ["Node.js", "TypeScript", "React", "Next.js"],
-    "en-US": ["Node.js", "TypeScript", "React", "Next.js"],
+    "pt-BR": ["Node.js", "TypeScript", "NestJS", "PostgreSQL"],
+    "en-US": ["Node.js", "TypeScript", "NestJS", "PostgreSQL"],
   },
   summary: {
     "pt-BR":
-      "Desenvolvedora Fullstack Júnior com foco em Node.js, TypeScript, React, Next.js, APIs REST, Java, Spring Boot e arquitetura de software.",
+      "Desenvolvo APIs REST, aplicações web e projetos fullstack com foco em arquitetura, segurança, qualidade de código e experiência de uso.",
     "en-US":
-      "Junior Fullstack Developer focused on Node.js, TypeScript, React, Next.js, REST APIs, Java, Spring Boot, and software architecture.",
+      "I build REST APIs, web applications, and fullstack projects with a focus on architecture, security, code quality, and user experience.",
   },
   specialties: {
     "pt-BR": [
@@ -41,25 +41,25 @@ export const PROFILE_SOURCE = {
   } satisfies Localized<string[]>,
   technologies: {
     "pt-BR": [
-      "Next.js",
-      "React",
-      "TypeScript",
       "Node.js",
-      "Java",
-      "Spring Boot",
+      "TypeScript",
+      "NestJS",
+      "Express",
       "PostgreSQL",
+      "React",
+      "Next.js",
       "Docker",
       "TailwindCSS",
       "Git",
     ],
     "en-US": [
-      "Next.js",
-      "React",
-      "TypeScript",
       "Node.js",
-      "Java",
-      "Spring Boot",
+      "TypeScript",
+      "NestJS",
+      "Express",
       "PostgreSQL",
+      "React",
+      "Next.js",
       "Docker",
       "TailwindCSS",
       "Git",

@@ -1,11 +1,11 @@
 {
   "metadata": {
-    "siteTitle": "Junior Fullstack Developer",
-    "siteDescription": "Portfolio of Viviane Aguiar — Junior Fullstack Developer focused on backend, TypeScript, Node.js, Java, Spring Boot, REST APIs, and software architecture.",
-    "ogImageAlt": "Viviane Aguiar — Technical portfolio",
+    "siteTitle": "Backend Developer",
+    "siteDescription": "Professional portfolio of Viviane Aguiar, backend developer focused on Node.js, TypeScript, REST APIs, software architecture, and engineering best practices.",
+    "ogImageAlt": "Viviane Aguiar — Backend Developer",
     "portfolioName": "Portfolio",
-    "recruiterTitle": "Viviane Aguiar | Junior Fullstack Developer",
-    "recruiterDescription": "Portfolio of Viviane Aguiar with Fullstack projects, Node.js backend, TypeScript, Java, Spring Boot, REST APIs, and software architecture.",
+    "recruiterTitle": "Viviane Aguiar | Backend Developer",
+    "recruiterDescription": "Professional portfolio of Viviane Aguiar, backend developer focused on Node.js, TypeScript, REST APIs, software architecture, and engineering best practices.",
     "blogTitle": "Technical Blog",
     "blogDescription": "Articles on architecture, security, backend, and code quality based on real projects.",
     "caseStudy": "Technical Case Study",
@@ -38,33 +38,26 @@
   },
   "footer": {
     "rights": "All rights reserved.",
-    "madeWith": "Made with",
-    "and": "and",
-    "githubAria": "GitHub",
-    "roadmapTitle": "Next steps",
-    "utilityNav": "Portfolio pages",
-    "roadmap": {
+    "studyingTitle": "Currently studying",
+    "mainNav": "Portfolio links",
+    "studying": {
       "aws": "AWS",
       "kubernetes": "Kubernetes",
       "springBoot": "Spring Boot",
       "distributedArchitecture": "Distributed Architecture",
       "microservices": "Microservices"
     },
+    "social": {
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "instagram": "Instagram",
+      "email": "Email"
+    },
     "links": {
-      "changelog": "Changelog",
-      "now": "Now",
-      "mediaKit": "Media Kit",
-      "pressKit": "Press Kit",
-      "recruiter": "Recruiter Mode",
-      "github": "GitHub Activity",
-      "status": "Status",
-      "architecture": "Architecture",
-      "architectureShowcase": "Architecture Showcase",
-      "security": "Security",
-      "engineering": "Engineering",
-      "quality": "Quality",
-      "productionReadiness": "Production Readiness",
-      "technicalKnowledge": "Technical Knowledge"
+      "projects": "Projects",
+      "blog": "Blog",
+      "knowledge": "Knowledge",
+      "resume": "Resume"
     }
   },
   "theme": {
@@ -81,7 +74,7 @@
   "hero": {
     "badge": "Open to new opportunities",
     "greeting": "Hi, I'm",
-    "intro": "Junior Fullstack Developer focused on Node.js, TypeScript, React, Next.js, REST APIs, Java, Spring Boot, and software architecture.",
+    "intro": "I build REST APIs, web applications, and fullstack projects with a focus on architecture, security, code quality, and user experience.",
     "resume": "Download resume",
     "explore": "Explore",
     "exploreAria": "Scroll to Projects section",
@@ -101,6 +94,10 @@
     "eyebrow": "Projects",
     "title": "Engineering case studies",
     "description": "Real projects focused on architecture and business value. See metrics, concepts, and challenges in each case.",
+    "primaryTitle": "Main projects",
+    "learningTitle": "Learning projects",
+    "learningBadge": "Learning project",
+    "learningBadgeWithYear": "Learning project — {year}",
     "technologies": "Technologies",
     "viewDetails": "View details",
     "viewDetailsAria": "View details for project {name}",

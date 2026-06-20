@@ -51,16 +51,16 @@ export const NOW_PAGE_SOURCE = {
   },
   goals: {
     "pt-BR": [
-      "Desenvolvedora Backend Júnior",
-      "Desenvolvedora Fullstack Júnior",
+      "Desenvolvedora Backend",
+      "Desenvolvedora Fullstack",
       "Estágio em Desenvolvimento",
-      "Analista de Sistemas Júnior",
+      "Analista de Sistemas",
     ],
     "en-US": [
-      "Junior Backend Developer",
-      "Junior Fullstack Developer",
+      "Backend Developer",
+      "Fullstack Developer",
       "Development Internship",
-      "Junior Systems Analyst",
+      "Systems Analyst",
     ],
   },
   updatedAt: {

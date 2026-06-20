@@ -287,10 +287,12 @@ export const PROJECTS_EN: Project[] = [
     slug: "finance-app",
     name: "Finance App",
     description:
-      "Personal finance control API with authentication, transactions, and dashboard.",
+      "Initial personal finance project to consolidate CRUD, authentication, data organization, and database integration fundamentals.",
     longDescription:
-      "Finance App is a backend API for personal financial management. It enables user registration, income and expense tracking, transaction categorization, and consolidated dashboard views, with PostgreSQL persistence and a containerized Docker environment.",
+      "Finance App is a 2024 learning project: a backend API for personal financial management with user registration, income and expense tracking, transaction categorization, and a consolidated dashboard, with PostgreSQL persistence and a Docker containerized environment.",
     status: "completed",
+    tier: "learning",
+    learningPeriod: "2024",
     image: "/projects/finance-app/cover.png",
     githubUrl: "https://github.com/vivianeaguiarc/finance-app",
     deployUrl: "https://finance-app-i600.onrender.com/docs/",

@@ -13,8 +13,8 @@ const RECRUITER_PROFILE_SOURCE = {
     "en-US": "Viviane Aguiar",
   },
   role: {
-    "pt-BR": "Desenvolvedora Fullstack Júnior",
-    "en-US": "Junior Fullstack Developer",
+    "pt-BR": "Desenvolvedora Backend",
+    "en-US": "Backend Developer",
   },
   location: {
     "pt-BR": "Juiz de Fora, MG — Brasil",
@@ -24,14 +24,14 @@ const RECRUITER_PROFILE_SOURCE = {
 
 const RECRUITER_METADATA_SOURCE = {
   title: {
-    "pt-BR": "Viviane Aguiar | Desenvolvedora Fullstack Júnior",
-    "en-US": "Viviane Aguiar | Junior Fullstack Developer",
+    "pt-BR": "Viviane Aguiar | Desenvolvedora Backend",
+    "en-US": "Viviane Aguiar | Backend Developer",
   },
   description: {
     "pt-BR":
-      "Portfólio de Viviane Aguiar — Desenvolvedora Fullstack Júnior com foco em backend, TypeScript, Node.js, Java, Spring Boot, APIs REST e arquitetura de software.",
+      "Portfólio profissional de Viviane Aguiar, desenvolvedora backend com foco em Node.js, TypeScript, APIs REST, arquitetura de software e boas práticas de engenharia.",
     "en-US":
-      "Portfolio of Viviane Aguiar — Junior Fullstack Developer focused on backend, TypeScript, Node.js, Java, Spring Boot, REST APIs, and software architecture.",
+      "Professional portfolio of Viviane Aguiar, backend developer focused on Node.js, TypeScript, REST APIs, software architecture, and engineering best practices.",
   },
 } as const satisfies Record<string, Localized<string>>;
 
@@ -42,7 +42,7 @@ const RECRUITER_SKILL_CATEGORIES_SOURCE = [
       "pt-BR": "Frontend",
       "en-US": "Frontend",
     },
-    skills: ["Next.js", "React", "TypeScript", "TailwindCSS", "shadcn/ui"],
+    skills: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
   },
   {
     id: "backend",
@@ -50,14 +50,7 @@ const RECRUITER_SKILL_CATEGORIES_SOURCE = [
       "pt-BR": "Backend",
       "en-US": "Backend",
     },
-    skills: [
-      "Node.js",
-      "NestJS",
-      "Express",
-      "Java",
-      "Spring Boot",
-      "REST APIs",
-    ],
+    skills: ["Node.js", "TypeScript", "Express", "NestJS", "REST APIs"],
   },
   {
     id: "database",
@@ -65,7 +58,7 @@ const RECRUITER_SKILL_CATEGORIES_SOURCE = [
       "pt-BR": "Banco de Dados",
       "en-US": "Database",
     },
-    skills: ["PostgreSQL", "MySQL", "MongoDB", "Redis", "Prisma"],
+    skills: ["PostgreSQL", "MySQL", "Prisma"],
   },
   {
     id: "devops",
@@ -73,15 +66,15 @@ const RECRUITER_SKILL_CATEGORIES_SOURCE = [
       "pt-BR": "DevOps",
       "en-US": "DevOps",
     },
-    skills: ["Docker", "GitHub Actions", "CI/CD", "Linux"],
-  },
-  {
-    id: "cloud",
-    title: {
-      "pt-BR": "Cloud",
-      "en-US": "Cloud",
-    },
-    skills: ["AWS", "Vercel", "Render", "Firebase"],
+    skills: [
+      "Docker",
+      "GitHub Actions",
+      "Vercel",
+      "Render",
+      "ESLint",
+      "Prettier",
+      "Vitest",
+    ],
   },
   {
     id: "architecture",
@@ -117,16 +110,16 @@ const AVAILABILITY_TITLE: Localized<string> = {
 
 const AVAILABILITY_ROLES: Localized<string[]> = {
   "pt-BR": [
-    "Desenvolvedora Backend Júnior",
-    "Desenvolvedora Fullstack Júnior",
+    "Desenvolvedora Backend",
+    "Desenvolvedora Fullstack",
     "Estágio em Desenvolvimento",
-    "Analista de Sistemas Júnior",
+    "Analista de Sistemas",
   ],
   "en-US": [
-    "Junior Backend Developer",
-    "Junior Fullstack Developer",
+    "Backend Developer",
+    "Fullstack Developer",
     "Development Internship",
-    "Junior Systems Analyst",
+    "Systems Analyst",
   ],
 };
 

@@ -48,8 +48,15 @@ export function ProjectCard({ project, priority = false }: ProjectCardProps) {
           priority={priority}
           className="transition-transform duration-300 group-hover:scale-105"
         />
-        <Badge variant={status.variant} className="absolute right-3 top-3">
-          {t(`status.${project.status}`)}
+        <Badge
+          variant={project.tier === "learning" ? "muted" : status.variant}
+          className="absolute right-3 top-3"
+        >
+          {project.tier === "learning"
+            ? project.learningPeriod
+              ? t("learningBadgeWithYear", { year: project.learningPeriod })
+              : t("learningBadge")
+            : t(`status.${project.status}`)}
         </Badge>
       </div>
 

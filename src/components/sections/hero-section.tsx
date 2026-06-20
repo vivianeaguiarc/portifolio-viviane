@@ -108,7 +108,7 @@ export function HeroSection() {
             </div>
 
             <p className="mt-8 max-w-2xl text-lg leading-relaxed text-muted-foreground lg:mx-0 mx-auto">
-              {t("intro")}
+              {profile.summary}
             </p>
 
             <div className="mt-10 flex flex-wrap items-center justify-center gap-3 lg:justify-start">

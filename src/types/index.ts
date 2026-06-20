@@ -1,4 +1,5 @@
 export type ProjectStatus = "completed" | "inDevelopment" | "planned";
+export type ProjectTier = "primary" | "learning";
 
 export interface ProjectMetric {
   label: string;
@@ -22,6 +23,8 @@ export interface Project {
   description: string;
   longDescription: string;
   status: ProjectStatus;
+  tier?: ProjectTier;
+  learningPeriod?: string;
   image: string;
   githubUrl?: string;
   deployUrl?: string;

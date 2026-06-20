@@ -1,11 +1,11 @@
 {
   "metadata": {
-    "siteTitle": "Desenvolvedora Fullstack Júnior",
-    "siteDescription": "Portfólio de Viviane Aguiar — Desenvolvedora Fullstack Júnior com foco em backend, TypeScript, Node.js, Java, Spring Boot, APIs REST e arquitetura de software.",
-    "ogImageAlt": "Viviane Aguiar — Portfólio técnico",
+    "siteTitle": "Desenvolvedora Backend",
+    "siteDescription": "Portfólio profissional de Viviane Aguiar, desenvolvedora backend com foco em Node.js, TypeScript, APIs REST, arquitetura de software e boas práticas de engenharia.",
+    "ogImageAlt": "Viviane Aguiar — Desenvolvedora Backend",
     "portfolioName": "Portfólio",
-    "recruiterTitle": "Viviane Aguiar | Desenvolvedora Fullstack Júnior",
-    "recruiterDescription": "Portfólio de Viviane Aguiar com projetos Fullstack, backend Node.js, TypeScript, Java, Spring Boot, APIs REST e arquitetura de software.",
+    "recruiterTitle": "Viviane Aguiar | Desenvolvedora Backend",
+    "recruiterDescription": "Portfólio profissional de Viviane Aguiar, desenvolvedora backend com foco em Node.js, TypeScript, APIs REST, arquitetura de software e boas práticas de engenharia.",
     "blogTitle": "Blog Técnico",
     "blogDescription": "Artigos sobre arquitetura, segurança, backend e qualidade de código baseados em projetos reais.",
     "caseStudy": "Case Técnico",
@@ -38,33 +38,26 @@
   },
   "footer": {
     "rights": "Todos os direitos reservados.",
-    "madeWith": "Feito com",
-    "and": "e",
-    "githubAria": "GitHub",
-    "roadmapTitle": "Próximos passos",
-    "utilityNav": "Páginas do portfólio",
-    "roadmap": {
+    "studyingTitle": "Atualmente estudando",
+    "mainNav": "Links do portfólio",
+    "studying": {
       "aws": "AWS",
       "kubernetes": "Kubernetes",
       "springBoot": "Spring Boot",
       "distributedArchitecture": "Arquitetura Distribuída",
       "microservices": "Microsserviços"
     },
+    "social": {
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "instagram": "Instagram",
+      "email": "E-mail"
+    },
     "links": {
-      "changelog": "Changelog",
-      "now": "Now",
-      "mediaKit": "Media Kit",
-      "pressKit": "Press Kit",
-      "recruiter": "Recruiter Mode",
-      "github": "GitHub Activity",
-      "status": "Status",
-      "architecture": "Arquitetura",
-      "architectureShowcase": "Architecture Showcase",
-      "security": "Segurança",
-      "engineering": "Engenharia",
-      "quality": "Quality",
-      "productionReadiness": "Production Readiness",
-      "technicalKnowledge": "Conhecimentos Técnicos"
+      "projects": "Projetos",
+      "blog": "Blog",
+      "knowledge": "Conhecimentos",
+      "resume": "Currículo"
     }
   },
   "theme": {
@@ -81,7 +74,7 @@
   "hero": {
     "badge": "Disponível para novas oportunidades",
     "greeting": "Olá, sou",
-    "intro": "Desenvolvedora Fullstack Júnior com foco em Node.js, TypeScript, React, Next.js, APIs REST, Java, Spring Boot e arquitetura de software.",
+    "intro": "Desenvolvo APIs REST, aplicações web e projetos fullstack com foco em arquitetura, segurança, qualidade de código e experiência de uso.",
     "resume": "Baixar currículo",
     "explore": "Explorar",
     "exploreAria": "Rolar para a seção Projetos",
@@ -101,6 +94,10 @@
     "eyebrow": "Projetos",
     "title": "Cases técnicos de engenharia",
     "description": "Projetos reais com foco em arquitetura e entrega de valor. Veja métricas, conceitos e desafios em cada case.",
+    "primaryTitle": "Projetos principais",
+    "learningTitle": "Projetos de aprendizado",
+    "learningBadge": "Projeto de aprendizado",
+    "learningBadgeWithYear": "Projeto de aprendizado — {year}",
     "technologies": "Tecnologias",
     "viewDetails": "Ver detalhes",
     "viewDetailsAria": "Ver detalhes do projeto {name}",

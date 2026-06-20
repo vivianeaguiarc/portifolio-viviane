@@ -4,48 +4,26 @@ import type { TechStackCategory, TechStackItem } from "@/types";
 
 const STACK_ITEMS = {
   frontend: [
-    { name: "Next.js" },
     { name: "React" },
+    { name: "Next.js" },
     { name: "TypeScript" },
-    { name: "TailwindCSS" },
-    { name: "shadcn/ui" },
-    { name: "Framer Motion" },
+    { name: "Tailwind CSS" },
   ],
   backend: [
     { name: "Node.js" },
-    { name: "NestJS" },
+    { name: "TypeScript" },
     { name: "Express" },
-    { name: "Java" },
-    { name: "Spring Boot" },
-    { name: "REST APIs" },
+    { name: "NestJS" },
   ],
-  database: [
-    { name: "PostgreSQL" },
-    { name: "MongoDB" },
-    { name: "Redis" },
-    { name: "Prisma" },
-    { name: "Supabase" },
-  ],
+  database: [{ name: "PostgreSQL" }, { name: "MySQL" }, { name: "Prisma" }],
   devops: [
     { name: "Docker" },
     { name: "GitHub Actions" },
-    { name: "CI/CD" },
-    { name: "Nginx" },
-    { name: "Linux" },
-  ],
-  cloud: [
-    { name: "AWS" },
     { name: "Vercel" },
-    { name: "Firebase" },
-    { name: "Cloudflare" },
-  ],
-  tools: [
-    { name: "Git" },
-    { name: "Figma" },
-    { name: "Postman" },
-    { name: "Jest" },
+    { name: "Render" },
     { name: "ESLint" },
     { name: "Prettier" },
+    { name: "Vitest" },
   ],
 } as const satisfies Record<string, readonly TechStackItem[]>;
 
@@ -54,17 +32,13 @@ const STACK_TITLES: Localized<Record<keyof typeof STACK_ITEMS, string>> = {
     frontend: "Frontend",
     backend: "Backend",
     database: "Banco de Dados",
-    devops: "DevOps",
-    cloud: "Cloud",
-    tools: "Ferramentas",
+    devops: "DevOps & Qualidade",
   },
   "en-US": {
     frontend: "Frontend",
     backend: "Backend",
     database: "Database",
-    devops: "DevOps",
-    cloud: "Cloud",
-    tools: "Tools",
+    devops: "DevOps & Quality",
   },
 };
 

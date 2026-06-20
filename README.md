@@ -9,7 +9,17 @@ Portfólio profissional bilíngue (pt-BR / en-US) para apresentação técnica, 
 
 ## Visão geral
 
-Plataforma completa de personal branding para **Viviane Aguiar** — Desenvolvedora Fullstack Júnior, com foco em recrutadores e empresas de tecnologia — nacional e internacional.
+Plataforma completa de personal branding para **Viviane Aguiar** — Desenvolvedora Backend com foco em Node.js, TypeScript, APIs REST e arquitetura de software — voltada a recrutadores e empresas de tecnologia, nacional e internacional.
+
+### Projetos principais
+
+- **StockFlow** — SaaS multi-tenant de gestão de estoque
+- **Ticket Sales** — API de venda de ingressos com concorrência
+- **Portfolio Viviane** — Portfólio técnico bilíngue com SEO e modo recrutador
+
+### Projeto de aprendizado
+
+- **Finance App** — Projeto inicial de 2024 para consolidar fundamentos de CRUD, autenticação e integração com banco
 
 ### Formação acadêmica
 

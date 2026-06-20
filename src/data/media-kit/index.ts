@@ -6,25 +6,25 @@ import { getResumeUrl } from "@/lib/resume";
 const MEDIA_KIT_SOURCE = {
   shortBio: {
     "pt-BR":
-      "Desenvolvedora Fullstack Júnior em evolução, com foco em backend, TypeScript, Node.js, APIs REST e arquitetura de software.",
+      "Desenvolvedora Backend com foco em Node.js, TypeScript, APIs REST e arquitetura de software.",
     "en-US":
-      "Junior Fullstack Developer in growth, focused on backend, TypeScript, Node.js, REST APIs, and software architecture.",
+      "Backend Developer focused on Node.js, TypeScript, REST APIs, and software architecture.",
   },
   mediumBio: {
     "pt-BR":
-      "Viviane Aguiar é Desenvolvedora Fullstack Júnior que constrói aplicações web e APIs com Next.js, TypeScript, Node.js e PostgreSQL. Seu portfólio reúne cases reais como StockFlow, Ticket Sales, Finance App e este portfolio técnico com SEO, i18n e modo recrutador.",
+      "Viviane Aguiar é Desenvolvedora Backend que constrói APIs e aplicações web com Node.js, TypeScript, NestJS e PostgreSQL. Seu portfólio reúne cases como StockFlow, Ticket Sales e este portfólio técnico com SEO, i18n e modo recrutador.",
     "en-US":
-      "Viviane Aguiar is a Junior Fullstack Developer building web applications and APIs with Next.js, TypeScript, Node.js, and PostgreSQL. Her portfolio includes real cases such as StockFlow, Ticket Sales, Finance App, and this technical portfolio with SEO, i18n, and recruiter mode.",
+      "Viviane Aguiar is a Backend Developer building APIs and web applications with Node.js, TypeScript, NestJS, and PostgreSQL. Her portfolio includes cases such as StockFlow, Ticket Sales, and this technical portfolio with SEO, i18n, and recruiter mode.",
   },
   longBio: {
     "pt-BR":
-      "Viviane Aguiar é Desenvolvedora Fullstack Júnior em formação em Engenharia de Software na UNIASSELVI, com graduação em ADS e pós-graduação em Arquitetura e Padrões de Projetos pela GRAN Faculdade. Desenvolve projetos práticos que demonstram backend, frontend, segurança e arquitetura — incluindo plataforma SaaS multi-tenant, API de venda de ingressos com concorrência e portfólio técnico bilíngue. Busca oportunidade como Desenvolvedora Backend ou Fullstack Júnior, estágio ou Analista de Sistemas Júnior.",
+      "Viviane Aguiar é Desenvolvedora Backend em formação em Engenharia de Software na UNIASSELVI, com graduação em ADS e pós-graduação em Arquitetura e Padrões de Projetos pela GRAN Faculdade. Desenvolve projetos práticos que demonstram backend, arquitetura e segurança — incluindo plataforma SaaS multi-tenant, API de venda de ingressos com concorrência e portfólio técnico bilíngue. Busca oportunidade como Desenvolvedora Backend, Fullstack, estágio ou Analista de Sistemas.",
     "en-US":
-      "Viviane Aguiar is a Junior Fullstack Developer studying Software Engineering at UNIASSELVI, with a degree in Systems Analysis and Development and a postgraduate degree in Architecture and Design Patterns from GRAN Faculdade. She builds hands-on projects demonstrating backend, frontend, security, and architecture — including a multi-tenant SaaS platform, a high-concurrency ticket sales API, and a bilingual technical portfolio. She is seeking opportunities as a Junior Backend or Fullstack Developer, internship, or Junior Systems Analyst.",
+      "Viviane Aguiar is a Backend Developer studying Software Engineering at UNIASSELVI, with a degree in Systems Analysis and Development and a postgraduate degree in Architecture and Design Patterns from GRAN Faculdade. She builds hands-on projects demonstrating backend, architecture, and security — including a multi-tenant SaaS platform, a high-concurrency ticket sales API, and a bilingual technical portfolio. She is seeking opportunities as a Backend or Fullstack Developer, internship, or Systems Analyst.",
   },
   tagline: {
-    "pt-BR": "Desenvolvedora Fullstack Júnior · Backend · APIs REST",
-    "en-US": "Junior Fullstack Developer · Backend · REST APIs",
+    "pt-BR": "Desenvolvedora Backend · Node.js · APIs REST",
+    "en-US": "Backend Developer · Node.js · REST APIs",
   },
 } as const;
 
@@ -56,8 +56,8 @@ export function getPressKitContent(locale: Locale) {
       "NestJS",
       "PostgreSQL",
       "Docker",
-      "AWS",
-      "Clean Architecture",
+      "Vercel",
+      "Render",
       "RBAC",
       "CI/CD",
     ],
@@ -68,8 +68,8 @@ export function getPressKitContent(locale: Locale) {
       "NestJS",
       "PostgreSQL",
       "Docker",
-      "AWS",
-      "Clean Architecture",
+      "Vercel",
+      "Render",
       "RBAC",
       "CI/CD",
     ],

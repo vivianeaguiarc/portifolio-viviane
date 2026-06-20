@@ -12,15 +12,9 @@ import { Link } from "@/i18n/routing";
 import { cn } from "@/lib/utils";
 
 const NAV_ITEMS = [
-  { key: "home", href: "/#hero" },
   { key: "projects", href: "/#projetos" },
-  { key: "engineering", href: "/#engenharia" },
-  { key: "education", href: "/#formacao" },
-  { key: "stack", href: "/#stack" },
   { key: "blog", href: "/blog" },
-  { key: "architecture", href: "/architecture-showcase" },
   { key: "knowledge", href: "/technical-knowledge" },
-  { key: "quality", href: "/quality" },
   { key: "contact", href: "/#contato" },
 ] as const;
 
