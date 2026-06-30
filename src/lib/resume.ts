@@ -1,8 +1,8 @@
 import type { Locale } from "@/i18n/routing";
 
 export const RESUME_PATHS = {
-  "pt-BR": "/resume/viviane-aguiar-cv-ptbr.pdf",
-  "en-US": "/resume/viviane-aguiar-cv-en.pdf",
+  "pt-BR": "/resume/Curriculo_Viviane_Aguiar_Silva_Simoes_portugues.pdf",
+  "en-US": "/resume/Resume_Viviane_Aguiar_Silva_Simoes_ingles.pdf",
 } as const satisfies Record<Locale, string>;
 
 export function getResumeUrl(locale: Locale): string {
