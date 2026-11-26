@@ -15,12 +15,13 @@ export const PROJECTS: Project[] = [
     technologies: [
       "Node.js",
       "TypeScript",
-      "NestJS",
+      "Express",
       "PostgreSQL",
       "Prisma",
       "Redis",
       "Docker",
       "Swagger",
+      "Vitest",
     ],
     concepts: [
       "JWT",
@@ -54,12 +55,12 @@ export const PROJECTS: Project[] = [
       "Endpoints críticos possuem rate limiting para proteção.",
     ],
     architecture: {
-      title: "Arquitetura em camadas com NestJS",
+      title: "Arquitetura em camadas com Express",
       description:
-        "A API segue módulos NestJS com separação entre controllers, services e repositórios Prisma. Redis atua como cache de leitura e PostgreSQL como fonte de verdade.",
+        "A API Express separa controllers, services e repositórios Prisma. Redis atua como cache de leitura e PostgreSQL como fonte de verdade.",
       flow: [
         "Cliente / Frontend",
-        "API Gateway NestJS",
+        "API REST Express",
         "Auth + RBAC",
         "Services de domínio",
         "Prisma + PostgreSQL",
@@ -68,9 +69,9 @@ export const PROJECTS: Project[] = [
     },
     technicalDecisions: [
       {
-        title: "NestJS + Prisma",
+        title: "Express + TypeScript + Prisma",
         description:
-          "Escolhidos para acelerar desenvolvimento tipado, com migrations versionadas e contratos claros entre domínio e persistência.",
+          "TypeScript para tipagem em todas as camadas, Prisma com migrations versionadas e contratos claros entre domínio e persistência.",
       },
       {
         title: "Redis para cache",
@@ -287,16 +288,31 @@ export const PROJECTS: Project[] = [
     slug: "finance-app",
     name: "Finance App",
     description:
-      "Projeto inicial de gestão financeira para consolidar fundamentos de CRUD, autenticação, organização de dados e integração com banco.",
+      "API REST de gestão financeira pessoal, desenvolvida na Formação Full Stack Node.js (Full Stack Club) e evoluída com paginação, testes de integração, categorias, orçamentos, dashboard e relatórios.",
     longDescription:
-      "Finance App é um projeto de aprendizado de 2024: API backend para gestão financeira pessoal com cadastro de usuários, registro de receitas e despesas, categorização de transações e dashboard consolidado, com persistência em PostgreSQL e ambiente containerizado com Docker.",
+      "Finance App é um projeto de aprendizado (2025–2026): API backend para gestão financeira pessoal com cadastro de usuários, registro de receitas e despesas e dashboard consolidado, com persistência em PostgreSQL e ambiente containerizado com Docker. A base foi desenvolvida na Formação Full Stack Node.js (Full Stack Club) e evoluiu depois do curso com os itens abaixo.",
     status: "completed",
     tier: "learning",
-    learningPeriod: "2024",
+    learningPeriod: "2025–2026",
+    postCourseAdditions: [
+      "Paginação, filtros e ordenação na listagem de transações.",
+      "Testes de integração com Supertest.",
+      "Health check e logs estruturados.",
+      "Categorias, orçamento mensal por categoria e dashboard com métricas.",
+      "Transações recorrentes e compras parceladas.",
+      "Relatórios exportáveis em JSON, CSV e PDF.",
+    ],
     image: "/projects/finance-app/cover.png",
     githubUrl: "https://github.com/vivianeaguiarc/finance-app",
     deployUrl: "https://finance-app-i600.onrender.com/docs/",
-    technologies: ["Node.js", "Express", "PostgreSQL", "Docker", "JavaScript"],
+    technologies: [
+      "Node.js",
+      "Express",
+      "PostgreSQL",
+      "Docker",
+      "JavaScript",
+      "Supertest",
+    ],
     concepts: ["REST API", "CRUD", "Migrações SQL", "Docker", "Clean Code"],
     metrics: [
       { label: "Domínio", value: "Gestão financeira" },
@@ -362,8 +378,7 @@ export const PROJECTS: Project[] = [
       "Documentação da API é essencial mesmo em projetos de portfólio.",
     ],
     roadmap: [
-      "Metas financeiras e alertas de orçamento.",
-      "Exportação de relatórios em PDF/CSV.",
+      "Metas financeiras.",
       "Frontend web com gráficos interativos.",
       "Autenticação OAuth para login social.",
     ],

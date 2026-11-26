@@ -9,12 +9,7 @@ const STACK_ITEMS = {
     { name: "TypeScript" },
     { name: "Tailwind CSS" },
   ],
-  backend: [
-    { name: "Node.js" },
-    { name: "TypeScript" },
-    { name: "Express" },
-    { name: "NestJS" },
-  ],
+  backend: [{ name: "Node.js" }, { name: "TypeScript" }, { name: "Express" }],
   database: [{ name: "PostgreSQL" }, { name: "MySQL" }, { name: "Prisma" }],
   devops: [
     { name: "Docker" },

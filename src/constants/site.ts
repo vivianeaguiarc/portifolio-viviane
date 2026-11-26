@@ -15,7 +15,6 @@ export const SITE_CONFIG = {
     "TypeScript",
     "Backend",
     "APIs REST",
-    "NestJS",
     "Express",
     "PostgreSQL",
     "MySQL",

@@ -9,53 +9,25 @@ const CURRENT_LEARNING_SECTION_SOURCE = {
   },
   description: {
     "pt-BR":
-      "Evolução contínua em arquitetura, backend e práticas de engenharia de software.",
+      "Evolução contínua em backend com Java e Spring Boot e em práticas de engenharia de software.",
     "en-US":
-      "Continuous growth in architecture, backend, and software engineering practices.",
+      "Continuous growth in backend with Java and Spring Boot and in software engineering practices.",
   },
 } as const satisfies Record<string, Localized<string>>;
 
 const CURRENT_LEARNING_TOPICS_SOURCE = [
   {
-    id: "java-spring",
+    id: "java",
     name: {
-      "pt-BR": "Java + Spring Boot",
-      "en-US": "Java + Spring Boot",
+      "pt-BR": "Java",
+      "en-US": "Java",
     },
   },
   {
-    id: "hexagonal",
+    id: "spring-boot",
     name: {
-      "pt-BR": "Arquitetura Hexagonal",
-      "en-US": "Hexagonal Architecture",
-    },
-  },
-  {
-    id: "ddd",
-    name: {
-      "pt-BR": "Domain Driven Design",
-      "en-US": "Domain Driven Design",
-    },
-  },
-  {
-    id: "api-security",
-    name: {
-      "pt-BR": "Segurança de APIs",
-      "en-US": "API Security",
-    },
-  },
-  {
-    id: "cloud",
-    name: {
-      "pt-BR": "Cloud Computing",
-      "en-US": "Cloud Computing",
-    },
-  },
-  {
-    id: "docker",
-    name: {
-      "pt-BR": "Docker",
-      "en-US": "Docker",
+      "pt-BR": "Spring Boot",
+      "en-US": "Spring Boot",
     },
   },
   {

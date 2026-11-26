@@ -50,7 +50,7 @@ const RECRUITER_SKILL_CATEGORIES_SOURCE = [
       "pt-BR": "Backend",
       "en-US": "Backend",
     },
-    skills: ["Node.js", "TypeScript", "Express", "NestJS", "REST APIs"],
+    skills: ["Node.js", "TypeScript", "Express", "REST APIs"],
   },
   {
     id: "database",

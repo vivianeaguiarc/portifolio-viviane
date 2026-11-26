@@ -12,9 +12,9 @@ const MEDIA_KIT_SOURCE = {
   },
   mediumBio: {
     "pt-BR":
-      "Viviane Aguiar é Desenvolvedora Backend que constrói APIs e aplicações web com Node.js, TypeScript, NestJS e PostgreSQL. Seu portfólio reúne cases como StockFlow, Ticket Sales e este portfólio técnico com SEO, i18n e modo recrutador.",
+      "Viviane Aguiar é Desenvolvedora Backend que constrói APIs e aplicações web com Node.js, TypeScript, Express e PostgreSQL. Seu portfólio reúne cases como StockFlow, Ticket Sales e este portfólio técnico com SEO, i18n e modo recrutador.",
     "en-US":
-      "Viviane Aguiar is a Backend Developer building APIs and web applications with Node.js, TypeScript, NestJS, and PostgreSQL. Her portfolio includes cases such as StockFlow, Ticket Sales, and this technical portfolio with SEO, i18n, and recruiter mode.",
+      "Viviane Aguiar is a Backend Developer building APIs and web applications with Node.js, TypeScript, Express, and PostgreSQL. Her portfolio includes cases such as StockFlow, Ticket Sales, and this technical portfolio with SEO, i18n, and recruiter mode.",
   },
   longBio: {
     "pt-BR":
@@ -53,7 +53,6 @@ export function getPressKitContent(locale: Locale) {
       "Next.js",
       "TypeScript",
       "Node.js",
-      "NestJS",
       "PostgreSQL",
       "Docker",
       "Vercel",
@@ -65,7 +64,6 @@ export function getPressKitContent(locale: Locale) {
       "Next.js",
       "TypeScript",
       "Node.js",
-      "NestJS",
       "PostgreSQL",
       "Docker",
       "Vercel",

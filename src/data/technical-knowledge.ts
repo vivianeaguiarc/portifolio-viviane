@@ -75,9 +75,9 @@ const KNOWLEDGE_ITEMS_SOURCE = [
     },
     practicalApplication: {
       "pt-BR":
-        "Todas as APIs do portfólio rodam em Node.js: NestJS no StockFlow, Express no Ticket Sales e Finance App. Escolhi Node.js pela produtividade com TypeScript, ecossistema maduro e facilidade de deploy em plataformas como Render e Vercel.",
+        "Todas as APIs do portfólio rodam em Node.js com Express: StockFlow, Ticket Sales e Finance App. Escolhi Node.js pela produtividade com TypeScript, ecossistema maduro e facilidade de deploy em plataformas como Render e Vercel.",
       "en-US":
-        "All portfolio APIs run on Node.js: NestJS in StockFlow, Express in Ticket Sales and Finance App. I chose Node.js for TypeScript productivity, a mature ecosystem, and straightforward deployment on platforms like Render and Vercel.",
+        "All portfolio APIs run on Node.js with Express: StockFlow, Ticket Sales, and Finance App. I chose Node.js for TypeScript productivity, a mature ecosystem, and straightforward deployment on platforms like Render and Vercel.",
     },
     relatedProjects: ["stockflow", "ticket-sales", "finance-app"],
   },
@@ -123,9 +123,9 @@ const KNOWLEDGE_ITEMS_SOURCE = [
     },
     practicalApplication: {
       "pt-BR":
-        "No StockFlow, guards NestJS e middlewares validam JWT e RBAC antes de acessar controllers. No Finance App, middleware de autenticação protege rotas de transações. No portfólio, o middleware Next.js aplica headers de segurança e roteamento i18n.",
+        "No StockFlow, o middleware authenticate valida o JWT e, em seguida, o middleware authorizeRoles verifica o papel do usuário antes de a requisição chegar ao controller. No Finance App, middleware de autenticação protege rotas de transações. No portfólio, o middleware Next.js aplica headers de segurança e roteamento i18n.",
       "en-US":
-        "In StockFlow, NestJS guards and middlewares validate JWT and RBAC before reaching controllers. In Finance App, auth middleware protects transaction routes. In the portfolio, Next.js middleware applies security headers and i18n routing.",
+        "In StockFlow, the authenticate middleware validates the JWT and then the authorizeRoles middleware checks the user's role before the request reaches the controller. In Finance App, auth middleware protects transaction routes. In the portfolio, Next.js middleware applies security headers and i18n routing.",
     },
     relatedProjects: ["stockflow", "finance-app", "portfolio-viviane"],
   },
@@ -219,9 +219,9 @@ const KNOWLEDGE_ITEMS_SOURCE = [
     },
     practicalApplication: {
       "pt-BR":
-        "StockFlow implementa RBAC com perfis distintos (admin, operador, viewer) por empresa. Guards NestJS verificam papel antes de permitir movimentações de estoque ou gestão de usuários, garantindo isolamento multi-tenant.",
+        "StockFlow implementa RBAC com três papéis (ADMIN, MANAGER, USER), definidos no enum UserRole do schema Prisma. O middleware Express authorizeRoles(...roles) roda depois da autenticação JWT e bloqueia a rota quando o papel do usuário não está entre os permitidos.",
       "en-US":
-        "StockFlow implements RBAC with distinct roles (admin, operator, viewer) per company. NestJS guards verify role before allowing stock movements or user management, ensuring multi-tenant isolation.",
+        "StockFlow implements RBAC with three roles (ADMIN, MANAGER, USER), defined in the UserRole enum of the Prisma schema. The Express middleware authorizeRoles(...roles) runs after JWT authentication and blocks the route when the user's role is not among the allowed ones.",
     },
     relatedProjects: ["stockflow"],
   },
@@ -267,9 +267,9 @@ const KNOWLEDGE_ITEMS_SOURCE = [
     },
     practicalApplication: {
       "pt-BR":
-        "StockFlow e Ticket Sales são APIs stateless com JWT: qualquer réplica processa requisições independentemente. Isso simplifica deploy no Render e prepara a arquitetura para auto-scaling sem sticky sessions.",
+        "StockFlow usa autenticação com JWT, sem sessão guardada no servidor; a cada requisição, o middleware authenticate consulta o banco para confirmar que o usuário e a empresa estão ativos. Ticket Sales também usa JWT. Sem sessão em memória, qualquer réplica processa requisições independentemente, o que simplifica deploy no Render e dispensa sticky sessions.",
       "en-US":
-        "StockFlow and Ticket Sales are stateless APIs with JWT: any replica processes requests independently. This simplifies deployment on Render and prepares the architecture for auto-scaling without sticky sessions.",
+        "StockFlow uses JWT authentication with no session stored on the server; on every request, the authenticate middleware queries the database to confirm that the user and the company are active. Ticket Sales also uses JWT. With no in-memory session, any replica processes requests independently, which simplifies deployment on Render and removes the need for sticky sessions.",
     },
     relatedProjects: ["stockflow", "ticket-sales"],
   },
@@ -293,9 +293,9 @@ const KNOWLEDGE_ITEMS_SOURCE = [
     },
     practicalApplication: {
       "pt-BR":
-        "Ticket Sales usa PKs em eventos, tickets e pedidos para rastrear cada ingresso individualmente. Finance App identifica transações por UUID. StockFlow usa IDs numéricos com índices otimizados para joins em dashboards multi-tenant.",
+        "Ticket Sales usa PKs em eventos, tickets e pedidos para rastrear cada ingresso individualmente. Finance App identifica transações por UUID. StockFlow usa IDs do tipo string: uuid em Company, RefreshToken e AuditLog, e cuid em User, Category, Supplier, Product e StockMovement.",
       "en-US":
-        "Ticket Sales uses PKs on events, tickets, and orders to track each ticket individually. Finance App identifies transactions by UUID. StockFlow uses numeric IDs with optimized indexes for multi-tenant dashboard joins.",
+        "Ticket Sales uses PKs on events, tickets, and orders to track each ticket individually. Finance App identifies transactions by UUID. StockFlow uses string IDs: uuid on Company, RefreshToken, and AuditLog, and cuid on User, Category, Supplier, Product, and StockMovement.",
     },
     relatedProjects: ["ticket-sales", "finance-app", "stockflow"],
   },
@@ -341,9 +341,9 @@ const KNOWLEDGE_ITEMS_SOURCE = [
     },
     practicalApplication: {
       "pt-BR":
-        "StockFlow modela empresa → usuários (1:N), produto → movimentações (1:N) e usuário ↔ papéis (N:N via join). Finance App relaciona usuário → transações → categorias, estrutura que sustenta o dashboard consolidado.",
+        "StockFlow relaciona cada empresa a seus usuários, categorias, fornecedores, produtos, movimentações e logs de auditoria (1:N, via companyId), e cada produto às suas movimentações (1:N, via productId). Cada usuário tem um único papel, definido pelo enum UserRole. Finance App relaciona usuário → transações → categorias, estrutura que sustenta o dashboard consolidado.",
       "en-US":
-        "StockFlow models company → users (1:N), product → movements (1:N), and user ↔ roles (N:N via join). Finance App relates user → transactions → categories, a structure supporting the consolidated dashboard.",
+        "StockFlow relates each company to its users, categories, suppliers, products, movements, and audit logs (1:N, via companyId), and each product to its movements (1:N, via productId). Each user has a single role, defined by the UserRole enum. Finance App relates user → transactions → categories, a structure supporting the consolidated dashboard.",
     },
     relatedProjects: ["stockflow", "finance-app"],
   },
@@ -413,9 +413,9 @@ const KNOWLEDGE_ITEMS_SOURCE = [
     },
     practicalApplication: {
       "pt-BR":
-        "StockFlow indexa company_id e product_id para listagens multi-tenant performáticas. Ticket Sales indexa status e event_id nas consultas de disponibilidade sob concorrência. Analiso planos de execução antes de otimizar queries críticas.",
+        "No StockFlow, User tem índice em (companyId, deletedAt), e as restrições únicas compostas incluem companyId — por exemplo, (companyId, sku) em Product e (companyId, name) em Category. Ticket Sales indexa status e event_id nas consultas de disponibilidade sob concorrência. Analiso planos de execução antes de otimizar queries críticas.",
       "en-US":
-        "StockFlow indexes company_id and product_id for performant multi-tenant listings. Ticket Sales indexes status and event_id in availability queries under concurrency. I analyze execution plans before optimizing critical queries.",
+        "In StockFlow, User has an index on (companyId, deletedAt), and composite unique constraints include companyId — for example, (companyId, sku) on Product and (companyId, name) on Category. Ticket Sales indexes status and event_id in availability queries under concurrency. I analyze execution plans before optimizing critical queries.",
     },
     relatedProjects: ["stockflow", "ticket-sales"],
   },
@@ -517,9 +517,9 @@ const KNOWLEDGE_ITEMS_SOURCE = [
     },
     practicalApplication: {
       "pt-BR":
-        "No StockFlow, Prisma é um adapter de saída para persistência; controllers NestJS são adapters de entrada. Redis entra como adapter de cache plugável — o service de produtos depende de interface, não de implementação concreta.",
+        "No StockFlow, Prisma é um adapter de saída para persistência; controllers Express são adapters de entrada. Redis entra como adapter de cache plugável — o service de produtos depende de interface, não de implementação concreta.",
       "en-US":
-        "In StockFlow, Prisma is an output adapter for persistence; NestJS controllers are input adapters. Redis plugs in as a cache adapter — the product service depends on an interface, not a concrete implementation.",
+        "In StockFlow, Prisma is an output adapter for persistence; Express controllers are input adapters. Redis plugs in as a cache adapter — the product service depends on an interface, not a concrete implementation.",
     },
     relatedProjects: ["stockflow"],
   },
@@ -615,9 +615,9 @@ const KNOWLEDGE_ITEMS_SOURCE = [
     },
     practicalApplication: {
       "pt-BR":
-        "Este portfólio usa Next.js App Router com next-intl (pt-BR/en-US), metadata dinâmica para SEO, JSON-LD e deploy na Vercel. StockFlow web usa Next.js para login e dashboard consumindo a API NestJS em produção.",
+        "Este portfólio usa Next.js App Router com next-intl (pt-BR/en-US), metadata dinâmica para SEO, JSON-LD e deploy na Vercel. StockFlow web usa Next.js para login e dashboard consumindo a API Express em produção.",
       "en-US":
-        "This portfolio uses Next.js App Router with next-intl (pt-BR/en-US), dynamic metadata for SEO, JSON-LD, and Vercel deployment. StockFlow web uses Next.js for login and dashboard consuming the NestJS API in production.",
+        "This portfolio uses Next.js App Router with next-intl (pt-BR/en-US), dynamic metadata for SEO, JSON-LD, and Vercel deployment. StockFlow web uses Next.js for login and dashboard consuming the Express API in production.",
     },
     relatedProjects: ["portfolio-viviane", "stockflow"],
   },
@@ -836,9 +836,9 @@ const KNOWLEDGE_ITEMS_SOURCE = [
     },
     practicalApplication: {
       "pt-BR":
-        "StockFlow e portfólio têm pipelines CI/CD: lint, typecheck, build e testes a cada push. Merge só após checks verdes. Deploy automático na Vercel (frontend) e validação antes de produção no Render (APIs).",
+        "StockFlow e portfólio usam pipelines de CI no GitHub Actions. No StockFlow, cada push e pull request para main e develop passa por lint, migrations, testes com Vitest (incluindo cobertura) e build. No portfólio, lint, type-check e build rodam a cada push e pull request para main.",
       "en-US":
-        "StockFlow and portfolio have CI/CD pipelines: lint, typecheck, build, and tests on every push. Merge only after green checks. Automatic deploy on Vercel (frontend) and validation before production on Render (APIs).",
+        "StockFlow and portfolio use CI pipelines on GitHub Actions. In StockFlow, every push and pull request to main and develop goes through lint, migrations, Vitest tests (including coverage), and build. In the portfolio, lint, type-check, and build run on every push and pull request to main.",
     },
     relatedProjects: ["stockflow", "portfolio-viviane"],
   },
@@ -860,9 +860,9 @@ const KNOWLEDGE_ITEMS_SOURCE = [
     },
     practicalApplication: {
       "pt-BR":
-        "Portfólio e StockFlow usam GitHub Actions para rodar pnpm lint, typecheck e build em cada PR. Cache de node_modules acelera execução. Workflow falha cedo se TypeScript ou ESLint quebram, protegendo main.",
+        "Portfólio e StockFlow usam GitHub Actions. No StockFlow, o workflow roda com pnpm a cada push e pull request para main e develop: lint, prisma generate, prisma migrate deploy, testes com Vitest, build e testes com cobertura. No portfólio, roda npm ci, lint, type-check e build a cada push e pull request para main, com cache do npm. Se uma etapa falha, as seguintes não rodam.",
       "en-US":
-        "Portfolio and StockFlow use GitHub Actions to run pnpm lint, typecheck, and build on every PR. node_modules cache speeds execution. Workflow fails early if TypeScript or ESLint break, protecting main.",
+        "Portfolio and StockFlow use GitHub Actions. In StockFlow, the workflow runs with pnpm on every push and pull request to main and develop: lint, prisma generate, prisma migrate deploy, Vitest tests, build, and coverage tests. In the portfolio, it runs npm ci, lint, type-check, and build on every push and pull request to main, with npm cache. If a step fails, the following steps do not run.",
     },
     relatedProjects: ["stockflow", "portfolio-viviane"],
   },
@@ -915,9 +915,9 @@ const KNOWLEDGE_ITEMS_SOURCE = [
     },
     practicalApplication: {
       "pt-BR":
-        "StockFlow usa access tokens de 15 min, refresh rotacionado e revogação no logout. Guards validam assinatura antes de confiar em claims de tenant e role. Secrets ficam em variáveis de ambiente, nunca no código.",
+        "StockFlow usa access tokens de 15 min, refresh rotacionado e revogação no logout. O middleware authenticate valida a assinatura do JWT e confere no banco se o companyId do token corresponde ao do usuário. Secrets ficam em variáveis de ambiente, nunca no código.",
       "en-US":
-        "StockFlow uses 15-min access tokens, rotated refresh, and logout revocation. Guards validate signature before trusting tenant and role claims. Secrets live in environment variables, never in code.",
+        "StockFlow uses 15-min access tokens, rotated refresh, and logout revocation. The authenticate middleware validates the JWT signature and checks against the database that the token's companyId matches the user's. Secrets live in environment variables, never in code.",
     },
     relatedProjects: ["stockflow"],
   },
@@ -1014,9 +1014,9 @@ const KNOWLEDGE_ITEMS_SOURCE = [
     },
     practicalApplication: {
       "pt-BR":
-        "StockFlow implementa rotação de refresh token a cada renovação e blacklist no logout. Tokens comprometidos disparam revogação em cascata. Access token curto limita danos se interceptado.",
+        "StockFlow rotaciona o refresh token a cada renovação e o revoga no logout. O banco guarda apenas o hash SHA-256 do refresh token. Access token curto (15 min) limita danos se interceptado.",
       "en-US":
-        "StockFlow implements refresh token rotation on each renewal and blacklist on logout. Compromised tokens trigger cascade revocation. Short access token limits damage if intercepted.",
+        "StockFlow rotates the refresh token on every renewal and revokes it on logout. The database stores only the SHA-256 hash of the refresh token. A short access token (15 min) limits damage if intercepted.",
     },
     relatedProjects: ["stockflow"],
   },
@@ -1038,9 +1038,9 @@ const KNOWLEDGE_ITEMS_SOURCE = [
     },
     practicalApplication: {
       "pt-BR":
-        "StockFlow valida DTOs com class-validator no NestJS. Finance App rejeita transações com valores ou datas inválidas. Portfólio usa Zod no formulário de contato — validação server-side é a linha de defesa que nunca pode faltar.",
+        "StockFlow valida os dados de entrada com schemas Zod. Finance App rejeita transações com valores ou datas inválidas. Portfólio usa Zod no formulário de contato — validação server-side é a linha de defesa que nunca pode faltar.",
       "en-US":
-        "StockFlow validates DTOs with class-validator in NestJS. Finance App rejects transactions with invalid values or dates. Portfolio uses Zod on contact form — server-side validation is the defense line that must never be missing.",
+        "StockFlow validates input data with Zod schemas. Finance App rejects transactions with invalid values or dates. Portfolio uses Zod on contact form — server-side validation is the defense line that must never be missing.",
     },
     relatedProjects: ["stockflow", "finance-app", "portfolio-viviane"],
   },

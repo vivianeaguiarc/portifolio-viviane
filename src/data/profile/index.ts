@@ -12,9 +12,9 @@ export const PROFILE_SOURCE = {
     "en-US": "Backend Developer",
   },
   mainStack: {
-    "pt-BR": ["Node.js", "TypeScript", "NestJS", "PostgreSQL"],
-    "en-US": ["Node.js", "TypeScript", "NestJS", "PostgreSQL"],
-  },
+    "pt-BR": ["Node.js", "TypeScript", "PostgreSQL", "Java (em estudo)"],
+    "en-US": ["Node.js", "TypeScript", "PostgreSQL", "Java (learning)"],
+  } satisfies Localized<string[]>,
   summary: {
     "pt-BR":
       "Desenvolvo APIs REST, aplicações web e projetos fullstack com foco em arquitetura, segurança, qualidade de código e experiência de uso.",
@@ -43,7 +43,6 @@ export const PROFILE_SOURCE = {
     "pt-BR": [
       "Node.js",
       "TypeScript",
-      "NestJS",
       "Express",
       "PostgreSQL",
       "React",
@@ -55,7 +54,6 @@ export const PROFILE_SOURCE = {
     "en-US": [
       "Node.js",
       "TypeScript",
-      "NestJS",
       "Express",
       "PostgreSQL",
       "React",

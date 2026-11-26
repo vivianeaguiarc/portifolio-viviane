@@ -5,58 +5,72 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: "rbac-stockflow",
     title: "Como implementei RBAC no StockFlow",
     description:
-      "Como modelei papéis, permissões e autorização por recurso na API SaaS multiempresa do StockFlow com NestJS.",
+      "Como modelei papéis e autorização na API SaaS multiempresa do StockFlow com middlewares Express, e como o isolamento entre empresas é feito por companyId.",
     category: "Segurança",
     publishedAt: "2026-03-10",
-    readingTime: "8 min",
+    readingTime: "6 min",
     tags: ["Node.js", "TypeScript", "RBAC", "Segurança"],
     content: {
       sections: [
         {
           heading: "Contexto no StockFlow",
           paragraphs: [
-            "O StockFlow é uma API SaaS multiempresa para gestão de estoque. Cada empresa possui usuários com responsabilidades diferentes: administradores, operadores de estoque e visualizadores de relatórios.",
-            "RBAC (Role-Based Access Control) foi necessário para garantir que um operador não pudesse alterar configurações da empresa nem acessar dados de outro tenant.",
+            "O StockFlow é uma API SaaS multiempresa para gestão de estoque. Cada usuário pertence a uma empresa e tem um de três papéis, definidos no enum UserRole do schema Prisma: ADMIN, MANAGER e USER.",
+            "O controle de acesso resolve dois problemas diferentes: impedir que um usuário execute ações fora do seu papel e impedir que ele acesse dados de outra empresa.",
           ],
         },
         {
           heading: "Modelagem de papéis",
           paragraphs: [
-            "Defini papéis fixos no domínio e associei permissões granulares por recurso: produtos, movimentações, usuários e auditoria.",
+            "Os papéis são fixos e não há permissões por recurso: cada rota declara quais papéis podem acessá-la.",
           ],
           list: [
-            "ADMIN: gestão completa do tenant",
-            "MANAGER: movimentações e relatórios",
-            "VIEWER: somente leitura",
+            "ADMIN: acesso total, incluindo criar, listar e excluir usuários; criar, editar e excluir empresas; excluir categorias; consultar os logs de auditoria.",
+            "MANAGER: criar, editar e excluir produtos; criar e editar categorias; registrar movimentações de estoque; consultar e editar usuários; consultar empresas.",
+            "USER: somente leitura de produtos, categorias, produtos com estoque baixo e movimentações de estoque.",
           ],
         },
         {
-          heading: "Implementação com guards no NestJS",
+          heading: "Implementação com middlewares Express",
           paragraphs: [
-            "Usei guards customizados combinados com decorators para declarar permissões nos controllers, mantendo a regra de autorização próxima da rota sem poluir a lógica de negócio.",
+            "A autorização é feita por middlewares encadeados na própria rota. O authenticate valida o JWT e preenche req.user. Em seguida, authorizeRoles(...allowedRoles: UserRole[]) responde 401 se não houver req.user e 403 se req.user.role não estiver entre os papéis permitidos.",
+            "Depois disso, validateRequest valida o corpo da requisição com um schema Zod, e só então o controller é executado.",
           ],
           code: {
             language: "typescript",
-            content: `@Roles('ADMIN', 'MANAGER')
-@UseGuards(JwtAuthGuard, RolesGuard, TenantGuard)
-@Post('movements')
-createMovement(@Body() dto: CreateMovementDto) {
-  return this.movementService.create(dto);
-}`,
+            content: `router.post(
+  '/',
+  authenticate,
+  authorizeRoles('ADMIN', 'MANAGER'),
+  validateRequest(createProductSchema),
+  (req, res, next) => productsController.create(req, res, next),
+)`,
           },
         },
         {
-          heading: "Isolamento multi-tenant",
+          heading: "Isolamento entre empresas",
           paragraphs: [
-            "Cada request carrega o tenantId do token JWT. O TenantGuard valida se o recurso pertence à empresa do usuário antes de executar o service.",
-            "Essa combinação RBAC + tenant evita vazamento horizontal de dados entre empresas — requisito crítico em qualquer SaaS B2B.",
+            "O JWT carrega o companyId do usuário, e o middleware authenticate confere no banco se esse companyId é igual ao do usuário.",
+            "Os controllers repassam req.user.companyId para os services, e os repositories filtram as consultas por esse campo — por exemplo, findActiveInCompany(companyId, productId). Um recurso de outra empresa não é encontrado.",
+            "O papel define quais ações o usuário pode executar; o companyId define sobre quais dados ele pode executá-las.",
+          ],
+        },
+        {
+          heading: "Regras de negócio além do papel",
+          paragraphs: [
+            "Algumas regras não podem ser expressas só pela checagem de papel e ficam no UsersService:",
+          ],
+          list: [
+            "Um usuário não pode excluir a si mesmo.",
+            "Não é possível remover ou rebaixar o último ADMIN da empresa.",
+            "A edição de usuário só aceita os papéis MANAGER ou USER.",
           ],
         },
         {
           heading: "Lições aprendidas",
           paragraphs: [
-            "Documentar a matriz papel × permissão no README da API ajudou na revisão de segurança e na integração com o frontend Next.js do StockFlow.",
-            "RBAC bem modelado reduz ifs espalhados e facilita evoluir novos perfis sem reescrever regras de negócio.",
+            "Separar autorização por papel e isolamento por empresa deixa cada responsabilidade em um lugar: a checagem de papel na rota, o filtro por companyId no repository.",
+            "Regras que dependem do estado dos dados, como proteger o último ADMIN, não cabem em um middleware de papel e precisam ficar na camada de serviço.",
           ],
         },
       ],
@@ -66,53 +80,64 @@ createMovement(@Body() dto: CreateMovementDto) {
     slug: "jwt-apis-pratica",
     title: "JWT na prática: autenticação segura em APIs",
     description:
-      "Access token, refresh token e rotação segura aplicados no StockFlow e no Finance App.",
+      "Access token JWT, refresh token opaco com rotação e revogação no logout, como implementados no StockFlow.",
     category: "Backend",
     publishedAt: "2026-02-18",
-    readingTime: "7 min",
+    readingTime: "6 min",
     tags: ["JWT", "Backend", "Segurança", "API REST"],
     content: {
       sections: [
         {
-          heading: "Por que JWT nos meus projetos",
+          heading: "Visão geral",
           paragraphs: [
-            "No StockFlow e no Finance App, escolhi JWT por ser stateless e facilitar integração com frontends e documentação Swagger.",
-            "O desafio não é emitir o token — é gerenciar expiração, renovação e revogação sem comprometer a experiência do usuário.",
+            "A autenticação do StockFlow usa dois tokens com funções diferentes: um access token JWT de curta duração, enviado em cada requisição, e um refresh token opaco, usado apenas para obter um novo access token.",
+            "O desafio não é emitir o token — é gerenciar expiração, renovação e revogação.",
           ],
         },
         {
-          heading: "Access token curto + refresh token",
+          heading: "Access token: JWT com HS256",
           paragraphs: [
-            "Access tokens com vida curta (15 minutos) limitam a janela de exposição. Refresh tokens com vida maior ficam persistidos com hash no PostgreSQL.",
+            "O access token é um JWT assinado com HS256. A expiração padrão é de 15 minutos, configurada pela variável de ambiente JWT_EXPIRES_IN.",
+            "O payload carrega os dados usados para identificar o usuário e autorizar a requisição:",
           ],
           code: {
-            language: "typescript",
-            content: `// Payload mínimo — sem dados sensíveis
-{
-  "sub": "user-uuid",
-  "tenantId": "company-uuid",
-  "role": "MANAGER",
-  "exp": 1710000000
+            language: "json",
+            content: `{
+  "userId": "user-uuid",
+  "email": "user@empresa.com",
+  "companyId": "company-uuid",
+  "role": "MANAGER"
 }`,
           },
         },
         {
-          heading: "Fluxo de renovação",
+          heading: "Validação no middleware authenticate",
           paragraphs: [
-            "O frontend do StockFlow intercepta 401, chama /auth/refresh com o refresh token em cookie HttpOnly e repete a requisição original.",
-            "No Finance App, o fluxo é similar, com validação de fingerprint do dispositivo para reduzir roubo de sessão.",
+            "O middleware authenticate não confia apenas na assinatura. A cada requisição, ele:",
           ],
           list: [
-            "Refresh token armazenado com hash bcrypt",
-            "Rotação a cada renovação",
-            "Invalidação em logout",
+            "verifica o token aceitando somente o algoritmo HS256;",
+            "valida a estrutura do payload com um schema Zod;",
+            "confere no banco se o usuário e a empresa estão ativos;",
+            "confere se companyId, role e email do token são iguais aos do banco.",
           ],
         },
         {
-          heading: "Boas práticas aplicadas",
+          heading: "Refresh token: valor opaco, não JWT",
           paragraphs: [
-            "Nunca armazeno senha em texto puro. Secrets ficam em variáveis de ambiente. Algoritmo HS256 com chave forte e rotação planejada.",
-            "Health checks e rate limiting na rota de login protegem contra brute force — padrão que também uso no Ticket Sales.",
+            "O refresh token não é um JWT. É um valor aleatório de 48 bytes, codificado em base64url.",
+          ],
+          list: [
+            "O banco guarda apenas o hash SHA-256 do refresh token, nunca o valor original.",
+            "A expiração padrão é de 7 dias, configurada por REFRESH_TOKEN_EXPIRES_IN_DAYS.",
+            "Na renovação, o refresh token é rotacionado pelo método rotate.",
+            "Um refresh token expirado ou revogado retorna 401.",
+          ],
+        },
+        {
+          heading: "Logout",
+          paragraphs: [
+            "O logout revoga o refresh token e registra um log de auditoria.",
           ],
         },
       ],
@@ -122,10 +147,10 @@ createMovement(@Body() dto: CreateMovementDto) {
     slug: "multi-tenant-saas",
     title: "Multi-Tenant explicado com um projeto real",
     description:
-      "Estratégias de isolamento de dados e schema usadas no StockFlow com PostgreSQL e Prisma.",
+      "Como o StockFlow isola os dados de cada empresa com a coluna companyId, filtros nos repositories e restrições únicas compostas no Prisma.",
     category: "Arquitetura",
     publishedAt: "2026-01-25",
-    readingTime: "9 min",
+    readingTime: "5 min",
     tags: ["SaaS", "Multi-Tenant", "Arquitetura", "PostgreSQL"],
     content: {
       sections: [
@@ -136,38 +161,44 @@ createMovement(@Body() dto: CreateMovementDto) {
           ],
         },
         {
-          heading: "Estratégia escolhida: shared database, shared schema",
+          heading: "Estratégia: banco e schema compartilhados",
           paragraphs: [
-            "Optei por banco compartilhado com coluna tenant_id em todas as tabelas de domínio. É o equilíbrio ideal para o estágio atual do produto: custo controlado e migrations simples com Prisma.",
+            "Todas as empresas compartilham o mesmo banco PostgreSQL e o mesmo schema. O isolamento é feito pela coluna companyId (company_id no banco).",
           ],
           list: [
-            "tenant_id em todas as queries",
-            "Índices compostos (tenant_id, id)",
-            "Middleware Prisma para filtro automático",
+            "Tabelas com companyId: User, Category, Supplier, Product, StockMovement e AuditLog.",
+            "Company é a tabela da própria empresa.",
+            "RefreshToken se liga ao usuário (userId), não diretamente à empresa.",
           ],
         },
         {
-          heading: "Implementação com Prisma",
+          heading: "Filtro por companyId nos repositories",
           paragraphs: [
-            "Criei um middleware que injeta where: { tenantId } em findMany e valida ownership em update/delete. Isso reduz o risco de esquecer o filtro em uma query.",
+            "O companyId vem do JWT e é conferido com o banco pelo middleware authenticate. Os controllers repassam req.user.companyId para os services, e os repositories recebem esse valor como parâmetro e filtram as consultas por ele — por exemplo, findActiveInCompany(companyId, productId).",
+            "Como o companyId faz parte da consulta, um recurso de outra empresa não é encontrado.",
+          ],
+        },
+        {
+          heading: "Índices e restrições únicas com companyId",
+          paragraphs: [
+            "No schema Prisma, as restrições únicas incluem companyId. Assim, os valores são únicos dentro de cada empresa, e não no banco inteiro: duas empresas podem ter um produto com o mesmo SKU, mas a mesma empresa não pode repeti-lo.",
           ],
           code: {
-            language: "typescript",
-            content: `prisma.$use(async (params, next) => {
-  if (params.model && TENANT_MODELS.includes(params.model)) {
-    if (params.action === 'findMany') {
-      params.args.where = { ...params.args.where, tenantId };
-    }
-  }
-  return next(params);
-});`,
+            language: "prisma",
+            content: `// User
+@@index([companyId, deletedAt])
+
+// Category
+@@unique([companyId, name])
+
+// Supplier
+@@unique([companyId, document])
+@@unique([companyId, email])
+
+// Product
+@@unique([companyId, sku])
+@@unique([companyId, barcode])`,
           },
-        },
-        {
-          heading: "Aplicação em novos produtos",
-          paragraphs: [
-            "Os aprendizados de isolamento por tenant e LGPD por design podem ser reaproveitados em futuros produtos SaaS e EdTech.",
-          ],
         },
       ],
     },

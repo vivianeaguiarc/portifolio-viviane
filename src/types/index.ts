@@ -25,6 +25,7 @@ export interface Project {
   status: ProjectStatus;
   tier?: ProjectTier;
   learningPeriod?: string;
+  postCourseAdditions?: string[];
   image: string;
   githubUrl?: string;
   deployUrl?: string;

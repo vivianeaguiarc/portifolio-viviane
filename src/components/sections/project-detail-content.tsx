@@ -55,6 +55,24 @@ export async function ProjectDetailContent({
             </ul>
           </ProjectSection>
 
+          {project.postCourseAdditions?.length ? (
+            <ProjectSection title={t("postCourseAdditions")} id="evolucoes">
+              <ul className="space-y-2" role="list">
+                {project.postCourseAdditions.map((item) => (
+                  <li
+                    key={item}
+                    className="flex gap-2 text-sm leading-relaxed text-muted-foreground"
+                  >
+                    <span className="text-primary" aria-hidden>
+                      •
+                    </span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </ProjectSection>
+          ) : null}
+
           <ProjectSection title={t("problem")} id="problema">
             <p className="leading-relaxed text-muted-foreground">
               {project.problem}
