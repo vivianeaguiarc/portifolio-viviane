@@ -15,12 +15,13 @@ export const PROJECTS_EN: Project[] = [
     technologies: [
       "Node.js",
       "TypeScript",
-      "NestJS",
+      "Express",
       "PostgreSQL",
       "Prisma",
       "Redis",
       "Docker",
       "Swagger",
+      "Vitest",
     ],
     concepts: [
       "JWT",
@@ -54,12 +55,12 @@ export const PROJECTS_EN: Project[] = [
       "Critical endpoints have rate limiting for protection.",
     ],
     architecture: {
-      title: "Layered architecture with NestJS",
+      title: "Layered architecture with Express",
       description:
-        "The API follows NestJS modules with separation between controllers, services, and Prisma repositories. Redis acts as a read cache and PostgreSQL as the source of truth.",
+        "The Express API separates controllers, services, and Prisma repositories. Redis acts as a read cache and PostgreSQL as the source of truth.",
       flow: [
         "Client / Frontend",
-        "NestJS API Gateway",
+        "Express REST API",
         "Auth + RBAC",
         "Domain services",
         "Prisma + PostgreSQL",
@@ -68,9 +69,9 @@ export const PROJECTS_EN: Project[] = [
     },
     technicalDecisions: [
       {
-        title: "NestJS + Prisma",
+        title: "Express + TypeScript + Prisma",
         description:
-          "Chosen to accelerate typed development, with versioned migrations and clear contracts between domain and persistence.",
+          "TypeScript for typing across all layers, Prisma with versioned migrations and clear contracts between domain and persistence.",
       },
       {
         title: "Redis for caching",
@@ -287,16 +288,31 @@ export const PROJECTS_EN: Project[] = [
     slug: "finance-app",
     name: "Finance App",
     description:
-      "Initial personal finance project to consolidate CRUD, authentication, data organization, and database integration fundamentals.",
+      "Personal finance REST API, built during the Full Stack Node.js program by Full Stack Club and extended with pagination, integration tests, categories, budgets, dashboard, and reports.",
     longDescription:
-      "Finance App is a 2024 learning project: a backend API for personal financial management with user registration, income and expense tracking, transaction categorization, and a consolidated dashboard, with PostgreSQL persistence and a Docker containerized environment.",
+      "Finance App is a learning project (2025–2026): a backend API for personal financial management with user registration, income and expense tracking, and a consolidated dashboard, with PostgreSQL persistence and a Docker containerized environment. The foundation was built during the Full Stack Node.js program by Full Stack Club and was extended after the program with the items below.",
     status: "completed",
     tier: "learning",
-    learningPeriod: "2024",
+    learningPeriod: "2025–2026",
+    postCourseAdditions: [
+      "Pagination, filtering, and sorting on the transaction list.",
+      "Integration tests with Supertest.",
+      "Health check and structured logging.",
+      "Categories, monthly budget per category, and a metrics dashboard.",
+      "Recurring transactions and installment purchases.",
+      "Reports exportable as JSON, CSV, and PDF.",
+    ],
     image: "/projects/finance-app/cover.png",
     githubUrl: "https://github.com/vivianeaguiarc/finance-app",
     deployUrl: "https://finance-app-i600.onrender.com/docs/",
-    technologies: ["Node.js", "Express", "PostgreSQL", "Docker", "JavaScript"],
+    technologies: [
+      "Node.js",
+      "Express",
+      "PostgreSQL",
+      "Docker",
+      "JavaScript",
+      "Supertest",
+    ],
     concepts: ["REST API", "CRUD", "SQL Migrations", "Docker", "Clean Code"],
     metrics: [
       { label: "Domain", value: "Financial management" },
@@ -362,8 +378,7 @@ export const PROJECTS_EN: Project[] = [
       "API documentation is essential even in portfolio projects.",
     ],
     roadmap: [
-      "Financial goals and budget alerts.",
-      "PDF/CSV report export.",
+      "Financial goals.",
       "Web frontend with interactive charts.",
       "OAuth authentication for social login.",
     ],
@@ -378,7 +393,7 @@ export const PROJECTS_EN: Project[] = [
     status: "completed",
     image: "/projects/portfolio-viviane/cover.png",
     githubUrl: "https://github.com/vivianeaguiarc/portifolio-viviane",
-    deployUrl: "https://portfolio-viviane.vercel.app",
+    deployUrl: "https://vivianeaguiardev.com.br",
     technologies: [
       "Next.js",
       "TypeScript",

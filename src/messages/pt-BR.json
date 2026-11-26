@@ -40,13 +40,6 @@
     "rights": "Todos os direitos reservados.",
     "studyingTitle": "Atualmente estudando",
     "mainNav": "Links do portfólio",
-    "studying": {
-      "aws": "AWS",
-      "kubernetes": "Kubernetes",
-      "springBoot": "Spring Boot",
-      "distributedArchitecture": "Arquitetura Distribuída",
-      "microservices": "Microsserviços"
-    },
     "social": {
       "github": "GitHub",
       "linkedin": "LinkedIn",
@@ -116,6 +109,7 @@
     "back": "Voltar aos projetos",
     "backAria": "Voltar para a seção de projetos",
     "overview": "Visão geral",
+    "postCourseAdditions": "Evoluções após o curso",
     "problem": "Problema resolvido",
     "businessRules": "Regras de negócio",
     "architecture": "Arquitetura",

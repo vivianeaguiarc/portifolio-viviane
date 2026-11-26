@@ -1,28 +1,7 @@
+import { getCurrentLearningTopics } from "@/data/current-learning";
 import type { Locale } from "@/i18n/routing";
 
 export const NOW_PAGE_SOURCE = {
-  studying: {
-    "pt-BR": [
-      "Java",
-      "Spring Boot",
-      "Arquitetura Hexagonal",
-      "DDD",
-      "Segurança de APIs",
-      "Docker",
-      "Cloud Computing",
-      "Engenharia de Software",
-    ],
-    "en-US": [
-      "Java",
-      "Spring Boot",
-      "Hexagonal Architecture",
-      "DDD",
-      "API Security",
-      "Docker",
-      "Cloud Computing",
-      "Software Engineering",
-    ],
-  },
   currentProjects: {
     "pt-BR": [
       {
@@ -69,14 +48,12 @@ export const NOW_PAGE_SOURCE = {
   },
 } as const;
 
-type StudyingList = (typeof NOW_PAGE_SOURCE.studying)["pt-BR"];
 type CurrentProjectList = (typeof NOW_PAGE_SOURCE.currentProjects)["pt-BR"];
 type GoalsList = (typeof NOW_PAGE_SOURCE.goals)["pt-BR"];
 
 export function getNowPageContent(locale: Locale) {
   return {
-    studying: (NOW_PAGE_SOURCE.studying[locale] ??
-      NOW_PAGE_SOURCE.studying["pt-BR"]) as StudyingList,
+    studying: getCurrentLearningTopics(locale).map((topic) => topic.name),
     currentProjects: (NOW_PAGE_SOURCE.currentProjects[locale] ??
       NOW_PAGE_SOURCE.currentProjects["pt-BR"]) as CurrentProjectList,
     goals: (NOW_PAGE_SOURCE.goals[locale] ??

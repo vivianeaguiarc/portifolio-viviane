@@ -79,7 +79,7 @@ Repita para `/en-US`, `/recruiter` e uma página de projeto.
 Audite a URL de produção após deploy:
 
 ```bash
-npx lighthouse https://portfolio-viviane.vercel.app/pt-BR --preset=desktop
+npx lighthouse https://vivianeaguiardev.com.br/pt-BR --preset=desktop
 ```
 
 ## Monitoramento contínuo

@@ -4,8 +4,7 @@ export const SITE_CONFIG = {
   title: "Desenvolvedora Backend",
   description:
     "Portfólio profissional de Viviane Aguiar, desenvolvedora backend com foco em Node.js, TypeScript, APIs REST, arquitetura de software e boas práticas de engenharia.",
-  url:
-    process.env.NEXT_PUBLIC_SITE_URL ?? "https://portfolio-viviane.vercel.app",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://vivianeaguiardev.com.br",
   locale: "pt_BR",
   author: "Viviane Aguiar",
   profileImage: "/profile/viviane-2.jpg",
@@ -16,7 +15,6 @@ export const SITE_CONFIG = {
     "TypeScript",
     "Backend",
     "APIs REST",
-    "NestJS",
     "Express",
     "PostgreSQL",
     "MySQL",

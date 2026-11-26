@@ -40,13 +40,6 @@
     "rights": "All rights reserved.",
     "studyingTitle": "Currently studying",
     "mainNav": "Portfolio links",
-    "studying": {
-      "aws": "AWS",
-      "kubernetes": "Kubernetes",
-      "springBoot": "Spring Boot",
-      "distributedArchitecture": "Distributed Architecture",
-      "microservices": "Microservices"
-    },
     "social": {
       "github": "GitHub",
       "linkedin": "LinkedIn",
@@ -116,6 +109,7 @@
     "back": "Back to projects",
     "backAria": "Back to projects section",
     "overview": "Overview",
+    "postCourseAdditions": "Additions after the program",
     "problem": "Problem solved",
     "businessRules": "Business rules",
     "architecture": "Architecture",

@@ -19,8 +19,8 @@ const SHOWCASE_SOURCE = [
         "Centralize inventory control in a multi-tenant environment with data isolation, auditing, and documented APIs.",
     },
     architectureTitle: {
-      "pt-BR": "Arquitetura em camadas com NestJS",
-      "en-US": "Layered architecture with NestJS",
+      "pt-BR": "Arquitetura em camadas com Express",
+      "en-US": "Layered architecture with Express",
     },
     architectureDescription: {
       "pt-BR":
@@ -51,7 +51,7 @@ const SHOWCASE_SOURCE = [
     dataFlowNodes: {
       "pt-BR": [
         "Frontend Next.js",
-        "REST API NestJS",
+        "API REST Express",
         "Auth JWT + RBAC",
         "Domínio de estoque",
         "Prisma ORM",
@@ -59,7 +59,7 @@ const SHOWCASE_SOURCE = [
       ],
       "en-US": [
         "Next.js Frontend",
-        "NestJS REST API",
+        "Express REST API",
         "JWT Auth + RBAC",
         "Inventory domain",
         "Prisma ORM",
@@ -74,35 +74,37 @@ const SHOWCASE_SOURCE = [
       "pt-BR": [
         "Node.js",
         "TypeScript",
-        "NestJS",
+        "Express",
         "Prisma",
         "PostgreSQL",
         "Redis",
         "Docker",
         "Swagger",
+        "Vitest",
       ],
       "en-US": [
         "Node.js",
         "TypeScript",
-        "NestJS",
+        "Express",
         "Prisma",
         "PostgreSQL",
         "Redis",
         "Docker",
         "Swagger",
+        "Vitest",
       ],
     },
     technicalDecisions: [
       {
         title: {
-          "pt-BR": "NestJS + Prisma",
-          "en-US": "NestJS + Prisma",
+          "pt-BR": "Express + TypeScript + Prisma",
+          "en-US": "Express + TypeScript + Prisma",
         },
         description: {
           "pt-BR":
-            "Módulos tipados com migrations versionadas e contratos claros entre domínio e persistência.",
+            "TypeScript para tipagem em todas as camadas, Prisma com migrations versionadas e contratos claros entre domínio e persistência.",
           "en-US":
-            "Typed modules with versioned migrations and clear contracts between domain and persistence.",
+            "TypeScript for typing across all layers, Prisma with versioned migrations and clear contracts between domain and persistence.",
         },
       },
       {

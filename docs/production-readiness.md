@@ -5,7 +5,7 @@ Documentação de observabilidade, segurança e qualidade operacional do portfó
 ## Health Check
 
 ```bash
-curl https://portfolio-viviane.vercel.app/api/health
+curl https://vivianeaguiardev.com.br/api/health
 ```
 
 Resposta:
@@ -74,7 +74,7 @@ Meta: Performance, Accessibility, Best Practices e SEO > 95.
 Auditar após deploy:
 
 ```bash
-npx lighthouse https://portfolio-viviane.vercel.app/pt-BR --only-categories=performance,accessibility,best-practices,seo
+npx lighthouse https://vivianeaguiardev.com.br/pt-BR --only-categories=performance,accessibility,best-practices,seo
 ```
 
 Resultados locais variam; em produção na Vercel os scores tendem a ser superiores.

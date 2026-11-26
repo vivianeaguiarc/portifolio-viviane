@@ -10,16 +10,9 @@ import {
 import { NavigationLink } from "@/components/shared/navigation-link";
 import { Link as I18nLink } from "@/i18n/routing";
 import { SITE_CONFIG, SOCIAL_LINKS } from "@/constants/site";
+import { getCurrentLearningTopics } from "@/data/current-learning";
 import type { Locale } from "@/i18n/routing";
 import { getResumeUrl } from "@/lib/resume";
-
-const STUDYING_ITEMS = [
-  "aws",
-  "kubernetes",
-  "springBoot",
-  "distributedArchitecture",
-  "microservices",
-] as const;
 
 const FOOTER_LINKS = [
   { key: "projects", href: "/#projetos" as const },
@@ -57,6 +50,7 @@ export function Footer() {
   const locale = useLocale() as Locale;
   const year = new Date().getFullYear();
   const resumeUrl = getResumeUrl(locale);
+  const studyingTopics = getCurrentLearningTopics(locale);
 
   return (
     <footer className="border-t bg-card/50">
@@ -69,12 +63,12 @@ export function Footer() {
             {t("studyingTitle")}
           </h2>
           <ul className="flex flex-wrap gap-2" role="list">
-            {STUDYING_ITEMS.map((item) => (
+            {studyingTopics.map((topic) => (
               <li
-                key={item}
+                key={topic.id}
                 className="rounded-full border bg-background/50 px-3 py-1 text-xs font-medium text-muted-foreground"
               >
-                {t(`studying.${item}`)}
+                {topic.name}
               </li>
             ))}
           </ul>
