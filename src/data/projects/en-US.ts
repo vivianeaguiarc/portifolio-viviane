@@ -378,7 +378,7 @@ export const PROJECTS_EN: Project[] = [
     status: "completed",
     image: "/projects/portfolio-viviane/cover.png",
     githubUrl: "https://github.com/vivianeaguiarc/portifolio-viviane",
-    deployUrl: "https://portfolio-viviane.vercel.app",
+    deployUrl: "https://vivianeaguiardev.com.br",
     technologies: [
       "Next.js",
       "TypeScript",
