@@ -211,9 +211,9 @@ Acesse [http://localhost:3000](http://localhost:3000) (redireciona para `/pt-BR`
 
 ### Variáveis de ambiente
 
-| Variável               | Descrição                  | Padrão                                 |
-| ---------------------- | -------------------------- | -------------------------------------- |
-| `NEXT_PUBLIC_SITE_URL` | URL pública (SEO, sitemap) | `https://portfolio-viviane.vercel.app` |
+| Variável               | Descrição                  | Padrão                            |
+| ---------------------- | -------------------------- | --------------------------------- |
+| `NEXT_PUBLIC_SITE_URL` | URL pública (SEO, sitemap) | `https://vivianeaguiardev.com.br` |
 
 ## Deploy
 

@@ -35,7 +35,7 @@ Revisão concluída em **18/06/2025** para divulgação no LinkedIn, currículo,
 | StockFlow deploy    | https://stock-flow-web-six.vercel.app/pt-BR/login | OK     |
 | Ticket Sales deploy | https://ticket-sales-3su2.onrender.com/docs/      | OK     |
 | Finance App deploy  | https://finance-app-i600.onrender.com/docs/       | OK     |
-| Portfolio deploy    | https://portfolio-viviane.vercel.app              | OK     |
+| Portfolio deploy    | https://vivianeaguiardev.com.br                   | OK     |
 | Blog                | `/blog`                                           | OK     |
 | Recruiter Mode      | `/recruiter`                                      | OK     |
 | Case Studies        | `/projetos/[slug]` / `/projects/[slug]`           | OK     |
